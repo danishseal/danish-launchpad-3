@@ -44,6 +44,8 @@
     "react-hook-form": "^7.71.1",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
+    "viem": "2.55.5",
+    "wagmi": "^2.19.5",
     "zod": "^4.3.6",
     "zustand": "^5.0.0"
   },

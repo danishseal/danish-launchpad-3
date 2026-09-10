@@ -125,6 +125,11 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
           <Link href="/vault" className="transition-colors hover:text-white">
             Vault
           </Link>
+          {/* The EVM section. Robinhood Chain 4663, not ansem-1, which is why it is
+              named rather than folded into Scanner. */}
+          <Link href="/4thstreet" className="transition-colors hover:text-white">
+            4thstreet
+          </Link>
         </nav>
 
         {/* Search */}

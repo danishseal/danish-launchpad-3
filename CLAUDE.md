@@ -10,6 +10,7 @@ Add your row before you write a file. Update it when you start, not when you fin
 | When (start) | Instance | Working on |
 |---|---|---|
 | 2026-09-09 | achi-43 [a4cd35] | Recolouring `app/` to black + phosphor green off the 4TH. logo. Colours only, no type, no layout. Dev server on 3020. |
+| 2026-09-09 | achi-2a [c94496] | Adding 4thstreet as its own section: NEW files under `app/src/app/(shell)/4thstreet/`, `app/src/lib/fourthstreet/`, `app/src/components/fourthstreet/`. EVM (wagmi/viem, chain 4663) alongside the Solana stack. Touching two shared files only, `app/package.json` and the providers, and using the phosphor tokens rather than any colour of my own. |
 
 ## The palette
 

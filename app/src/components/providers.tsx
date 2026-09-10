@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "@/components/ui/sonner";
 import { SolanaWalletProvider } from "@/components/wallet/solana-wallet-provider";
+import { WagmiProvider } from "wagmi";
+import { fourthStreetWagmiConfig } from "@/lib/fourthstreet/wagmi";
 
 function makeQueryClient() {
   return new QueryClient({
@@ -24,9 +26,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <SolanaWalletProvider>
       <QueryClientProvider client={queryClient}>
-        {children}
-        <Toaster />
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* The EVM provider for the 4thstreet section, mounted INSIDE the existing
+            tree so the Solana adapter, the toaster and the query client are all
+            untouched. Pages that never call a wagmi hook pay nothing for it. */}
+        <WagmiProvider config={fourthStreetWagmiConfig}>
+          {children}
+          <Toaster />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </WagmiProvider>
       </QueryClientProvider>
     </SolanaWalletProvider>
   );
