@@ -102,7 +102,7 @@ export function PostComposer({
           type="button"
           onClick={() => void wallet.connect()}
           disabled={wallet.connecting}
-          className="h-9 rounded-lg bg-[#6cf07f] px-4 font-sans text-[13px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-50"
+          className="h-9 rounded-lg bg-[#00f090] px-4 font-sans text-[13px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-50"
         >
           {wallet.connecting ? "Connecting…" : "Connect to post"}
         </button>
@@ -173,7 +173,7 @@ export function PostComposer({
                 disabled={imgBusy || busy}
                 aria-label="Add image"
                 title="Add image"
-                className="flex h-8 w-8 items-center justify-center rounded-full text-[#6cf07f] transition-colors hover:bg-[#6cf07f]/10 disabled:opacity-50"
+                className="flex h-8 w-8 items-center justify-center rounded-full text-[#00f090] transition-colors hover:bg-[#00f090]/10 disabled:opacity-50"
               >
                 <ImageIcon size={18} weight="regular" />
               </button>
@@ -183,8 +183,8 @@ export function PostComposer({
                 disabled={busy}
                 aria-label="Add token"
                 title="Add token"
-                className={`flex h-8 items-center gap-1 rounded-full px-2 text-[12px] font-medium transition-colors hover:bg-[#6cf07f]/10 disabled:opacity-50 ${
-                  pickerOpen ? "text-white" : "text-[#6cf07f]"
+                className={`flex h-8 items-center gap-1 rounded-full px-2 text-[12px] font-medium transition-colors hover:bg-[#00f090]/10 disabled:opacity-50 ${
+                  pickerOpen ? "text-white" : "text-[#00f090]"
                 }`}
               >
                 <CurrencyCircleDollar size={18} weight="regular" /> Token
@@ -224,7 +224,7 @@ export function PostComposer({
                 type="button"
                 onClick={() => void submit()}
                 disabled={!canPost}
-                className="h-8 rounded-full bg-[#6cf07f] px-4 font-sans text-[13px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-40"
+                className="h-8 rounded-full bg-[#00f090] px-4 font-sans text-[13px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-40"
               >
                 {busy ? "Signing…" : quoteOf ? "Quote" : "Post"}
               </button>
@@ -241,8 +241,8 @@ export function PostComposer({
 function TokenChip({ address, onRemove }: { address: string; onRemove: () => void }) {
   const token = useToken(address);
   return (
-    <div className="mt-2 flex items-center gap-2.5 rounded-xl border border-[var(--hairline)] bg-[#161616] px-3 py-2">
-      <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#202022]">
+    <div className="mt-2 flex items-center gap-2.5 rounded-xl border border-[var(--hairline)] bg-[#000000] px-3 py-2">
+      <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]">
         {token?.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -253,7 +253,7 @@ function TokenChip({ address, onRemove }: { address: string; onRemove: () => voi
         )}
       </div>
       <div className="min-w-0 flex-1">
-        <span className="truncate font-display text-[13px] font-semibold text-[#6cf07f]">
+        <span className="truncate font-display text-[13px] font-semibold text-[#00f090]">
           ${token?.symbol ?? short(address)}
         </span>
         {token?.name && (
@@ -264,7 +264,7 @@ function TokenChip({ address, onRemove }: { address: string; onRemove: () => voi
         type="button"
         onClick={onRemove}
         aria-label="Remove token"
-        className="flex h-6 w-6 items-center justify-center rounded-full text-zinc-500 hover:bg-[#232326] hover:text-zinc-200"
+        className="flex h-6 w-6 items-center justify-center rounded-full text-zinc-500 hover:bg-[#141414] hover:text-zinc-200"
       >
         <X size={13} weight="bold" />
       </button>
@@ -299,7 +299,7 @@ function TokenPicker({
   }, [tokens, q]);
 
   return (
-    <div className="ansem-fade-in mt-2 overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#161616]">
+    <div className="ansem-fade-in mt-2 overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#000000]">
       <div className="flex items-center gap-2 border-b border-[var(--hairline)] px-3 py-2">
         <MagnifyingGlass size={14} className="text-zinc-500" />
         <input
@@ -327,9 +327,9 @@ function TokenPicker({
               <button
                 type="button"
                 onClick={() => onPick(t)}
-                className="flex w-full items-center gap-2.5 px-3 py-2 text-left transition-colors hover:bg-[#232326]"
+                className="flex w-full items-center gap-2.5 px-3 py-2 text-left transition-colors hover:bg-[#141414]"
               >
-                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#202022]">
+                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]">
                   {t.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={t.image} alt="" className="h-full w-full object-cover" />
@@ -341,7 +341,7 @@ function TokenPicker({
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5">
-                    <span className="truncate font-display text-[13px] font-semibold text-[#6cf07f]">
+                    <span className="truncate font-display text-[13px] font-semibold text-[#00f090]">
                       ${t.symbol}
                     </span>
                     <span className="truncate font-sans text-[12px] text-zinc-500">{t.name}</span>
@@ -366,7 +366,7 @@ function QuotedEmbed({ post }: { post: Post }) {
   const p = profile.data ?? {};
   const name = p.displayName || (p.username ? `@${p.username}` : short(post.author));
   return (
-    <div className="mt-2 rounded-xl border border-[var(--hairline)] bg-[#161616] p-3">
+    <div className="mt-2 rounded-xl border border-[var(--hairline)] bg-[#000000] p-3">
       <div className="flex items-center gap-1.5">
         <Avatar src={p.avatar} className="h-5 w-5" iconSize={11} />
         <span className="truncate font-sans text-[13px] font-semibold text-zinc-200">{name}</span>

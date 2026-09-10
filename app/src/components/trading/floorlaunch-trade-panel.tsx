@@ -146,7 +146,7 @@ export function FloorlaunchTradePanel({ token }: { token: TokenListItem }) {
             href={explorerUrl("tx", hash)}
             target="_blank"
             rel="noreferrer"
-            className="font-mono underline decoration-dotted underline-offset-2 hover:text-[#6cef4b]"
+            className="font-mono underline decoration-dotted underline-offset-2 hover:text-[#00f090]"
           >
             {hash.slice(0, 10)}… ↗
           </a>
@@ -191,7 +191,7 @@ export function FloorlaunchTradePanel({ token }: { token: TokenListItem }) {
               className={`rounded-[8px] px-4 py-2 font-display text-[13px] font-semibold capitalize transition ${
                 active
                   ? s === "buy"
-                    ? "bg-[#6cf07f]/15 text-[#6cf07f]"
+                    ? "bg-[#00f090]/15 text-[#00f090]"
                     : "bg-[#ff5b5b]/15 text-[#ff7a7a]"
                   : "text-zinc-500 hover:text-zinc-300"
               }`}
@@ -259,7 +259,7 @@ export function FloorlaunchTradePanel({ token }: { token: TokenListItem }) {
           aria-expanded={showSlippage}
           className={`flex shrink-0 items-center justify-center rounded-[8px] px-2 py-1.5 transition ${
             showSlippage
-              ? "bg-[#6cf07f]/15 text-[#6cf07f]"
+              ? "bg-[#00f090]/15 text-[#00f090]"
               : "bg-[#101012] text-zinc-500 hover:bg-[#1c1c20] hover:text-zinc-200"
           }`}
         >
@@ -272,7 +272,7 @@ export function FloorlaunchTradePanel({ token }: { token: TokenListItem }) {
         <div className="rounded-[10px] bg-[#0d0d0f] p-3">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-[11px] font-medium text-zinc-400">Slippage tolerance</span>
-            <span className="font-mono text-[11px] font-semibold text-[#6cf07f]">{pctLabel(slippage)}</span>
+            <span className="font-mono text-[11px] font-semibold text-[#00f090]">{pctLabel(slippage)}</span>
           </div>
           <div className="flex items-center gap-1.5">
             {SLIPPAGE_PRESETS.map((p) => (
@@ -282,7 +282,7 @@ export function FloorlaunchTradePanel({ token }: { token: TokenListItem }) {
                 onClick={() => selectPreset(p)}
                 className={`flex-1 rounded-[6px] px-2 py-1.5 font-mono text-[11px] font-semibold transition ${
                   !customSlippage && slippage === p
-                    ? "bg-[#6cf07f] text-[#0a0a0b]"
+                    ? "bg-[#00f090] text-[#000000]"
                     : "bg-[#17171a] text-zinc-400 hover:bg-[#1c1c20] hover:text-zinc-100"
                 }`}
               >
@@ -331,7 +331,7 @@ export function FloorlaunchTradePanel({ token }: { token: TokenListItem }) {
           className={
             "h-12 rounded-[10px] border-0 font-display text-[14px] font-semibold text-white " +
             (side === "buy"
-              ? "bg-[#1f9d57] hover:bg-[#23ab5f]"
+              ? "bg-[#00c477] hover:bg-[#00c477]"
               : "bg-[#c9403f] hover:bg-[#d54847]")
           }
         >

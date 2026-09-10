@@ -225,10 +225,10 @@ function HornsPromoBanner() {
           onError={() => setFailed(true)}
         />
       ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-r from-[#0f1a12] via-[#0d1410] to-[#0a0a0b]">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-r from-[#0f1a12] via-[#0d1410] to-[#000000]">
           <div className="flex items-center gap-2">
-            <Horse size={18} weight="fill" className="text-[#6cf07f]" />
-            <span className="font-display text-[11px] font-bold uppercase tracking-[0.18em] text-[#6cf07f]">
+            <Horse size={18} weight="fill" className="text-[#00f090]" />
+            <span className="font-display text-[11px] font-bold uppercase tracking-[0.18em] text-[#00f090]">
               Horns banner
             </span>
           </div>
@@ -250,7 +250,7 @@ function LaunchFooterBar() {
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         {/* Left: pitch */}
         <div className="flex items-start gap-3">
-          <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] border border-[#26262b] bg-[#101012] text-[#6cf07f]">
+          <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] border border-[#26262b] bg-[#101012] text-[#00f090]">
             <Horse size={16} weight="fill" />
           </span>
           <div>
@@ -265,7 +265,7 @@ function LaunchFooterBar() {
 
         {/* Right: creator share of fees, ANSEM vs others */}
         <div className="w-full max-w-[280px] shrink-0 space-y-1.5">
-          <FeeShareBar label="ansem.fun" value={90} tone="#6cf07f" display="90/10" />
+          <FeeShareBar label="ansem.fun" value={90} tone="#00f090" display="90/10" />
           <FeeShareBar label="others" value={70} tone="#3a3a42" display="70/30" />
           <p className="pt-0.5 text-right font-display text-[9px] uppercase tracking-[0.16em] text-zinc-600">
             Creator share of LP fees
@@ -354,7 +354,7 @@ function RankedCoin({ token, rank }: { token: TokenListItem; rank: number }) {
       <span className="absolute left-2 top-2 z-10 flex h-6 min-w-6 items-center justify-center rounded-[4px] bg-black/70 px-1.5 font-display text-[11px] font-bold text-white backdrop-blur-sm">
         {rank}
       </span>
-      <div className="relative aspect-square w-full overflow-hidden bg-[#131316]">
+      <div className="relative aspect-square w-full overflow-hidden bg-[#070707]">
         {token.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={token.image} alt="" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
@@ -379,7 +379,7 @@ function RankedCoin({ token, rank }: { token: TokenListItem; rank: number }) {
         <div className="mt-0.5 flex items-center justify-between">
           <span className="mono text-[13px] font-semibold text-white">{formatUsd(cap)}</span>
           {change != null && (
-            <span className={`mono text-[11px] font-semibold ${change >= 0 ? "text-[#4ade80]" : "text-[#ff5b5b]"}`}>
+            <span className={`mono text-[11px] font-semibold ${change >= 0 ? "text-[#00f090]" : "text-[#ff5b5b]"}`}>
               {change >= 0 ? "+" : ""}{change.toFixed(1)}%
             </span>
           )}
@@ -401,7 +401,7 @@ function ProtocolStat({
   foot: string;
 }) {
   return (
-    <div className="bg-[#0a0a0b] px-4 py-4">
+    <div className="bg-[#000000] px-4 py-4">
       <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-600">
         {label}
       </p>
@@ -446,7 +446,7 @@ function NewCoinRow({ token, thresholdMicro }: { token: TokenListItem; threshold
       className="grid grid-cols-[minmax(240px,1fr)_140px_120px_110px_90px] items-center border-b border-[#141417] px-4 py-2.5 transition-colors last:border-b-0 hover:bg-[#101012]"
     >
       <div className="flex min-w-0 items-center gap-2.5">
-        <div className="h-9 w-9 shrink-0 overflow-hidden rounded-[5px] border border-[#1e1e22] bg-[#131316]">
+        <div className="h-9 w-9 shrink-0 overflow-hidden rounded-[5px] border border-[#161616] bg-[#070707]">
           {token.image ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -468,7 +468,7 @@ function NewCoinRow({ token, thresholdMicro }: { token: TokenListItem; threshold
               e.stopPropagation();
               router.push(`/creator/${creatorAddr}`);
             }}
-            className="relative z-10 block max-w-full truncate text-left font-mono text-[10px] text-zinc-600 transition-colors hover:text-[#6cf07f]"
+            className="relative z-10 block max-w-full truncate text-left font-mono text-[10px] text-zinc-600 transition-colors hover:text-[#00f090]"
             title="View creator"
           >
             by {truncate(creatorAddr, 4)}
@@ -477,9 +477,9 @@ function NewCoinRow({ token, thresholdMicro }: { token: TokenListItem; threshold
       </div>
       <span className="mono text-right text-[13px] font-semibold text-white">{formatUsd(cap)}</span>
       <div className="flex items-center justify-end gap-2">
-        <div className="h-1 w-14 overflow-hidden rounded-full bg-[#1e1e22]">
+        <div className="h-1 w-14 overflow-hidden rounded-full bg-[#161616]">
           <span
-            className={`block h-full rounded-full ${token.graduated ? "bg-[#8ab4ff]" : "bg-[#6cf07f]"}`}
+            className={`block h-full rounded-full ${token.graduated ? "bg-[#8ab4ff]" : "bg-[#00f090]"}`}
             style={{ width: `${progress ?? 0}%` }}
           />
         </div>
@@ -495,7 +495,7 @@ function NewCoinRow({ token, thresholdMicro }: { token: TokenListItem; threshold
 
 function EmptyRail({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-[236px] flex-1 items-center justify-center rounded-[8px] border border-dashed border-[#1e1e22] px-6 text-center text-sm text-zinc-600">
+    <div className="flex h-[236px] flex-1 items-center justify-center rounded-[8px] border border-dashed border-[#161616] px-6 text-center text-sm text-zinc-600">
       {children}
     </div>
   );

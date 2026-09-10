@@ -168,7 +168,7 @@ export function Avatar({
 }) {
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#202022] ring-1 ring-inset ring-white/10 ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#101010] ring-1 ring-inset ring-white/10 ${className}`}
     >
       {src ? (
         // eslint-disable-next-line @next/next/no-img-element
@@ -207,8 +207,8 @@ export function TokenPreviewBanner({
   const sym = size === "sm" ? "text-[12px]" : "text-[13px]";
 
   const inner = (
-    <div className="flex items-center gap-2.5 rounded-xl border border-[var(--hairline)] bg-[#161616] px-3 py-2 transition-colors hover:border-[var(--hairline-strong)]">
-      <div className={`${dim} shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#202022]`}>
+    <div className="flex items-center gap-2.5 rounded-xl border border-[var(--hairline)] bg-[#000000] px-3 py-2 transition-colors hover:border-[var(--hairline-strong)]">
+      <div className={`${dim} shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]`}>
         {token?.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -220,7 +220,7 @@ export function TokenPreviewBanner({
       </div>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-1.5">
-          <span className={`truncate font-display ${sym} font-semibold text-[#6cf07f]`}>
+          <span className={`truncate font-display ${sym} font-semibold text-[#00f090]`}>
             ${token?.symbol ?? short(address)}
           </span>
           {token?.name && (
@@ -232,7 +232,7 @@ export function TokenPreviewBanner({
             <span className="font-mono text-[11px] text-zinc-400">{usdCompact(capUsd(token))}</span>
             {token.price_change_24h != null && (
               <span
-                className={`font-mono text-[11px] ${token.price_change_24h >= 0 ? "text-[#4ade80]" : "text-[#ff5b5b]"}`}
+                className={`font-mono text-[11px] ${token.price_change_24h >= 0 ? "text-[#00f090]" : "text-[#ff5b5b]"}`}
               >
                 {token.price_change_24h >= 0 ? "+" : ""}
                 {token.price_change_24h.toFixed(1)}%

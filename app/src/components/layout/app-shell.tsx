@@ -36,7 +36,7 @@ export function AppShell({ children }: AppShellProps) {
 
 function SiteFooter() {
   return (
-    <footer className="relative z-10 border-t border-[var(--hairline)] bg-[#161616]">
+    <footer className="relative z-10 border-t border-[var(--hairline)] bg-[#000000]">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-x-6 gap-y-3 px-4 py-7 text-[13px] text-zinc-500 sm:flex-row sm:flex-wrap sm:px-6">
         <span className="flex items-center gap-2 text-zinc-300">
           {/* eslint-disable-next-line @next/next/no-img-element */}

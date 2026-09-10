@@ -116,9 +116,9 @@ export function ClaimUsername() {
     const identity = resolveIdentity(claimed, wallet.address);
     return (
       <div className="mx-auto w-full max-w-md">
-        <div className="rounded-2xl border border-[var(--hairline)] bg-[#1c1c1e] p-8 text-center">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#6cf07f]/10">
-            <CheckCircle size={34} weight="fill" className="text-[#6cf07f]" />
+        <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] p-8 text-center">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#00f090]/10">
+            <CheckCircle size={34} weight="fill" className="text-[#00f090]" />
           </div>
           <h1 className="mt-4 font-display text-[20px] font-semibold tracking-tight text-white">
             Handle claimed
@@ -126,7 +126,7 @@ export function ClaimUsername() {
           <div className="mt-1.5 inline-flex items-center gap-1.5">
             <span className="font-display text-[16px] font-semibold text-zinc-100">{identity.name}</span>
             {claimed.verified && (
-              <SealCheck size={17} weight="fill" className="text-[#6cf07f]" aria-label="Verified" />
+              <SealCheck size={17} weight="fill" className="text-[#00f090]" aria-label="Verified" />
             )}
           </div>
           <p className="mt-3 text-[13px] leading-6 text-zinc-500">
@@ -136,7 +136,7 @@ export function ClaimUsername() {
           <button
             type="button"
             onClick={() => router.push(`/creator/${encodeURIComponent(wallet.address!)}`)}
-            className="mt-6 inline-flex h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-[#6cf07f] text-[14px] font-semibold text-black transition-opacity hover:opacity-90"
+            className="mt-6 inline-flex h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-[#00f090] text-[14px] font-semibold text-black transition-opacity hover:opacity-90"
           >
             View your profile <ArrowRight size={15} weight="bold" />
           </button>
@@ -150,8 +150,8 @@ export function ClaimUsername() {
   return (
     <div className="mx-auto w-full max-w-md">
       <div className="mb-5 text-center">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--hairline)] bg-[#202022]">
-          <Ticket size={24} weight="duotone" className="text-[#6cf07f]" />
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--hairline)] bg-[#101010]">
+          <Ticket size={24} weight="duotone" className="text-[#00f090]" />
         </div>
         <h1 className="mt-3 font-display text-[22px] font-semibold tracking-tight text-white">
           Claim a reserved handle
@@ -162,7 +162,7 @@ export function ClaimUsername() {
         </p>
       </div>
 
-      <div className="rounded-2xl border border-[var(--hairline)] bg-[#1c1c1e] p-5">
+      <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] p-5">
         <label htmlFor="claim-token" className="block text-[12px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
           Claim token
         </label>
@@ -176,7 +176,7 @@ export function ClaimUsername() {
           placeholder="Paste the token you were sent"
           spellCheck={false}
           autoComplete="off"
-          className="mt-2 w-full rounded-lg border border-[var(--hairline)] bg-[#161616] px-3.5 py-2.5 font-mono text-[13px] text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-[#6cf07f]/50"
+          className="mt-2 w-full rounded-lg border border-[var(--hairline)] bg-[#000000] px-3.5 py-2.5 font-mono text-[13px] text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-[#00f090]/50"
         />
 
         {wallet.address ? (
@@ -188,7 +188,7 @@ export function ClaimUsername() {
               type="button"
               onClick={() => void handleClaim()}
               disabled={claiming}
-              className="mt-4 inline-flex h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-[#6cf07f] text-[14px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-60"
+              className="mt-4 inline-flex h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-[#00f090] text-[14px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-60"
             >
               {claim.isPending ? "Claiming…" : (
                 <>
@@ -215,7 +215,7 @@ export function ClaimUsername() {
               type="button"
               onClick={() => void handleClaimNoWallet()}
               disabled={claiming}
-              className="mt-4 inline-flex h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-[#6cf07f] text-[14px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-60"
+              className="mt-4 inline-flex h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-[#00f090] text-[14px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-60"
             >
               {claimNoWallet.isPending ? "Claiming…" : (
                 <>
@@ -320,18 +320,18 @@ function TokenAccountView({
   }
 
   const field =
-    "h-10 w-full rounded-lg border border-[var(--hairline)] bg-[#202022] px-3 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]";
+    "h-10 w-full rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]";
 
   return (
     <div className="mx-auto w-full max-w-md">
-      <div className="rounded-2xl border border-[var(--hairline)] bg-[#1c1c1e] p-5">
+      <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] p-5">
         {/* Success header */}
         <div className="flex items-center gap-2">
-          <CheckCircle size={22} weight="fill" className="shrink-0 text-[#6cf07f]" />
+          <CheckCircle size={22} weight="fill" className="shrink-0 text-[#00f090]" />
           <div className="min-w-0">
             <div className="flex items-center gap-1.5">
               <h1 className="truncate font-display text-[17px] font-semibold text-white">{identity.name}</h1>
-              {form.verified && <SealCheck size={16} weight="fill" className="shrink-0 text-[#6cf07f]" aria-label="Verified" />}
+              {form.verified && <SealCheck size={16} weight="fill" className="shrink-0 text-[#00f090]" aria-label="Verified" />}
             </div>
             <p className="text-[12px] text-zinc-500">Handle claimed. It&apos;s live and public now.</p>
           </div>
@@ -355,13 +355,13 @@ function TokenAccountView({
               <button
                 type="button"
                 onClick={() => bannerInput.current?.click()}
-                className="group relative block aspect-[3.8/1] w-full overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#202022]"
+                className="group relative block aspect-[3.8/1] w-full overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#101010]"
               >
                 {form.banner ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={form.banner} alt="" className="h-full w-full object-cover" />
                 ) : (
-                  <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#1c1c1e] to-[#161616]" />
+                  <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#0a0a0a] to-[#000000]" />
                 )}
                 <span className="absolute inset-0 flex items-center justify-center gap-1.5 bg-black/40 text-[12px] font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
                   <Camera size={16} weight="fill" /> {imgBusy === "banner" ? "Processing…" : form.banner ? "Change banner" : "Upload banner"}
@@ -370,7 +370,7 @@ function TokenAccountView({
               <button
                 type="button"
                 onClick={() => avatarInput.current?.click()}
-                className="group absolute -bottom-8 left-4 h-20 w-20 overflow-hidden rounded-full border-2 border-[#1c1c1e] bg-[#202022] ring-4 ring-[#1c1c1e]"
+                className="group absolute -bottom-8 left-4 h-20 w-20 overflow-hidden rounded-full border-2 border-[#0a0a0a] bg-[#101010] ring-4 ring-[#0a0a0a]"
               >
                 {form.avatar ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -399,7 +399,7 @@ function TokenAccountView({
           <label className="block">
             <span className="mb-1.5 block text-[12px] font-medium text-zinc-400">Bio</span>
             <textarea
-              className="w-full resize-none rounded-lg border border-[var(--hairline)] bg-[#202022] px-3 py-2 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]"
+              className="w-full resize-none rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 py-2 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]"
               rows={2}
               value={form.bio ?? ""}
               onChange={(e) => set("bio", e.target.value)}
@@ -412,7 +412,7 @@ function TokenAccountView({
             type="button"
             onClick={() => void save()}
             disabled={editTokenProfile.isPending}
-            className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-[var(--hairline-strong)] bg-[#202022] text-[13px] font-semibold text-zinc-100 transition-colors hover:text-white disabled:opacity-60"
+            className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-[var(--hairline-strong)] bg-[#101010] text-[13px] font-semibold text-zinc-100 transition-colors hover:text-white disabled:opacity-60"
           >
             {editTokenProfile.isPending ? "Saving…" : "Save profile"}
           </button>
@@ -424,7 +424,7 @@ function TokenAccountView({
             type="button"
             onClick={() => void bindWallet()}
             disabled={bind.isPending}
-            className="inline-flex h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-[#6cf07f] text-[14px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-60"
+            className="inline-flex h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-[#00f090] text-[14px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-60"
           >
             {bind.isPending
               ? "Binding…"

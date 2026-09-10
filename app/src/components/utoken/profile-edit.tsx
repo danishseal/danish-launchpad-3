@@ -114,12 +114,12 @@ export function ProfileEditModal({
   }
 
   const field =
-    "h-10 w-full rounded-lg border border-[var(--hairline)] bg-[#202022] px-3 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]";
+    "h-10 w-full rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm" onClick={onClose}>
-      <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl border border-[var(--hairline-strong)] bg-[#1c1c1e] shadow-2xl" onClick={(e) => e.stopPropagation()}>
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-[var(--hairline)] bg-[#1c1c1e] px-5 py-3.5">
+      <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl border border-[var(--hairline-strong)] bg-[#0a0a0a] shadow-2xl" onClick={(e) => e.stopPropagation()}>
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-[var(--hairline)] bg-[#0a0a0a] px-5 py-3.5">
           <h2 className="font-display text-[15px] font-semibold text-white">Edit profile</h2>
           <button type="button" onClick={onClose} className="text-zinc-500 hover:text-white">
             <X size={16} weight="bold" />
@@ -136,7 +136,7 @@ export function ProfileEditModal({
 
           <Labeled label="Username">
             <div
-              className={`flex h-10 items-center rounded-lg border bg-[#202022] px-3 ${
+              className={`flex h-10 items-center rounded-lg border bg-[#101010] px-3 ${
                 usernameError
                   ? "border-red-500/60"
                   : "border-[var(--hairline)] focus-within:border-[var(--hairline-strong)]"
@@ -165,7 +165,7 @@ export function ProfileEditModal({
           </Labeled>
           <Labeled label="Bio">
             <textarea
-              className="w-full resize-none rounded-lg border border-[var(--hairline)] bg-[#202022] px-3 py-2 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]"
+              className="w-full resize-none rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 py-2 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]"
               rows={2}
               value={form.bio ?? ""}
               onChange={(e) => set("bio", e.target.value)}
@@ -185,11 +185,11 @@ export function ProfileEditModal({
             Saving signs a message with your wallet to prove it&apos;s you. No gas, no transaction.
           </p>
         </div>
-        <div className="sticky bottom-0 flex justify-end gap-2 border-t border-[var(--hairline)] bg-[#1c1c1e] px-5 py-3.5">
+        <div className="sticky bottom-0 flex justify-end gap-2 border-t border-[var(--hairline)] bg-[#0a0a0a] px-5 py-3.5">
           <button type="button" onClick={onClose} className="h-9 rounded-lg border border-[var(--hairline)] px-4 text-[13px] text-zinc-300 hover:border-[var(--hairline-strong)] hover:text-white">
             Cancel
           </button>
-          <button type="button" onClick={submit} disabled={saving} className="h-9 rounded-lg bg-[#6cf07f] px-4 text-[13px] font-semibold text-black hover:opacity-90 disabled:opacity-50">
+          <button type="button" onClick={submit} disabled={saving} className="h-9 rounded-lg bg-[#00f090] px-4 text-[13px] font-semibold text-black hover:opacity-90 disabled:opacity-50">
             {saving ? "Signing…" : "Save"}
           </button>
         </div>
@@ -279,13 +279,13 @@ function ProfileImages({
           type="button"
           onClick={() => bannerInput.current?.click()}
           {...dropHandlers(onBannerFile, setBannerDrag)}
-          className={`group relative block aspect-[3.8/1] w-full overflow-hidden rounded-xl border bg-[#202022] transition-colors ${bannerDrag ? "border-[#6cf07f] ring-2 ring-[#6cf07f]" : "border-[var(--hairline)]"}`}
+          className={`group relative block aspect-[3.8/1] w-full overflow-hidden rounded-xl border bg-[#101010] transition-colors ${bannerDrag ? "border-[#00f090] ring-2 ring-[#00f090]" : "border-[var(--hairline)]"}`}
         >
           {banner ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={banner} alt="" className="h-full w-full object-cover" />
           ) : (
-            <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#1c1c1e] to-[#161616]" />
+            <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#0a0a0a] to-[#000000]" />
           )}
           <span className={`absolute inset-0 flex items-center justify-center gap-1.5 bg-black/40 text-[12px] font-medium text-white transition-opacity ${bannerDrag ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
             <Camera size={16} weight="fill" /> {bannerBusy ? "Processing…" : bannerDrag ? "Drop to set banner" : banner ? "Change banner" : "Upload or drop banner"}
@@ -296,7 +296,7 @@ function ProfileImages({
           type="button"
           onClick={() => avatarInput.current?.click()}
           {...dropHandlers(onAvatarFile, setAvatarDrag)}
-          className={`group absolute -bottom-8 left-4 h-20 w-20 overflow-hidden rounded-full border-2 border-[#1c1c1e] bg-[#202022] ring-4 transition-colors ${avatarDrag ? "ring-[#6cf07f]" : "ring-[#1c1c1e]"}`}
+          className={`group absolute -bottom-8 left-4 h-20 w-20 overflow-hidden rounded-full border-2 border-[#0a0a0a] bg-[#101010] ring-4 transition-colors ${avatarDrag ? "ring-[#00f090]" : "ring-[#0a0a0a]"}`}
         >
           {avatar ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -324,7 +324,7 @@ function ProfileImages({
 
       {/* Avatar controls, sitting beside the avatar's overhang - clear of the hint */}
       <div className="mt-2.5 flex items-center gap-3 pl-[108px]">
-        <button type="button" onClick={() => avatarInput.current?.click()} className="text-[12px] font-medium text-[#6cf07f] hover:underline">
+        <button type="button" onClick={() => avatarInput.current?.click()} className="text-[12px] font-medium text-[#00f090] hover:underline">
           {avatarBusy ? "Processing…" : avatar ? "Change avatar" : "Upload avatar"}
         </button>
         {avatar && (

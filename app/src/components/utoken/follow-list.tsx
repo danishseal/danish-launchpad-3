@@ -40,7 +40,7 @@ export function FollowListModal({
       onClick={onClose}
     >
       <div
-        className="flex max-h-[80vh] w-full max-w-md flex-col overflow-hidden rounded-2xl border border-[var(--hairline-strong)] bg-[#1c1c1e] shadow-2xl"
+        className="flex max-h-[80vh] w-full max-w-md flex-col overflow-hidden rounded-2xl border border-[var(--hairline-strong)] bg-[#0a0a0a] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-[var(--hairline)] px-5 py-3.5">
@@ -66,7 +66,7 @@ export function FollowListModal({
                 {t === "followers" ? followers.length : following.length}
               </span>
               {tab === t && (
-                <span className="absolute inset-x-6 bottom-0 h-[3px] rounded-full bg-[#6cf07f]" />
+                <span className="absolute inset-x-6 bottom-0 h-[3px] rounded-full bg-[#00f090]" />
               )}
             </button>
           ))}

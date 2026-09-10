@@ -90,12 +90,12 @@ function TradeRow({
       <TokenAvatar image={img?.image ?? null} symbol={sym} />
       <p className="min-w-0 flex-1 truncate text-[13px] text-zinc-300">
         {showTrader && (
-          <Link href={`/creator/${trade.trader}`} className="font-mono text-zinc-400 hover:text-[#6cf07f]">
+          <Link href={`/creator/${trade.trader}`} className="font-mono text-zinc-400 hover:text-[#00f090]">
             {short(trade.trader)}
           </Link>
         )}{" "}
         <span className={`font-semibold ${k.color}`}>{k.verb}</span>{" "}
-        <Link href={`/token/${trade.token_address}`} className="font-semibold text-[#6cf07f] hover:underline">
+        <Link href={`/token/${trade.token_address}`} className="font-semibold text-[#00f090] hover:underline">
           ${sym}
         </Link>
       </p>
@@ -104,7 +104,7 @@ function TradeRow({
         href={explorerUrl("tx", trade.tx_hash)}
         target="_blank"
         rel="noreferrer"
-        className="shrink-0 font-mono text-[11px] text-zinc-600 hover:text-[#6cf07f]"
+        className="shrink-0 font-mono text-[11px] text-zinc-600 hover:text-[#00f090]"
       >
         {short(trade.tx_hash, 4)}
       </a>
@@ -118,11 +118,11 @@ function FollowRow({ event, viewer }: { event: FollowEvent; viewer?: string }) {
     <div className="flex items-center gap-3 py-3">
       <GradientAvatar seed={event.follower} />
       <p className="min-w-0 flex-1 truncate text-[13px] text-zinc-300">
-        <Link href={`/creator/${event.follower}`} className="font-mono text-zinc-200 hover:text-[#6cf07f]">
+        <Link href={`/creator/${event.follower}`} className="font-mono text-zinc-200 hover:text-[#00f090]">
           {followerIsViewer ? "You" : short(event.follower)}
         </Link>{" "}
-        <span className="font-semibold text-[#6cf07f]">followed</span>{" "}
-        <Link href={`/creator/${event.target}`} className="font-mono text-zinc-200 hover:text-[#6cf07f]">
+        <span className="font-semibold text-[#00f090]">followed</span>{" "}
+        <Link href={`/creator/${event.target}`} className="font-mono text-zinc-200 hover:text-[#00f090]">
           {viewer && event.target === viewer ? "you" : short(event.target)}
         </Link>
       </p>
@@ -136,7 +136,7 @@ function FollowRow({ event, viewer }: { event: FollowEvent; viewer?: string }) {
 
 function TokenAvatar({ image, symbol }: { image: string | null; symbol: string }) {
   return (
-    <div className="h-9 w-9 shrink-0 overflow-hidden rounded-full bg-[#202022] ring-1 ring-inset ring-white/10">
+    <div className="h-9 w-9 shrink-0 overflow-hidden rounded-full bg-[#101010] ring-1 ring-inset ring-white/10">
       {image ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={image} alt="" className="h-full w-full object-cover" />
@@ -159,9 +159,9 @@ function GradientAvatar({ seed }: { seed: string }) {
 
 function verbFor(action: string): { verb: string; color: string } {
   const a = action.toLowerCase();
-  if (a === "buy") return { verb: "bought", color: "text-[#4ade80]" };
+  if (a === "buy") return { verb: "bought", color: "text-[#00f090]" };
   if (a === "sell") return { verb: "sold", color: "text-[#ff5b5b]" };
-  if (a === "create" || a === "launch") return { verb: "launched", color: "text-[#6cf07f]" };
+  if (a === "create" || a === "launch") return { verb: "launched", color: "text-[#00f090]" };
   return { verb: action, color: "text-zinc-400" };
 }
 

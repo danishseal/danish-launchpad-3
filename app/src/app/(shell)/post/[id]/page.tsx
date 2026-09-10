@@ -40,7 +40,7 @@ export default function PostDetailPage() {
   return (
     <FeedShell>
       {/* Sticky header with a back affordance */}
-      <div className="sticky top-0 z-10 -mx-1 flex items-center gap-4 border-b border-[var(--hairline)] bg-[#161616]/90 px-4 py-3 backdrop-blur">
+      <div className="sticky top-0 z-10 -mx-1 flex items-center gap-4 border-b border-[var(--hairline)] bg-[#000000]/90 px-4 py-3 backdrop-blur">
         <button
           type="button"
           onClick={goBack}
@@ -63,7 +63,7 @@ export default function PostDetailPage() {
           <button
             type="button"
             onClick={() => router.push("/feed")}
-            className="mt-2 h-9 rounded-lg bg-[#6cf07f] px-4 font-sans text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
+            className="mt-2 h-9 rounded-lg bg-[#00f090] px-4 font-sans text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
           >
             Back to feed
           </button>

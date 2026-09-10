@@ -41,10 +41,10 @@ export function Leaderboard() {
         <p className="mt-1 text-[13px] text-zinc-500">Top creators and coins on ansemchain, by market value.</p>
       </div>
 
-      <div className="relative flex w-fit items-center rounded-lg border border-[var(--hairline)] bg-[#1c1c1e] p-1">
+      <div className="relative flex w-fit items-center rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] p-1">
         <span
           aria-hidden
-          className="absolute bottom-1 left-1 top-1 w-[calc(50%-4px)] rounded-md bg-[#6cf07f] transition-transform duration-300 ease-out"
+          className="absolute bottom-1 left-1 top-1 w-[calc(50%-4px)] rounded-md bg-[#00f090] transition-transform duration-300 ease-out"
           style={{ transform: `translateX(${tab === "coins" ? "100%" : "0%"})` }}
         />
         {(["creators", "coins"] as Tab[]).map((t) => (
@@ -61,7 +61,7 @@ export function Leaderboard() {
         ))}
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-[var(--hairline)] bg-[#1c1c1e]">
+      <div className="overflow-x-auto rounded-xl border border-[var(--hairline)] bg-[#0a0a0a]">
         <div key={tab} className="ansem-fade-in">
         {tab === "creators" ? (
           <table className="w-full min-w-[640px] text-left">
@@ -79,17 +79,17 @@ export function Leaderboard() {
                 <tr><td colSpan={5} className="px-4 py-10 text-center text-[13px] text-zinc-500">Loading…</td></tr>
               ) : (
                 creators.map((c, i) => (
-                  <tr key={c.creator} className="group border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#232326]">
+                  <tr key={c.creator} className="group border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#141414]">
                     <td className="px-4 py-3 text-[13px] text-zinc-600">{medal(i)}</td>
                     <td className="px-4 py-3">
                       <Link href={`/creator/${c.creator}`} className="flex items-center gap-2.5">
-                        <div className="h-8 w-8 shrink-0 overflow-hidden rounded-full border border-[var(--hairline)] bg-[#202022]">
+                        <div className="h-8 w-8 shrink-0 overflow-hidden rounded-full border border-[var(--hairline)] bg-[#101010]">
                           {c.image ? (
                             // eslint-disable-next-line @next/next/no-img-element
                             <img src={c.image} alt="" className="h-full w-full object-cover" />
                           ) : null}
                         </div>
-                        <span className="font-mono text-[13px] font-semibold text-zinc-200 group-hover:text-[#6cf07f]">{short(c.creator)}</span>
+                        <span className="font-mono text-[13px] font-semibold text-zinc-200 group-hover:text-[#00f090]">{short(c.creator)}</span>
                       </Link>
                     </td>
                     <td className="px-4 py-3 text-right text-[13px] text-zinc-300">{c.launches}</td>
@@ -117,24 +117,24 @@ export function Leaderboard() {
                 coins.map((t, i) => {
                   const change = t.price_change_24h;
                   return (
-                    <tr key={t.address} className="group border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#232326]">
+                    <tr key={t.address} className="group border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#141414]">
                       <td className="px-4 py-3 text-[13px] text-zinc-600">{medal(i)}</td>
                       <td className="px-4 py-3">
                         <Link href={`/token/${t.address}`} className="flex items-center gap-2.5">
-                          <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#202022]">
+                          <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]">
                             {t.image ? (
                               // eslint-disable-next-line @next/next/no-img-element
                               <img src={t.image} alt="" className="h-full w-full object-cover" />
                             ) : null}
                           </div>
                           <div>
-                            <p className="text-[13px] font-semibold text-[#6cf07f] group-hover:underline">${t.symbol}</p>
+                            <p className="text-[13px] font-semibold text-[#00f090] group-hover:underline">${t.symbol}</p>
                             <p className="truncate text-[12px] text-zinc-500">{t.name}</p>
                           </div>
                         </Link>
                       </td>
                       <td className="px-4 py-3 text-right text-[13px] font-semibold text-white">{usd(capUsd(t))}</td>
-                      <td className={`px-4 py-3 text-right text-[13px] ${change == null ? "text-zinc-600" : change >= 0 ? "text-[#4ade80]" : "text-[#ff5b5b]"}`}>
+                      <td className={`px-4 py-3 text-right text-[13px] ${change == null ? "text-zinc-600" : change >= 0 ? "text-[#00f090]" : "text-[#ff5b5b]"}`}>
                         {change == null ? "-" : `${change >= 0 ? "+" : ""}${change.toFixed(1)}%`}
                       </td>
                     </tr>

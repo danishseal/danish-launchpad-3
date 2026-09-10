@@ -35,7 +35,7 @@ export function Sparkline({
     return { line, area };
   }, [data, width, height]);
 
-  const color = up ? "#4ade80" : "#ff5b5b";
+  const color = up ? "#00f090" : "#ff5b5b";
   return (
     <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} className="overflow-visible">
       {geom ? (

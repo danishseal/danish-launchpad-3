@@ -176,7 +176,7 @@ export default function CreatorPage() {
             // eslint-disable-next-line @next/next/no-img-element
             <img src={bannerImage} alt="" className="h-full w-full object-cover" />
           ) : (
-            <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#1c1c1e] to-[#161616]" />
+            <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#0a0a0a] to-[#000000]" />
           )}
         </div>
 
@@ -184,7 +184,7 @@ export default function CreatorPage() {
             page-colored ring so it reads as a clean cutout, plus the actions. */}
         <div className="px-1">
           <div className="flex items-end justify-between">
-            <div className="relative z-10 -mt-14 ml-4 h-28 w-28 shrink-0 overflow-hidden rounded-full bg-[#1c1c1e] ring-[6px] ring-[#161616] sm:-mt-16 sm:ml-6 sm:h-32 sm:w-32">
+            <div className="relative z-10 -mt-14 ml-4 h-28 w-28 shrink-0 overflow-hidden rounded-full bg-[#0a0a0a] ring-[6px] ring-[#000000] sm:-mt-16 sm:ml-6 sm:h-32 sm:w-32">
               {avatarImage ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={avatarImage} alt="" className="h-full w-full object-cover" />
@@ -198,11 +198,11 @@ export default function CreatorPage() {
               <button
                 type="button"
                 onClick={handleShare}
-                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[var(--hairline)] bg-[#202022] px-3 text-[13px] font-medium text-zinc-300 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
+                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 text-[13px] font-medium text-zinc-300 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
               >
                 {shared ? (
                   <>
-                    <Check size={14} weight="bold" className="text-[#6cf07f]" /> Copied
+                    <Check size={14} weight="bold" className="text-[#00f090]" /> Copied
                   </>
                 ) : (
                   <>
@@ -214,7 +214,7 @@ export default function CreatorPage() {
                 <button
                   type="button"
                   onClick={() => setShowEdit(true)}
-                  className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-[#6cf07f] px-3.5 text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
+                  className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-[#00f090] px-3.5 text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
                 >
                   <PencilSimple size={14} weight="bold" /> Edit profile
                 </button>
@@ -222,7 +222,7 @@ export default function CreatorPage() {
                 <>
                   <Link
                     href={`/messages?peer=${encodeURIComponent(address)}`}
-                    className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[var(--hairline)] bg-[#202022] px-3 text-[13px] font-medium text-zinc-300 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
+                    className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 text-[13px] font-medium text-zinc-300 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
                   >
                     <ChatCircle size={14} weight="bold" /> Message
                   </Link>
@@ -233,7 +233,7 @@ export default function CreatorPage() {
                     className={`inline-flex h-9 items-center gap-1.5 rounded-lg px-3.5 text-[13px] font-semibold transition-colors disabled:opacity-60 ${
                       graph?.viewerFollows
                         ? "border border-[var(--hairline-strong)] bg-transparent text-zinc-200 hover:border-[#ff5b5b]/50 hover:text-[#ff5b5b]"
-                        : "bg-[#6cf07f] text-black hover:opacity-90"
+                        : "bg-[#00f090] text-black hover:opacity-90"
                     }`}
                   >
                     <UserPlus size={14} weight="bold" /> {graph?.viewerFollows ? "Following" : "Follow"}
@@ -248,7 +248,7 @@ export default function CreatorPage() {
             <div className="flex items-center gap-1.5">
               <h1 className="font-display text-[24px] font-semibold leading-tight tracking-tight text-white">{displayName}</h1>
               {profile.verified && (
-                <SealCheck size={22} weight="fill" className="shrink-0 text-[#6cf07f]" aria-label="Verified" />
+                <SealCheck size={22} weight="fill" className="shrink-0 text-[#00f090]" aria-label="Verified" />
               )}
               {/* A token-<username> account is a reserved handle not yet bound to a
                   wallet — mark it Reserved. The tag drops once its owner binds a
@@ -278,7 +278,7 @@ export default function CreatorPage() {
                   className="inline-flex items-center gap-1 font-mono text-[12px] text-zinc-500 transition-colors hover:text-zinc-300"
                 >
                   {handle}
-                  {copied ? <Check size={12} weight="bold" className="text-[#6cf07f]" /> : <CopySimple size={12} />}
+                  {copied ? <Check size={12} weight="bold" className="text-[#00f090]" /> : <CopySimple size={12} />}
                 </button>
               )}
             </div>
@@ -288,7 +288,7 @@ export default function CreatorPage() {
               <button
                 type="button"
                 onClick={() => setShowEdit(true)}
-                className="mt-3 inline-flex items-center gap-1 text-[13px] text-zinc-500 transition-colors hover:text-[#6cf07f]"
+                className="mt-3 inline-flex items-center gap-1 text-[13px] text-zinc-500 transition-colors hover:text-[#00f090]"
               >
                 <PencilSimple size={13} weight="bold" /> Add a bio
               </button>
@@ -332,7 +332,7 @@ export default function CreatorPage() {
         {/* Content: tabs fill the main column, stats sit in a sidebar */}
         <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
         {/* Tabs */}
-        <div className="order-2 min-w-0 self-start rounded-2xl border border-[var(--hairline)] bg-[#1c1c1e] lg:order-1">
+        <div className="order-2 min-w-0 self-start rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] lg:order-1">
           <div className="flex items-center border-b border-[var(--hairline)] px-2">
             {(["posts", "launches", "holdings", "activity"] as Tab[]).map((t) => (
               <button
@@ -348,7 +348,7 @@ export default function CreatorPage() {
                   <span className="ml-1.5 font-mono text-[12px] text-zinc-600">{launches.length}</span>
                 )}
                 {tab === t && (
-                  <span className="absolute inset-x-3 bottom-0 h-[3px] rounded-full bg-[#6cf07f]" />
+                  <span className="absolute inset-x-3 bottom-0 h-[3px] rounded-full bg-[#00f090]" />
                 )}
               </button>
             ))}
@@ -379,7 +379,7 @@ export default function CreatorPage() {
                       href={`/token/${h.market}`}
                       className="group flex items-center gap-3 py-2.5"
                     >
-                      <div className="h-9 w-9 shrink-0 overflow-hidden rounded-[6px] border border-[var(--hairline)] bg-[#202022]">
+                      <div className="h-9 w-9 shrink-0 overflow-hidden rounded-[6px] border border-[var(--hairline)] bg-[#101010]">
                         {h.image ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={h.image} alt="" className="h-full w-full object-cover" />
@@ -396,7 +396,7 @@ export default function CreatorPage() {
                       <span className="mono text-[13px] font-semibold text-zinc-200">
                         {compact(h.balance)}
                       </span>
-                      <ArrowUpRight size={14} className="text-zinc-600 transition-colors group-hover:text-[#6cf07f]" />
+                      <ArrowUpRight size={14} className="text-zinc-600 transition-colors group-hover:text-[#00f090]" />
                     </Link>
                   ))}
                 </div>
@@ -458,7 +458,7 @@ export default function CreatorPage() {
 function StatCard({ label, value, foot }: { label: string; value: string; foot: string }) {
   return (
     <div className="py-4">
-      <p className="font-display text-[14px] font-semibold text-[#6cf07f]">{label}</p>
+      <p className="font-display text-[14px] font-semibold text-[#00f090]">{label}</p>
       <p className="mono mt-1.5 text-[26px] font-bold tracking-tight text-white">{value}</p>
       <p className="mt-0.5 text-[11px] text-zinc-600">{foot}</p>
     </div>
@@ -485,7 +485,7 @@ function HoldingsCard({
   };
   return (
     <div className="py-4">
-      <p className="font-display text-[14px] font-semibold text-[#6cf07f]">Holdings</p>
+      <p className="font-display text-[14px] font-semibold text-[#00f090]">Holdings</p>
       <div className="mt-2 space-y-1.5">
         <div className="flex items-baseline justify-between gap-3">
           <span className="text-[12px] font-semibold text-zinc-400">ANSEM</span>

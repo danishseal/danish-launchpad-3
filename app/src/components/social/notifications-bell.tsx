@@ -120,20 +120,20 @@ export function NotificationsBell() {
         aria-haspopup="menu"
         aria-expanded={open}
         className={
-          "relative flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#1c1c1e] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white " +
+          "relative flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white " +
           (open ? "border-[var(--hairline-strong)] text-white" : "")
         }
       >
         <Bell size={16} weight={unread > 0 ? "fill" : "bold"} />
         {unread > 0 && (
-          <span className="absolute -right-1 -top-1 inline-flex h-[17px] min-w-[17px] items-center justify-center rounded-full bg-[#6cf07f] px-1 font-mono text-[10px] font-bold tabular-nums text-black ring-2 ring-[#161616]">
+          <span className="absolute -right-1 -top-1 inline-flex h-[17px] min-w-[17px] items-center justify-center rounded-full bg-[#00f090] px-1 font-mono text-[10px] font-bold tabular-nums text-black ring-2 ring-[#000000]">
             {unread > 99 ? "99+" : unread}
           </span>
         )}
       </button>
 
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-[360px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[#1c1c1e] shadow-2xl shadow-black/50">
+        <div className="absolute right-0 z-50 mt-2 w-[360px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] shadow-2xl shadow-black/50">
           <Panel connected={Boolean(wallet.address)} onNavigate={() => setOpen(false)} onConnect={() => void wallet.connect().catch(() => {})} />
         </div>
       )}
@@ -182,7 +182,7 @@ function Panel({
             <button
               type="button"
               onClick={onConnect}
-              className="mt-1 inline-flex h-8 items-center rounded-lg bg-[#6cf07f] px-3 text-[12px] font-semibold text-black transition-opacity hover:opacity-90"
+              className="mt-1 inline-flex h-8 items-center rounded-lg bg-[#00f090] px-3 text-[12px] font-semibold text-black transition-opacity hover:opacity-90"
             >
               Connect wallet
             </button>
@@ -232,7 +232,7 @@ function NotificationRow({
           router.push(routeFor(n));
         }}
         className={
-          "flex w-full items-start gap-3 border-b border-[var(--hairline)] px-4 py-3 text-left transition-colors hover:bg-[#232326] " +
+          "flex w-full items-start gap-3 border-b border-[var(--hairline)] px-4 py-3 text-left transition-colors hover:bg-[#141414] " +
           (fresh ? "bg-[#1f241f]" : "")
         }
       >
@@ -249,7 +249,7 @@ function NotificationRow({
           )}
           <span className="mt-0.5 block font-mono text-[11px] text-zinc-600">{ago(n.createdAt)}</span>
         </div>
-        {fresh && <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#6cf07f]" aria-hidden />}
+        {fresh && <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#00f090]" aria-hidden />}
       </button>
     </li>
   );

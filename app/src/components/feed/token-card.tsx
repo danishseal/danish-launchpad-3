@@ -35,7 +35,7 @@ export function TokenCard({ token }: TokenCardProps) {
 
   return (
     <Link href={`/token/${token.address}`} className="block min-w-0">
-      <article className="group rounded-[10px] border border-[#1e1e22] bg-[#111114]/80 p-3 transition-colors hover:border-[#3a3a42]">
+      <article className="group rounded-[10px] border border-[#161616] bg-[#111114]/80 p-3 transition-colors hover:border-[#3a3a42]">
         {/* Identity row */}
         <div className="flex items-center gap-2.5">
           <div className="h-11 w-11 shrink-0 overflow-hidden rounded-[8px] border border-[#242429] bg-[#1a1a1e]">
@@ -48,7 +48,7 @@ export function TokenCard({ token }: TokenCardProps) {
             <div className="flex items-center gap-1.5">
               <p className="min-w-0 flex-1 truncate text-[14px] font-semibold text-zinc-100">{token.name ?? "Unknown Token"}</p>
               {change != null && (
-                <span className={`mono shrink-0 text-[11px] font-semibold ${change >= 0 ? "text-[#4ade80]" : "text-[#ff5b5b]"}`}>
+                <span className={`mono shrink-0 text-[11px] font-semibold ${change >= 0 ? "text-[#00f090]" : "text-[#ff5b5b]"}`}>
                   {change >= 0 ? "+" : ""}{change.toFixed(1)}%
                 </span>
               )}
@@ -66,7 +66,7 @@ export function TokenCard({ token }: TokenCardProps) {
               </button>
               <span
                 className={`ml-auto shrink-0 rounded-[3px] border px-1.5 py-0.5 font-display text-[9px] font-semibold uppercase tracking-[0.1em] ${
-                  token.graduated ? "border-[#26323f] bg-[#141b24] text-[#8ab4ff]" : "border-[#26262b] bg-[#161619] text-zinc-500"
+                  token.graduated ? "border-[#143325] bg-[#0a1a12] text-[#00f090]" : "border-[#1e1e1e] bg-[#0a0a0a] text-zinc-500"
                 }`}
               >
                 {token.graduated ? "AMM" : "Curve"}
@@ -78,7 +78,7 @@ export function TokenCard({ token }: TokenCardProps) {
         {/* Stats row */}
         <div className="mt-3 flex items-center justify-between rounded-[7px] border border-[#1a1a1e] bg-[#0c0c0e]/80 px-3 py-2">
           <Metric label="MC" value={formatUsd(marketCapUsd)} />
-          <span className="h-6 w-px bg-[#1e1e22]" />
+          <span className="h-6 w-px bg-[#161616]" />
           <Metric label="24h Vol" value={formatUsd(volumeUsd)} align="right" />
         </div>
 
@@ -87,7 +87,7 @@ export function TokenCard({ token }: TokenCardProps) {
           <button
             type="button"
             onClick={openCreator}
-            className="relative z-10 truncate transition-colors hover:text-[#6cf07f]"
+            className="relative z-10 truncate transition-colors hover:text-[#00f090]"
             title="View creator"
           >
             by {truncate(creatorAddr, 4)}

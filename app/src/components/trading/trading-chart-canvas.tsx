@@ -47,7 +47,7 @@ const COLORS: Record<string, string> = {
   bollLower: "rgba(67, 103, 216, 0.35)",
 };
 
-const PRICE_UP_COLOR = "#39d98a";
+const PRICE_UP_COLOR = "#00f090";
 const PRICE_DOWN_COLOR = "#ff646b";
 
 function formatChartPrice(v: number): string {

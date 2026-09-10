@@ -57,9 +57,9 @@ export function TrendingRail() {
             <li key={t.address}>
               <Link
                 href={`/token/${t.address}`}
-                className="group flex items-center gap-2.5 px-3 py-2.5 transition-colors hover:bg-[#232326]"
+                className="group flex items-center gap-2.5 px-3 py-2.5 transition-colors hover:bg-[#141414]"
               >
-                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#202022]">
+                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]">
                   {t.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={t.image} alt="" className="h-full w-full object-cover" />
@@ -71,7 +71,7 @@ export function TrendingRail() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5">
-                    <span className="truncate font-display text-[13px] font-semibold text-[#6cf07f]">
+                    <span className="truncate font-display text-[13px] font-semibold text-[#00f090]">
                       ${t.symbol}
                     </span>
                   </div>
@@ -85,7 +85,7 @@ export function TrendingRail() {
                   </span>
                   {t.price_change_24h != null && (
                     <span
-                      className={`block font-mono text-[11px] ${t.price_change_24h >= 0 ? "text-[#4ade80]" : "text-[#ff5b5b]"}`}
+                      className={`block font-mono text-[11px] ${t.price_change_24h >= 0 ? "text-[#00f090]" : "text-[#ff5b5b]"}`}
                     >
                       {t.price_change_24h >= 0 ? "+" : ""}
                       {t.price_change_24h.toFixed(1)}%
@@ -133,12 +133,12 @@ export function LeaderboardRail() {
             <li key={c.creator}>
               <Link
                 href={`/creator/${c.creator}`}
-                className="group flex items-center gap-2.5 px-3 py-2.5 transition-colors hover:bg-[#232326]"
+                className="group flex items-center gap-2.5 px-3 py-2.5 transition-colors hover:bg-[#141414]"
               >
                 <span className="w-5 shrink-0 text-center font-mono text-[12px] text-zinc-500">
                   {medal(i)}
                 </span>
-                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-full border border-[var(--hairline)] bg-[#202022]">
+                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-full border border-[var(--hairline)] bg-[#101010]">
                   {c.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={c.image} alt="" className="h-full w-full object-cover" />
@@ -147,7 +147,7 @@ export function LeaderboardRail() {
                   )}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <span className="block truncate font-mono text-[13px] font-semibold text-zinc-200 group-hover:text-[#6cf07f]">
+                  <span className="block truncate font-mono text-[13px] font-semibold text-zinc-200 group-hover:text-[#00f090]">
                     {short(c.creator)}
                   </span>
                   <span className="block font-sans text-[11px] text-zinc-500">
@@ -178,7 +178,7 @@ function RailShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#1c1c1e]">
+    <div className="overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#0a0a0a]">
       <div className="flex items-center gap-2 border-b border-[var(--hairline)] px-3 py-3">
         <h2 className="font-display text-[15px] font-semibold text-white">{title}</h2>
       </div>

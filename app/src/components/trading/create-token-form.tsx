@@ -149,7 +149,7 @@ export function CreateTokenForm() {
   }
 
   const field =
-    "h-11 w-full rounded-[6px] border border-[#1e1e22] bg-[#131316] px-3.5 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30]";
+    "h-11 w-full rounded-[6px] border border-[#161616] bg-[#070707] px-3.5 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30]";
 
   const skimBps = Math.round(skimPct * 100);
   const chansePct = 100 - ansemPct;
@@ -159,7 +159,7 @@ export function CreateTokenForm() {
       {/* Stepper */}
       <div className="flex items-center gap-2">
         <StepPip n={1} label="Customize" active={step === 1} done={step > 1} onClick={() => setStep(1)} />
-        <span className="h-px flex-1 bg-[#1e1e22]" />
+        <span className="h-px flex-1 bg-[#161616]" />
         <StepPip n={2} label="Launch" active={step === 2} done={false} onClick={() => step1Valid && setStep(2)} />
       </div>
 
@@ -187,7 +187,7 @@ export function CreateTokenForm() {
           onDragLeave={() => setDragOver(false)}
           onDrop={(e) => { e.preventDefault(); setDragOver(false); void handleFile(e.dataTransfer.files?.[0]); }}
           className={`flex cursor-pointer items-center gap-4 rounded-xl border border-dashed px-4 py-4 transition ${
-            dragOver ? "border-[#6cf07f] bg-[#6cf07f]/10" : "border-[#2a2a30] bg-[#131316] hover:border-[#3a3a42]"
+            dragOver ? "border-[#00f090] bg-[#00f090]/10" : "border-[#2a2a30] bg-[#070707] hover:border-[#3a3a42]"
           }`}
         >
           {image ? (
@@ -221,7 +221,7 @@ export function CreateTokenForm() {
       <div>
         <label className="mb-2 block text-[13px] font-medium text-zinc-400">Description</label>
         <textarea
-          className="w-full resize-none rounded-[6px] border border-[#1e1e22] bg-[#131316] px-3.5 py-3 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30]"
+          className="w-full resize-none rounded-[6px] border border-[#161616] bg-[#070707] px-3.5 py-3 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30]"
           rows={3}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -256,8 +256,8 @@ export function CreateTokenForm() {
               onClick={() => setBase(b)}
               className={`flex-1 rounded-[6px] px-4 py-3 font-display text-[13px] font-bold uppercase tracking-[0.08em] transition ${
                 base === b
-                  ? "bg-[#6cf07f] text-[#0a0a0b]"
-                  : "border border-[#1e1e22] bg-[#131316] text-zinc-400 hover:text-white"
+                  ? "bg-[#00f090] text-[#000000]"
+                  : "border border-[#161616] bg-[#070707] text-zinc-400 hover:text-white"
               }`}
             >
               {b === "chanse" ? "CHANSE" : "ANSEM"}
@@ -290,10 +290,10 @@ export function CreateTokenForm() {
       ) : null}
 
       {/* Horns config */}
-      <div className="rounded-xl border border-[#1e1e22] bg-[#0c0c0e]/80 p-4">
+      <div className="rounded-xl border border-[#161616] bg-[#0c0c0e]/80 p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Horse size={16} weight="fill" className="text-[#6cf07f]" />
+            <Horse size={16} weight="fill" className="text-[#00f090]" />
             <span className="font-display text-[13px] font-semibold uppercase tracking-[0.1em] text-zinc-100">
               Horns
             </span>
@@ -306,7 +306,7 @@ export function CreateTokenForm() {
             role="switch"
             aria-checked={attachHorns}
             onClick={() => setAttachHorns((v) => !v)}
-            className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${attachHorns ? "bg-[#6cf07f]" : "bg-[#26262b]"}`}
+            className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${attachHorns ? "bg-[#00f090]" : "bg-[#26262b]"}`}
           >
             <span
               className={`absolute top-0.5 h-5 w-5 rounded-full bg-white transition-transform ${attachHorns ? "translate-x-[22px]" : "translate-x-0.5"}`}
@@ -320,7 +320,7 @@ export function CreateTokenForm() {
             <div>
               <div className="flex items-center justify-between text-[12px]">
                 <span className="text-zinc-400">Skim to Horn Vault</span>
-                <span className="mono font-semibold text-[#6cf07f]">{skimPct}% of swap fees</span>
+                <span className="mono font-semibold text-[#00f090]">{skimPct}% of swap fees</span>
               </div>
               <input
                 type="range"
@@ -338,12 +338,12 @@ export function CreateTokenForm() {
               <div className="flex items-center justify-between text-[12px]">
                 <span className="text-zinc-400">Sink split</span>
                 <span className="mono font-semibold text-zinc-200">
-                  <span className="text-[#6cf07f]">{ansemPct}%</span> ANSEM /{" "}
+                  <span className="text-[#00f090]">{ansemPct}%</span> ANSEM /{" "}
                   <span className="text-[#8ab4ff]">{chansePct}%</span> CHANSE
                 </span>
               </div>
               <div className="mt-2 flex h-2 overflow-hidden rounded-full">
-                <span style={{ width: `${ansemPct}%`, background: "#6cf07f" }} className="block h-full" />
+                <span style={{ width: `${ansemPct}%`, background: "#00f090" }} className="block h-full" />
                 <span style={{ width: `${chansePct}%`, background: "#8ab4ff" }} className="block h-full" />
               </div>
               <input
@@ -380,13 +380,13 @@ export function CreateTokenForm() {
                       }
                       className={`inline-flex items-center gap-1.5 rounded-[6px] border px-2 py-1 text-[11px] transition-colors ${
                         on
-                          ? "border-[#6cf07f] bg-[#6cf07f]/10 text-[#9ff5ae]"
-                          : "border-[#26262b] bg-[#131316] text-zinc-400 hover:text-zinc-200"
+                          ? "border-[#00f090] bg-[#00f090]/10 text-[#6dffbf]"
+                          : "border-[#26262b] bg-[#070707] text-zinc-400 hover:text-zinc-200"
                       }`}
                     >
                       {h.name}
                       {HORN_SOLO.has(h.slug) && (
-                        <span className="rounded-[3px] bg-[#2a2a2c] px-1 py-0.5 font-mono text-[8px] uppercase tracking-wide text-zinc-500">
+                        <span className="rounded-[3px] bg-[#1e1e1e] px-1 py-0.5 font-mono text-[8px] uppercase tracking-wide text-zinc-500">
                           solo
                         </span>
                       )}
@@ -467,10 +467,10 @@ function StepPip({
       <span
         className={`flex h-6 w-6 items-center justify-center rounded-full font-mono text-[11px] font-semibold transition-colors ${
           active
-            ? "bg-[#6cf07f] text-[#0a0a0b]"
+            ? "bg-[#00f090] text-[#000000]"
             : done
-              ? "border border-[#2f7d3f] bg-[#6cf07f]/10 text-[#6cf07f]"
-              : "border border-[#26262b] bg-[#131316] text-zinc-500"
+              ? "border border-[#00693f] bg-[#00f090]/10 text-[#00f090]"
+              : "border border-[#26262b] bg-[#070707] text-zinc-500"
         }`}
       >
         {done ? "✓" : n}

@@ -269,7 +269,7 @@ export function PostCard({
             count={post.replyCount}
             label="Reply"
             active={!expanded && showReplies}
-            activeClass="text-[#6cf07f]"
+            activeClass="text-[#00f090]"
             onClick={onReplyClick}
           />
 
@@ -279,7 +279,7 @@ export function PostCard({
               count={post.repostCount}
               label="Repost"
               active={Boolean(post.viewerReposted)}
-              activeClass="text-[#6cf07f]"
+              activeClass="text-[#00f090]"
               busy={repostM.isPending}
               onClick={openRepostMenu}
             />
@@ -289,12 +289,12 @@ export function PostCard({
               <div
                 ref={menuRef}
                 style={{ position: "fixed", top: menuPos.top, left: menuPos.left, zIndex: 1000 }}
-                className="ansem-fade-in w-40 overflow-hidden rounded-lg border border-[var(--hairline)] bg-[#1c1c1e] py-1 shadow-xl"
+                className="ansem-fade-in w-40 overflow-hidden rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] py-1 shadow-xl"
               >
                 <button
                   type="button"
                   onClick={onRepost}
-                  className="flex w-full items-center gap-2 px-3 py-2 text-left font-sans text-[13px] text-zinc-200 hover:bg-[#232326]"
+                  className="flex w-full items-center gap-2 px-3 py-2 text-left font-sans text-[13px] text-zinc-200 hover:bg-[#141414]"
                 >
                   <Repeat size={15} weight="regular" />
                   {post.viewerReposted ? "Undo repost" : "Repost"}
@@ -302,7 +302,7 @@ export function PostCard({
                 <button
                   type="button"
                   onClick={onQuote}
-                  className="flex w-full items-center gap-2 px-3 py-2 text-left font-sans text-[13px] text-zinc-200 hover:bg-[#232326]"
+                  className="flex w-full items-center gap-2 px-3 py-2 text-left font-sans text-[13px] text-zinc-200 hover:bg-[#141414]"
                 >
                   <Quotes size={15} weight="regular" />
                   Quote
@@ -324,7 +324,7 @@ export function PostCard({
             icon={<ShareNetwork size={17} weight="regular" />}
             label="Share"
             active={false}
-            activeClass="text-[#6cf07f]"
+            activeClass="text-[#00f090]"
             onClick={() => void onShare()}
           />
         </div>
@@ -380,7 +380,7 @@ function ActionButton({
       onClick={onClick}
       disabled={busy}
       aria-label={label}
-      className={`group flex items-center gap-1.5 rounded-md px-2 py-1 font-mono text-[12px] tabular-nums transition-colors hover:bg-[#232326] disabled:opacity-50 ${
+      className={`group flex items-center gap-1.5 rounded-md px-2 py-1 font-mono text-[12px] tabular-nums transition-colors hover:bg-[#141414] disabled:opacity-50 ${
         active ? activeClass : "text-zinc-500 hover:text-zinc-300"
       }`}
     >
@@ -401,7 +401,7 @@ function QuotedPost({ post }: { post: Post }) {
     <Link
       href={`/creator/${post.author}`}
       onClick={(e) => e.stopPropagation()}
-      className="mt-2 block rounded-xl border border-[var(--hairline)] bg-[#161616] p-3 transition-colors hover:border-[var(--hairline-strong)]"
+      className="mt-2 block rounded-xl border border-[var(--hairline)] bg-[#000000] p-3 transition-colors hover:border-[var(--hairline-strong)]"
     >
       <div className="flex items-center gap-1.5">
         <Avatar src={p.avatar} className="h-5 w-5" iconSize={11} />
@@ -469,7 +469,7 @@ function ReplyPanel({
   const list = [...(replies.data ?? [])].sort((a, b) => b.createdAt - a.createdAt);
 
   return (
-    <div className="ansem-fade-in mt-3 rounded-lg border border-[var(--hairline)] bg-[#161616] p-3">
+    <div className="ansem-fade-in mt-3 rounded-lg border border-[var(--hairline)] bg-[#000000] p-3">
       {wallet.address ? (
         <div className="flex gap-2">
           <textarea
@@ -492,7 +492,7 @@ function ReplyPanel({
               type="button"
               onClick={() => void send()}
               disabled={busy || !trimmed || over}
-              className="h-7 rounded-md bg-[#6cf07f] px-3 font-sans text-[12px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-40"
+              className="h-7 rounded-md bg-[#00f090] px-3 font-sans text-[12px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-40"
             >
               {busy ? "Signing…" : "Reply"}
             </button>

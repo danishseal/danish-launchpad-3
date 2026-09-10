@@ -37,7 +37,7 @@ export function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
   return (
     <aside
       className={
-        "fixed inset-y-0 left-0 z-30 hidden flex-col border-r border-[#1a1a1e] bg-[#0a0a0b] text-zinc-100 transition-[width] duration-200 md:flex " +
+        "fixed inset-y-0 left-0 z-30 hidden flex-col border-r border-[#1a1a1e] bg-[#000000] text-zinc-100 transition-[width] duration-200 md:flex " +
         widthClass
       }
     >
@@ -139,7 +139,7 @@ function ChainTicker() {
         <span className="tnum text-zinc-500">1,284,930</span>
       </div>
       <div className="flex items-center gap-1.5 pt-0.5">
-        <span className="h-1.5 w-1.5 rounded-full bg-[#6cf07f]" />
+        <span className="h-1.5 w-1.5 rounded-full bg-[#00f090]" />
         <span className="uppercase tracking-[0.14em] text-zinc-600">
           ansemchain
         </span>
@@ -173,7 +173,7 @@ function NavRow({
       }
     >
       {active && (
-        <span className="absolute left-0 top-1/2 h-4 w-[2px] -translate-y-1/2 rounded-full bg-[#6cf07f]" />
+        <span className="absolute left-0 top-1/2 h-4 w-[2px] -translate-y-1/2 rounded-full bg-[#00f090]" />
       )}
       {collapsed ? (
         <span className="text-[13px] font-semibold">{item.label.slice(0, 1)}</span>

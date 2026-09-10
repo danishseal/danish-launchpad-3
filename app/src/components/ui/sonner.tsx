@@ -19,8 +19,8 @@ const Toaster = ({ ...props }: ToasterProps) => {
           toast: "!border-[#2a2a30] !bg-[#1b1b1f] !text-zinc-100",
           title: "!text-zinc-100",
           description: "!text-zinc-300",
-          actionButton: "!bg-[#6cef4b] !text-[#10250a]",
-          cancelButton: "!bg-[#1e1e22] !text-zinc-200",
+          actionButton: "!bg-[#00f090] !text-[#10250a]",
+          cancelButton: "!bg-[#161616] !text-zinc-200",
           closeButton: "!border-[#45454c] !bg-[#242428] !text-zinc-100",
         },
       }}

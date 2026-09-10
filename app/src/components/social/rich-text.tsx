@@ -38,7 +38,7 @@ export function linkify(text: string): React.ReactNode[] {
           key={key++}
           href={`/explore?tab=tags&tag=${encodeURIComponent(tag)}`}
           onClick={(e) => e.stopPropagation()}
-          className="text-[#6cf07f] hover:underline"
+          className="text-[#00f090] hover:underline"
         >
           {tok}
         </Link>,
@@ -70,7 +70,7 @@ function Mention({ handle, raw }: { handle: string; raw: string }) {
     <Link
       href={`/creator/${address}`}
       onClick={(e) => e.stopPropagation()}
-      className="text-[#6cf07f] hover:underline"
+      className="text-[#00f090] hover:underline"
     >
       {raw}
     </Link>

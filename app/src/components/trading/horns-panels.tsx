@@ -95,17 +95,17 @@ export function HornsFeeSplitPanel({ token }: { token: TokenListItem }) {
       </p>
 
       {/* Platform defaults from the live launchpad HornConfig (not per-pool). */}
-      <div className="mt-3 rounded-lg border border-[#1a1a1e] bg-[#0a0a0b] p-3">
-        <FlowRow tone="#6cf07f" label="Swap fee" value="pool rate" sub="charged on every trade" />
+      <div className="mt-3 rounded-lg border border-[#1a1a1e] bg-[#000000] p-3">
+        <FlowRow tone="#00f090" label="Swap fee" value="pool rate" sub="charged on every trade" />
         <div className="my-1.5 ml-[3px] h-3 w-px bg-[#26262b]" />
-        <FlowRow tone="#6cf07f" label="Skim to Horns" value={flowSkim} sub="of the swap fee" />
+        <FlowRow tone="#00f090" label="Skim to Horns" value={flowSkim} sub="of the swap fee" />
         <FlowRow tone="#8ab4ff" label="ANSEM + CHANSE sinks" value={flowSplit} sub="to Vault stakers" />
       </div>
 
       {/* This pool: real per-pool params. Pre-hook pools honestly read "None". */}
       <div className="mt-3">
         <p className="mb-1.5 text-[10px] uppercase tracking-[0.14em] text-zinc-600">This pool</p>
-        <div className="space-y-1.5 rounded-lg border border-[#1a1a1e] bg-[#0a0a0b] p-3">
+        <div className="space-y-1.5 rounded-lg border border-[#1a1a1e] bg-[#000000] p-3">
           <PoolRow label="Attached Horn" value={attachedHornValue} />
           <PoolRow label="Skim to Vault" value={skimValue} />
           <PoolRow label="ANSEM / CHANSE split" value={splitValue} />
@@ -205,7 +205,7 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
     <section className="rounded-xl bg-[#17171a] p-4">
       <div className="flex items-center justify-between">
         <h3 className="flex items-center gap-1.5 font-display text-[13px] font-semibold uppercase tracking-[0.12em] text-zinc-100">
-          <Lightning size={15} weight="fill" className="text-[#6cf07f]" />
+          <Lightning size={15} weight="fill" className="text-[#00f090]" />
           Horn Vault
         </h3>
         <span className="rounded-[4px] border border-[#26262b] px-2 py-0.5 font-mono text-[10px] text-zinc-500">
@@ -221,14 +221,14 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
       </div>
 
       {/* Denom tabs: two sinks, ANSEM (uansem) + CHANSE (uchanse) */}
-      <div className="mt-4 grid grid-cols-2 gap-1 rounded-[6px] bg-[#131316] p-1">
+      <div className="mt-4 grid grid-cols-2 gap-1 rounded-[6px] bg-[#070707] p-1">
         {(["uansem", "uchanse"] as StakeDenom[]).map((d) => (
           <button
             key={d}
             type="button"
             onClick={() => setDenom(d)}
             className={`h-8 rounded-[4px] font-display text-[11px] font-semibold uppercase tracking-[0.1em] transition-colors ${
-              denom === d ? "bg-[#1e1e22] text-white" : "text-zinc-500 hover:text-zinc-200"
+              denom === d ? "bg-[#161616] text-white" : "text-zinc-500 hover:text-zinc-200"
             }`}
           >
             {denomLabel(d)}
@@ -245,7 +245,7 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
             onClick={() => setAction(a)}
             className={`pb-1 font-display text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors ${
               action === a
-                ? "border-b-2 border-[#6cf07f] text-white"
+                ? "border-b-2 border-[#00f090] text-white"
                 : "border-b-2 border-transparent text-zinc-500 hover:text-zinc-300"
             }`}
           >
@@ -262,7 +262,7 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
           inputMode="decimal"
           placeholder="0.0"
           disabled={!live}
-          className="h-10 w-full rounded-[6px] border border-[#1e1e22] bg-[#131316] px-3 font-mono text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30] disabled:cursor-not-allowed disabled:opacity-60"
+          className="h-10 w-full rounded-[6px] border border-[#161616] bg-[#070707] px-3 font-mono text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30] disabled:cursor-not-allowed disabled:opacity-60"
         />
       </div>
 
@@ -278,7 +278,7 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
       </button>
 
       {/* Pending rewards (Coin[]) + Claim */}
-      <div className="mt-3 rounded-lg border border-[#1e1e22] bg-[#0a0a0b] p-3">
+      <div className="mt-3 rounded-lg border border-[#161616] bg-[#000000] p-3">
         <div className="flex items-center justify-between">
           <p className="text-[10px] uppercase tracking-[0.14em] text-zinc-600">
             Pending rewards
@@ -289,8 +289,8 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
             title={live ? undefined : "Claim goes live with the Horn Vault"}
             className={`h-7 rounded-[4px] border px-3 font-display text-[10px] font-semibold uppercase tracking-[0.1em] transition-colors ${
               live && hasRewards
-                ? "border-[#2f7d3f] bg-[#6cf07f]/10 text-[#6cf07f] hover:bg-[#6cf07f]/15"
-                : "cursor-not-allowed border-[#1e1e22] text-zinc-600"
+                ? "border-[#00693f] bg-[#00f090]/10 text-[#00f090] hover:bg-[#00f090]/15"
+                : "cursor-not-allowed border-[#161616] text-zinc-600"
             }`}
           >
             Claim {label}
@@ -329,7 +329,7 @@ function VaultStat({
   return (
     <div className="bg-[#0e0e10]/80 px-2.5 py-2 text-center">
       <p className="text-[9px] uppercase tracking-[0.14em] text-zinc-600">{label}</p>
-      <p className={`mono mt-1 text-[13px] font-semibold ${accent ? "text-[#6cf07f]" : "text-zinc-100"}`}>
+      <p className={`mono mt-1 text-[13px] font-semibold ${accent ? "text-[#00f090]" : "text-zinc-100"}`}>
         {value}
       </p>
     </div>

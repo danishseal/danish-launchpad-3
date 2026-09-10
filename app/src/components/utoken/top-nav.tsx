@@ -67,19 +67,19 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
 
   return (
     <header
-      className="sticky top-0 z-30 border-b border-[var(--hairline)] bg-[#161616]/90 backdrop-blur-md"
+      className="sticky top-0 z-30 border-b border-[var(--hairline)] bg-[#000000]/90 backdrop-blur-md"
       style={squareCorners ? { borderRadius: 0 } : undefined}
     >
       {/* Stats line */}
       <div className="border-b border-[var(--hairline)]">
         <div className="mx-auto flex h-8 w-full max-w-[1440px] items-center gap-6 overflow-x-auto px-4 font-mono text-[11px] text-zinc-500 sm:px-6">
           <span className="flex items-center gap-1.5">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#4ade80]" />
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00f090]" />
             <span className="text-zinc-300">ansemchain</span>
           </span>
           <span>
             BLOCK{" "}
-            <span className="text-[#6cf07f]">
+            <span className="text-[#00f090]">
               {mounted && block != null ? `#${block.toLocaleString()}` : "-"}
             </span>
           </span>
@@ -131,7 +131,7 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
         <button
           type="button"
           onClick={search.open}
-          className="ml-auto flex h-9 w-full max-w-[340px] items-center gap-2 rounded-lg border border-[var(--hairline)] bg-[#1c1c1e] px-3 text-[13px] text-zinc-500 transition-colors hover:border-[var(--hairline-strong)]"
+          className="ml-auto flex h-9 w-full max-w-[340px] items-center gap-2 rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] px-3 text-[13px] text-zinc-500 transition-colors hover:border-[var(--hairline-strong)]"
         >
           <MagnifyingGlass size={15} />
           <span>Search tokens or users</span>
@@ -146,7 +146,7 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
           rel="noreferrer"
           aria-label="ansemchain docs"
           title="Docs"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#1c1c1e] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
         >
           <BookOpen size={16} weight="bold" />
         </a>
@@ -157,14 +157,14 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
           rel="noreferrer"
           aria-label="ansemchain on X"
           title="ansemchain on X"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#1c1c1e] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
         >
           <XLogo size={16} weight="bold" />
         </a>
 
         <Link
           href="/create"
-          className="flex h-9 shrink-0 items-center gap-1.5 rounded-lg bg-[#6cf07f] px-3.5 font-sans text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
+          className="flex h-9 shrink-0 items-center gap-1.5 rounded-lg bg-[#00f090] px-3.5 font-sans text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
         >
           <Plus size={15} weight="bold" /> Launch
         </Link>
@@ -174,7 +174,7 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
         <ConnectButton
           label="Connect"
           balanceOnly
-          className="h-9 shrink-0 rounded-lg bg-[#6cf07f] px-3.5 text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
+          className="h-9 shrink-0 rounded-lg bg-[#00f090] px-3.5 text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
           connectedClassName="h-9 w-auto rounded-lg px-3"
         />
       </div>

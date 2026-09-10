@@ -5,19 +5,19 @@
 // charts, so plain SVG keeps the page dependency-free and fully theme-native.
 //
 // Colors follow the dataviz skill:
-//   - Volume is a SINGLE series -> the brand accent green (#6cf07f). A lone
+//   - Volume is a SINGLE series -> the brand accent green (#00f090). A lone
 //     series needs no CVD separation, only contrast vs the surface (it passes).
 //   - Launches vs Graduations is a TWO-series categorical encoding -> the
-//     validated dark-mode pair emerald #22a04f + violet #6f4fd0 (passes the
-//     six checks against surface #161616), plus a legend + 2px gaps as
+//     validated dark-mode pair emerald #00c477 + violet #6f4fd0 (passes the
+//     six checks against surface #000000), plus a legend + 2px gaps as
 //     secondary encoding so identity is never color-alone.
 //
 // SVG coordinates are rounded to avoid SSR/client hydration drift.
 
 import { useState } from "react";
 
-const ACCENT = "#6cf07f"; // brand green, volume single series
-const LAUNCHED = "#22a04f"; // emerald (validated)
+const ACCENT = "#00f090"; // brand green, volume single series
+const LAUNCHED = "#00c477"; // emerald (validated)
 const GRADUATED = "#6f4fd0"; // violet (validated)
 
 const r2 = (n: number) => Math.round(n * 100) / 100;
@@ -120,7 +120,7 @@ export function VolumeChart({
               strokeDasharray="3 3"
               vectorEffect="non-scaling-stroke"
             />
-            <circle cx={r2(x(hover))} cy={r2(y(h.volumeUsd))} r={4} fill={ACCENT} stroke="#161616" strokeWidth={2} />
+            <circle cx={r2(x(hover))} cy={r2(y(h.volumeUsd))} r={4} fill={ACCENT} stroke="#000000" strokeWidth={2} />
           </>
         )}
       </svg>
@@ -136,7 +136,7 @@ export function VolumeChart({
       </div>
       {h && hover != null && (
         <div
-          className="pointer-events-none absolute top-2 z-10 rounded-lg border border-[var(--hairline-strong)] bg-[#202022] px-2.5 py-1.5 shadow-lg"
+          className="pointer-events-none absolute top-2 z-10 rounded-lg border border-[var(--hairline-strong)] bg-[#101010] px-2.5 py-1.5 shadow-lg"
           style={{ left: `calc(${(hover / Math.max(1, n - 1)) * 100}% )`, transform: "translateX(-50%)" }}
         >
           <p className="font-mono text-[10px] text-zinc-500">{fmtTime(h.t)}</p>
@@ -262,7 +262,7 @@ export function LaunchesChart({
       </div>
       {h && hover != null && (
         <div
-          className="pointer-events-none absolute top-8 z-10 rounded-lg border border-[var(--hairline-strong)] bg-[#202022] px-2.5 py-1.5 shadow-lg"
+          className="pointer-events-none absolute top-8 z-10 rounded-lg border border-[var(--hairline-strong)] bg-[#101010] px-2.5 py-1.5 shadow-lg"
           style={{
             left: `calc(${((hover + 0.5) / n) * 100}%)`,
             transform: "translateX(-50%)",

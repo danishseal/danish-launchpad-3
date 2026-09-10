@@ -55,7 +55,7 @@ export default function AnalyticsPage() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="flex items-center gap-2 font-display text-[24px] font-semibold tracking-tight text-white">
-            <ChartLineUp size={20} weight="fill" className="text-[#6cf07f]" />
+            <ChartLineUp size={20} weight="fill" className="text-[#00f090]" />
             Analytics
           </h1>
           <p className="mt-1 max-w-xl text-[13px] leading-5 text-zinc-400">
@@ -63,7 +63,7 @@ export default function AnalyticsPage() {
             price CHANSE volume through the on-chain oracle.
           </p>
         </div>
-        <div className="flex items-center gap-1 rounded-lg border border-[var(--hairline)] bg-[#1c1c1e] p-1">
+        <div className="flex items-center gap-1 rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] p-1">
           {ANALYTICS_WINDOWS.map((w) => (
             <button
               key={w.key}
@@ -71,7 +71,7 @@ export default function AnalyticsPage() {
               onClick={() => setWin(w.key)}
               className={`h-7 rounded-md px-3 font-display text-[12px] font-semibold uppercase tracking-[0.06em] transition-colors ${
                 win === w.key
-                  ? "bg-[#6cf07f] text-black"
+                  ? "bg-[#00f090] text-black"
                   : "text-zinc-400 hover:text-white"
               }`}
             >
@@ -130,8 +130,8 @@ export default function AnalyticsPage() {
           right={
             flow > 0 ? (
               <div className="flex flex-col items-end gap-1">
-                <div className="flex h-1.5 w-28 overflow-hidden rounded-full bg-[#2a2a2c]">
-                  <div style={{ width: `${buyPct}%`, background: "#6cf07f" }} />
+                <div className="flex h-1.5 w-28 overflow-hidden rounded-full bg-[#1e1e1e]">
+                  <div style={{ width: `${buyPct}%`, background: "#00f090" }} />
                   <div style={{ width: `${100 - buyPct}%`, background: "#f0736c" }} />
                 </div>
                 <span className="font-mono text-[10px] text-zinc-500 tabular-nums">
@@ -193,7 +193,7 @@ export default function AnalyticsPage() {
               {top.data?.tokens.map((t, i) => (
                 <tr
                   key={t.address}
-                  className="border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#202022]"
+                  className="border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#101010]"
                 >
                   <td className="px-4 py-2.5 font-mono text-[12px] text-zinc-600 tabular-nums">
                     {i + 1}
@@ -201,11 +201,11 @@ export default function AnalyticsPage() {
                   <td className="px-4 py-2.5">
                     <Link
                       href={`/token/${t.address}`}
-                      className="flex items-center gap-2 font-display text-[13px] font-semibold text-zinc-100 transition-colors hover:text-[#6cf07f]"
+                      className="flex items-center gap-2 font-display text-[13px] font-semibold text-zinc-100 transition-colors hover:text-[#00f090]"
                     >
                       ${t.symbol || t.address.slice(0, 6)}
                       {t.base_denom !== "uchanse" && (
-                        <span className="rounded-[3px] bg-[#2a2a2c] px-1.5 py-0.5 font-mono text-[9px] uppercase text-zinc-400">
+                        <span className="rounded-[3px] bg-[#1e1e1e] px-1.5 py-0.5 font-mono text-[9px] uppercase text-zinc-400">
                           {t.base_label}
                         </span>
                       )}
@@ -272,7 +272,7 @@ function StatTile({
   accent?: boolean;
 }) {
   return (
-    <div className="bg-[#161616] p-4">
+    <div className="bg-[#000000] p-4">
       <p className="truncate font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">
         {label}
       </p>
@@ -281,7 +281,7 @@ function StatTile({
       ) : (
         <p
           className={`mt-1.5 font-display text-[22px] font-semibold leading-none tabular-nums ${
-            accent ? "text-[#6cf07f]" : "text-white"
+            accent ? "text-[#00f090]" : "text-white"
           }`}
         >
           {value}
@@ -303,7 +303,7 @@ function Delta({ pct }: { pct: number | null }) {
   return (
     <span
       className={`flex items-center gap-1 font-mono text-[11px] tabular-nums ${
-        up ? "text-[#6cf07f]" : "text-[#f0736c]"
+        up ? "text-[#00f090]" : "text-[#f0736c]"
       }`}
     >
       {up ? <TrendUp size={11} weight="bold" /> : <TrendDown size={11} weight="bold" />}
@@ -317,7 +317,7 @@ function ChangeCell({ pct }: { pct: number | null }) {
   if (pct == null) return <span className="text-zinc-600">—</span>;
   const up = pct >= 0;
   return (
-    <span className={`inline-flex items-center gap-0.5 ${up ? "text-[#6cf07f]" : "text-[#f0736c]"}`}>
+    <span className={`inline-flex items-center gap-0.5 ${up ? "text-[#00f090]" : "text-[#f0736c]"}`}>
       {up ? <TrendUp size={11} weight="bold" /> : <TrendDown size={11} weight="bold" />}
       {up ? "+" : ""}
       {pct.toFixed(1)}%
@@ -339,7 +339,7 @@ function Card({
   noPad?: boolean;
 }) {
   return (
-    <div className="rounded-2xl border border-[var(--hairline)] bg-[#1c1c1e]">
+    <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a]">
       <div className="flex items-start justify-between gap-4 border-b border-[var(--hairline)] px-4 py-3">
         <div>
           <h2 className="font-display text-[14px] font-semibold text-white">{title}</h2>
@@ -353,5 +353,5 @@ function Card({
 }
 
 function ChartSkeleton() {
-  return <div className="h-[240px] w-full animate-pulse rounded-lg bg-[#202022]" />;
+  return <div className="h-[240px] w-full animate-pulse rounded-lg bg-[#101010]" />;
 }

@@ -87,8 +87,8 @@ export function Scanner() {
             Every coin on ansemchain, across the bonding curve and the ANSEM AMM.
           </p>
         </div>
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--hairline)] bg-[#161616] px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.08em] text-zinc-400">
-          <span className={`h-1.5 w-1.5 rounded-full bg-[#6cf07f] ${isFetching ? "animate-pulse" : ""}`} />
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--hairline)] bg-[#000000] px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.08em] text-zinc-400">
+          <span className={`h-1.5 w-1.5 rounded-full bg-[#00f090] ${isFetching ? "animate-pulse" : ""}`} />
           {isFetching ? "Syncing" : "Live"}
         </span>
       </div>
@@ -98,7 +98,7 @@ export function Scanner() {
 
       {/* Controls */}
       <div className="flex flex-wrap items-center gap-2">
-        <div className="flex h-9 min-w-[220px] flex-1 items-center gap-2 rounded-[10px] border border-[var(--hairline)] bg-[#1c1c1e] px-3">
+        <div className="flex h-9 min-w-[220px] flex-1 items-center gap-2 rounded-[10px] border border-[var(--hairline)] bg-[#0a0a0a] px-3">
           <MagnifyingGlass size={15} className="text-zinc-500" />
           <input
             value={query}
@@ -121,7 +121,7 @@ export function Scanner() {
         {/* Venue filter: segmented control with a sliding thumb (matches home). */}
         <div className="relative grid grid-cols-3 rounded-[10px] bg-[#282828] p-0.5 ring-1 ring-[var(--hairline)]">
           <span
-            className="pointer-events-none absolute inset-y-0.5 left-0.5 rounded-md bg-[#6cf07f] transition-transform duration-200"
+            className="pointer-events-none absolute inset-y-0.5 left-0.5 rounded-md bg-[#00f090] transition-transform duration-200"
             style={{ width: "calc((100% - 4px) / 3)", transform: `translateX(${(["all", "curve", "amm"] as Filter[]).indexOf(filter) * 100}%)` }}
           />
           {(["all", "curve", "amm"] as Filter[]).map((f) => (
@@ -144,7 +144,7 @@ export function Scanner() {
             setSortKey(e.target.value as SortKey);
             setSortDir("desc");
           }}
-          className="h-9 rounded-[10px] border border-[var(--hairline)] bg-[#1c1c1e] px-3 text-[13px] text-zinc-300 outline-none"
+          className="h-9 rounded-[10px] border border-[var(--hairline)] bg-[#0a0a0a] px-3 text-[13px] text-zinc-300 outline-none"
           aria-label="Sort by"
         >
           {(Object.keys(SORT_LABELS) as SortKey[]).map((k) => (
@@ -196,18 +196,18 @@ export function Scanner() {
         <div key={`${filter}-${sortKey}-${sortDir}`} className="ansem-fade-in grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {isLoading
             ? Array.from({ length: 9 }).map((_, i) => (
-                <div key={i} className="h-[150px] animate-pulse rounded-[10px] border border-[var(--hairline)] bg-[#1c1c1e]" />
+                <div key={i} className="h-[150px] animate-pulse rounded-[10px] border border-[var(--hairline)] bg-[#0a0a0a]" />
               ))
             : rows.map((t) => <ScannerCard key={t.address} token={t} thresholdMicro={threshold} />)}
         </div>
       )}
 
       {!isLoading && rows.length === 0 && (
-        <div className="rounded-[10px] border border-dashed border-[var(--hairline)] bg-[#161616] py-16 text-center">
+        <div className="rounded-[10px] border border-dashed border-[var(--hairline)] bg-[#000000] py-16 text-center">
           <p className="text-[13px] text-zinc-400">No coins match your filters.</p>
           <p className="mt-1 text-[12px] text-zinc-600">
             Try clearing the search, or{" "}
-            <Link href="/create" className="text-[#6cf07f] hover:underline">launch one yourself</Link>.
+            <Link href="/create" className="text-[#00f090] hover:underline">launch one yourself</Link>.
           </p>
         </div>
       )}
@@ -254,7 +254,7 @@ function TrendBand({ stats, loading }: { stats: Stats; loading: boolean }) {
     return (
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
         {Array.from({ length: 7 }).map((_, i) => (
-          <div key={i} className="h-[64px] animate-pulse rounded-[10px] border border-[var(--hairline)] bg-[#1c1c1e]" />
+          <div key={i} className="h-[64px] animate-pulse rounded-[10px] border border-[var(--hairline)] bg-[#0a0a0a]" />
         ))}
       </div>
     );
@@ -285,7 +285,7 @@ function TrendBand({ stats, loading }: { stats: Stats; loading: boolean }) {
 
 function Metric({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
-    <div className="rounded-[10px] border border-[var(--hairline)] bg-[#161616] px-3 py-2.5">
+    <div className="rounded-[10px] border border-[var(--hairline)] bg-[#000000] px-3 py-2.5">
       <p className="text-[10px] font-medium uppercase tracking-[0.08em] text-zinc-600">{label}</p>
       <p className="mt-1 font-mono text-[17px] font-semibold tabular-nums leading-none text-white">{value}</p>
       {sub && <p className="mt-1.5 truncate text-[11px] text-zinc-500">{sub}</p>}
@@ -295,8 +295,8 @@ function Metric({ label, value, sub }: { label: string; value: string; sub?: str
 
 function Spotlight({ icon, label, token, value }: { icon: ReactNode; label: string; token: TokenListItem | null; value: string }) {
   const body = (
-    <div className="flex h-full items-center gap-2.5 rounded-[10px] border border-[var(--hairline)] bg-[#161616] px-3 py-2.5 transition-colors hover:border-zinc-600">
-      <div className="h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-[var(--hairline)] bg-[#202022]">
+    <div className="flex h-full items-center gap-2.5 rounded-[10px] border border-[var(--hairline)] bg-[#000000] px-3 py-2.5 transition-colors hover:border-zinc-600">
+      <div className="h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-[var(--hairline)] bg-[#101010]">
         {token?.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -307,8 +307,8 @@ function Spotlight({ icon, label, token, value }: { icon: ReactNode; label: stri
         )}
       </div>
       <div className="min-w-0 flex-1">
-        <p className="flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.08em] text-[#6cf07f]">
-          <span className="text-[#6cf07f]">{icon}</span>
+        <p className="flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.08em] text-[#00f090]">
+          <span className="text-[#00f090]">{icon}</span>
           {label}
         </p>
         <p className="mt-0.5 truncate text-[13px] font-semibold text-white">
@@ -344,7 +344,7 @@ function ScannerTable({
   thresholdMicro: number;
 }) {
   return (
-    <div className="overflow-x-auto rounded-[10px] bg-[#1c1c1e] ring-1 ring-[var(--hairline)]">
+    <div className="overflow-x-auto rounded-[10px] bg-[#0a0a0a] ring-1 ring-[var(--hairline)]">
       <table className="w-full min-w-[900px] text-left">
         <thead>
           <tr className="border-b border-[var(--hairline)] text-[11px] uppercase tracking-[0.06em] text-zinc-600">
@@ -418,11 +418,11 @@ function TableRow({ token, rank, thresholdMicro }: { token: TokenListItem; rank:
   const change = token.price_change_24h;
   const price = priceUsdOf(token);
   return (
-    <tr className="group border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#232326]">
+    <tr className="group border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#141414]">
       <td className="px-4 py-3 font-mono text-[13px] tabular-nums text-zinc-600">{rank}</td>
       <td className="px-4 py-3">
         <Link href={`/token/${token.address}`} className="flex items-center gap-2.5">
-          <div className="h-8 w-8 shrink-0 overflow-hidden rounded-lg bg-[#202022] ring-1 ring-[var(--hairline)]">
+          <div className="h-8 w-8 shrink-0 overflow-hidden rounded-lg bg-[#101010] ring-1 ring-[var(--hairline)]">
             {token.image ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -431,7 +431,7 @@ function TableRow({ token, rank, thresholdMicro }: { token: TokenListItem; rank:
             )}
           </div>
           <div className="min-w-0">
-            <p className="truncate text-[14px] font-semibold text-[#6cf07f] group-hover:underline">${token.symbol}</p>
+            <p className="truncate text-[14px] font-semibold text-[#00f090] group-hover:underline">${token.symbol}</p>
             <p className="truncate text-[12px] text-zinc-500">{token.name}</p>
           </div>
         </Link>
@@ -463,8 +463,8 @@ function VenueCell({ token, thresholdMicro }: { token: TokenListItem; thresholdM
         {pct != null && <span className="font-mono text-[10px] tabular-nums text-zinc-500">{pct.toFixed(0)}%</span>}
       </div>
       {pct != null && (
-        <div className="mt-1 h-1 overflow-hidden rounded-full bg-[#2a2a2c]">
-          <div className="h-full rounded-full bg-[#6cf07f]" style={{ width: `${Math.max(3, pct)}%` }} />
+        <div className="mt-1 h-1 overflow-hidden rounded-full bg-[#1e1e1e]">
+          <div className="h-full rounded-full bg-[#00f090]" style={{ width: `${Math.max(3, pct)}%` }} />
         </div>
       )}
     </div>
@@ -491,11 +491,11 @@ function ScannerCard({ token, thresholdMicro }: { token: TokenListItem; threshol
   return (
     <Link
       href={`/token/${token.address}`}
-      className="group flex flex-col rounded-[10px] border border-[var(--hairline)] bg-[#1c1c1e] p-3.5 transition-colors hover:border-zinc-500"
+      className="group flex flex-col rounded-[10px] border border-[var(--hairline)] bg-[#0a0a0a] p-3.5 transition-colors hover:border-zinc-500"
     >
       {/* Identity */}
       <div className="flex items-center gap-2.5">
-        <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-[var(--hairline)] bg-[#202022]">
+        <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-[var(--hairline)] bg-[#101010]">
           {token.image ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -511,7 +511,7 @@ function ScannerCard({ token, thresholdMicro }: { token: TokenListItem; threshol
             </span>
           </div>
           <div className="mt-0.5 flex items-center gap-1.5">
-            <span className="text-[12px] font-semibold text-[#6cf07f]">${token.symbol}</span>
+            <span className="text-[12px] font-semibold text-[#00f090]">${token.symbol}</span>
             <VenueBadge graduated={token.graduated} />
             <span className="ml-auto shrink-0">
               <Sparkline address={token.address} up={up} width={64} height={22} />
@@ -521,7 +521,7 @@ function ScannerCard({ token, thresholdMicro }: { token: TokenListItem; threshol
       </div>
 
       {/* Stats */}
-      <div className="mt-3 grid grid-cols-3 divide-x divide-[var(--hairline)] rounded-lg border border-[var(--hairline)] bg-[#161616]">
+      <div className="mt-3 grid grid-cols-3 divide-x divide-[var(--hairline)] rounded-lg border border-[var(--hairline)] bg-[#000000]">
         <Cell label="Mcap" value={usd(cap)} />
         <Cell label="24h vol" value={usd(vol)} />
         <Cell label="24h tx" value={num(token.trade_count_24h ?? 0)} />
@@ -532,17 +532,17 @@ function ScannerCard({ token, thresholdMicro }: { token: TokenListItem; threshol
         <div className="mt-2.5">
           <div className="mb-1 flex items-center justify-between text-[10px] uppercase tracking-[0.06em] text-zinc-600">
             <span>Migration</span>
-            <span className="font-mono tabular-nums text-[#6cf07f]">{pct.toFixed(0)}% to AMM</span>
+            <span className="font-mono tabular-nums text-[#00f090]">{pct.toFixed(0)}% to AMM</span>
           </div>
-          <div className="h-1.5 overflow-hidden rounded-full bg-[#2a2a2c]">
-            <div className="h-full rounded-full bg-[#6cf07f] transition-[width] duration-500" style={{ width: `${Math.max(3, pct)}%` }} />
+          <div className="h-1.5 overflow-hidden rounded-full bg-[#1e1e1e]">
+            <div className="h-full rounded-full bg-[#00f090] transition-[width] duration-500" style={{ width: `${Math.max(3, pct)}%` }} />
           </div>
         </div>
       )}
 
       {/* Footer */}
       <div className="mt-2.5 flex items-center justify-between text-[11px] text-zinc-600">
-        <button type="button" onClick={openCreator} className="relative z-10 truncate transition-colors hover:text-[#6cf07f]">
+        <button type="button" onClick={openCreator} className="relative z-10 truncate transition-colors hover:text-[#00f090]">
           by {short(creator, 4)}
         </button>
         <span className="font-mono tabular-nums">{ageShort(token.first_seen_at)}</span>
@@ -566,7 +566,7 @@ function VenueBadge({ graduated }: { graduated: boolean }) {
   return (
     <span
       className={`inline-flex items-center rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider ${
-        graduated ? "bg-[#6cf07f]/15 text-[#9ff5ae]" : "bg-[#2a2a2c] text-zinc-500"
+        graduated ? "bg-[#00f090]/15 text-[#6dffbf]" : "bg-[#1e1e1e] text-zinc-500"
       }`}
     >
       {graduated ? "AMM" : "Curve"}
@@ -605,7 +605,7 @@ function gradProgress(t: TokenListItem, thresholdMicro: number): number | null {
 
 function changeColor(change: number | null): string {
   if (change == null) return "text-zinc-600";
-  return change >= 0 ? "text-[#4ade80]" : "text-[#ff5b5b]";
+  return change >= 0 ? "text-[#00f090]" : "text-[#ff5b5b]";
 }
 function fmtChange(change: number | null): string {
   if (change == null) return "-";

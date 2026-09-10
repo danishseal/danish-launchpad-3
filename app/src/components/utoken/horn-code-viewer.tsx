@@ -62,8 +62,8 @@ export function HornCodeViewer({ slug }: { slug: string }) {
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-[#1e1e22] bg-[#0c0c0e]">
-      <div className="flex items-center justify-between gap-3 border-b border-[#1e1e22] bg-[#111113] px-3 py-2">
+    <div className="overflow-hidden rounded-xl border border-[#161616] bg-[#0c0c0e]">
+      <div className="flex items-center justify-between gap-3 border-b border-[#161616] bg-[#111113] px-3 py-2">
         <span className="truncate font-mono text-[11px] text-zinc-500">
           {path}
           {code ? ` · ${lines.length} lines` : ""}
@@ -76,16 +76,16 @@ export function HornCodeViewer({ slug }: { slug: string }) {
             title="Copy the explanation plus source as one markdown block for an AI assistant"
             className="flex items-center gap-1.5 rounded-md border border-[#26343a] bg-[#12181b] px-2 py-1 font-mono text-[11px] text-[#7fd4e6] transition-colors hover:text-[#a6e6f2] disabled:opacity-40"
           >
-            {copiedAi ? <Check size={12} className="text-[#6cf07f]" weight="bold" /> : <Sparkle size={12} weight="fill" />}
+            {copiedAi ? <Check size={12} className="text-[#00f090]" weight="bold" /> : <Sparkle size={12} weight="fill" />}
             {copiedAi ? "Copied" : "Copy for AI"}
           </button>
           <button
             type="button"
             onClick={copy}
             disabled={!code}
-            className="flex items-center gap-1.5 rounded-md border border-[#1e1e22] bg-[#161618] px-2 py-1 font-mono text-[11px] text-zinc-400 transition-colors hover:text-white disabled:opacity-40"
+            className="flex items-center gap-1.5 rounded-md border border-[#161616] bg-[#161618] px-2 py-1 font-mono text-[11px] text-zinc-400 transition-colors hover:text-white disabled:opacity-40"
           >
-            {copied ? <Check size={12} className="text-[#6cf07f]" weight="bold" /> : <CopySimple size={12} />}
+            {copied ? <Check size={12} className="text-[#00f090]" weight="bold" /> : <CopySimple size={12} />}
             {copied ? "Copied" : "Copy"}
           </button>
         </div>
@@ -110,7 +110,7 @@ export function HornCodeViewer({ slug }: { slug: string }) {
                   </span>
                   <code
                     className={`whitespace-pre px-4 ${
-                      isComment ? "text-[#5f8a67]" : isAttr ? "text-[#c9a26b]" : "text-zinc-300"
+                      isComment ? "text-[#3f7a5c]" : isAttr ? "text-[#c9a26b]" : "text-zinc-300"
                     }`}
                   >
                     {ln || " "}

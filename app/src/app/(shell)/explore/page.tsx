@@ -47,7 +47,7 @@ function ExploreInner() {
           >
             {t.label}
             {tab === t.id && (
-              <span className="absolute inset-x-0 bottom-0 mx-auto h-[3px] w-full rounded-full bg-[#6cf07f]" />
+              <span className="absolute inset-x-0 bottom-0 mx-auto h-[3px] w-full rounded-full bg-[#00f090]" />
             )}
           </button>
         ))}

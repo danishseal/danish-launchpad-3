@@ -55,13 +55,13 @@
   --radius: 0.25rem;
   /* light kept as a defined fallback; the app runs dark-first (pew is dark-only) */
   --background: #ffffff;
-  --foreground: #0a0a0b;
+  --foreground: #000000;
   --card: #ffffff;
-  --card-foreground: #0a0a0b;
+  --card-foreground: #000000;
   --popover: #ffffff;
-  --popover-foreground: #0a0a0b;
+  --popover-foreground: #000000;
   --primary: #ffffff;
-  --primary-foreground: #0a0a0b;
+  --primary-foreground: #000000;
   --secondary: #e4e4e7;
   --secondary-foreground: #18181b;
   --muted: #f1f5f9;
@@ -71,70 +71,75 @@
   --destructive: #ef4444;
   --border: #d4d4d8;
   --input: #ffffff;
-  --ring: #6cf07f;
-  --chart-1: #6cf07f;
+  --ring: #00f090;
+  --chart-1: #00f090;
   --chart-2: #71717a;
   --chart-3: #3f3f46;
   --chart-4: #a1a1aa;
   --chart-5: #ff5b5b;
   --sidebar: #ffffff;
   --sidebar-foreground: #18181b;
-  --sidebar-primary: #0a0a0b;
+  --sidebar-primary: #000000;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #eef2ff;
   --sidebar-accent-foreground: #18181b;
   --sidebar-border: #d4d4d8;
-  --sidebar-ring: #6cf07f;
+  --sidebar-ring: #00f090;
 
-  /* utoken.so palette: purple accent on a #161616 dark base. */
-  --ansem: #6cf07f; /* accent (purple) */
-  --ansem-dim: #7a3a9c;
-  --up: #4ade80;
+  /* All black, with the phosphor green off the logo's CRT. The green was
+     sampled from the artwork rather than picked: #00f090 is the most common
+     glyph pixel in it, a spring green with a slight cyan lean, which is what a
+     P1 phosphor actually looks like. The ground is true #000000 and every
+     surface above it steps up in near-equal increments so cards read as raised
+     without ever going grey. */
+  --ansem: #00f090; /* accent */
+  --ansem-dim: #00693f;
+  --up: #00f090;
   --down: #ff5b5b;
-  --surface-0: #161616; /* page */
-  --surface-1: #1c1c1e; /* raised card */
-  --surface-2: #202022; /* elevated */
-  --surface-3: #26262a; /* controls */
-  --hairline: #2a2a2c;
-  --hairline-strong: #35353a;
+  --surface-0: #000000; /* page */
+  --surface-1: #0a0a0a; /* raised card */
+  --surface-2: #101010; /* elevated */
+  --surface-3: #171717; /* controls */
+  --hairline: #1e1e1e;
+  --hairline-strong: #2c2c2c;
 
   /* Ink for the ported utoken tile-field backdrop, adapted to ANSEM green
-     (108 240 127) from utoken's original 80 245 137. */
-  --hero-ink: 108 240 127;
+     (0 240 144) from utoken's original 80 245 137. */
+  --hero-ink: 0 240 144;
 }
 
 .dark {
-  --background: #161616;
+  --background: #000000;
   --foreground: #fafafa;
-  --card: #1c1c1e;
+  --card: #0a0a0a;
   --card-foreground: #fafafa;
-  --popover: #1c1c1e;
+  --popover: #0a0a0a;
   --popover-foreground: #fafafa;
-  --primary: #6cf07f;
-  --primary-foreground: #0a0a0b;
-  --secondary: #131316;
+  --primary: #00f090;
+  --primary-foreground: #000000;
+  --secondary: #070707;
   --secondary-foreground: #f4f4f5;
-  --muted: #131316;
+  --muted: #070707;
   --muted-foreground: #71717a;
-  --accent: #232326;
+  --accent: #141414;
   --accent-foreground: #f4f4f5;
   --destructive: #ff5b5b;
-  --border: #2a2a2c;
-  --input: #202022;
-  --ring: #6cf07f;
-  --chart-1: #6cf07f;
+  --border: #1e1e1e;
+  --input: #101010;
+  --ring: #00f090;
+  --chart-1: #00f090;
   --chart-2: #71717a;
   --chart-3: #52525b;
   --chart-4: #a1a1aa;
   --chart-5: #ff5b5b;
-  --sidebar: #0a0a0b;
+  --sidebar: #000000;
   --sidebar-foreground: #fafafa;
   --sidebar-primary: #ffffff;
-  --sidebar-primary-foreground: #0a0a0b;
-  --sidebar-accent: #131316;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #070707;
   --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: #1e1e22;
-  --sidebar-ring: #6cf07f;
+  --sidebar-border: #161616;
+  --sidebar-ring: #00f090;
 }
 
 @layer base {
@@ -248,13 +253,13 @@
 
   body {
     @apply text-foreground font-sans;
-    background-color: #161616;
+    background-color: #000000;
   }
 
   /* Ported utoken tile-field backdrop (see TileFieldBackground). Fixed behind
      all content, never intercepts pointer events. */
   .ansem-tilefield {
-    background-color: #161616;
+    background-color: #000000;
   }
   .ansem-tilefield-canvas {
     display: block;
@@ -274,7 +279,7 @@
     height: 620px;
     top: -12%;
     left: 12%;
-    background: #6cf07f;
+    background: #00f090;
     opacity: 0.10;
     animation: ansem-drift-1 34s ease-in-out infinite;
   }
@@ -283,7 +288,7 @@
     height: 540px;
     top: 24%;
     right: 6%;
-    background: #2f7d3f;
+    background: #00693f;
     opacity: 0.11;
     animation: ansem-drift-2 42s ease-in-out infinite;
   }
@@ -292,7 +297,7 @@
     height: 460px;
     bottom: -14%;
     left: 38%;
-    background: #3ad07a;
+    background: #00c477;
     opacity: 0.09;
     animation: ansem-drift-3 38s ease-in-out infinite;
   }
@@ -344,17 +349,17 @@
     height: 16px;
     width: 16px;
     border-radius: 999px;
-    background: #6cf07f;
+    background: #00f090;
     cursor: pointer;
-    border: 2px solid #0a0a0b;
+    border: 2px solid #000000;
   }
   .ansem-range::-moz-range-thumb {
     height: 14px;
     width: 14px;
     border-radius: 999px;
-    background: #6cf07f;
+    background: #00f090;
     cursor: pointer;
-    border: 2px solid #0a0a0b;
+    border: 2px solid #000000;
   }
 
   .fee-range {
@@ -373,13 +378,13 @@
     border-radius: 999px;
     border: 4px solid #06170d;
     background: #eff8f1;
-    box-shadow: 0 0 0 2px #6cf07f, 0 4px 14px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 0 2px #00f090, 0 4px 14px rgba(0, 0, 0, 0.45);
     transition: transform 160ms ease, box-shadow 160ms ease;
   }
   .fee-range:hover::-webkit-slider-thumb,
   .fee-range:focus-visible::-webkit-slider-thumb {
     transform: scale(1.08);
-    box-shadow: 0 0 0 3px rgba(108, 240, 127, 0.55), 0 5px 18px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 0 0 3px rgba(0, 240, 144, 0.55), 0 5px 18px rgba(0, 0, 0, 0.55);
   }
   .fee-range::-moz-range-thumb {
     width: 14px;
@@ -387,7 +392,7 @@
     border-radius: 999px;
     border: 4px solid #06170d;
     background: #eff8f1;
-    box-shadow: 0 0 0 2px #6cf07f, 0 4px 14px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 0 2px #00f090, 0 4px 14px rgba(0, 0, 0, 0.45);
   }
 
   h1,
@@ -402,8 +407,8 @@
   }
 
   ::selection {
-    background: #6cf07f;
-    color: #0a0a0b;
+    background: #00f090;
+    color: #000000;
   }
 }
 
@@ -465,7 +470,7 @@
 /* White primary pill/box button, pew style */
 .btn-white {
   background: #ffffff;
-  color: #0a0a0b;
+  color: #000000;
   font-weight: 700;
   transition: opacity 0.15s ease;
 }
@@ -474,7 +479,7 @@
 }
 
 .hairline {
-  background: #1e1e22;
+  background: #161616;
 }
 
 /* ANSEM green flag badge (mirrors pew's PONS badge) */
@@ -487,9 +492,9 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6cf07f;
-  background: rgba(108, 240, 127, 0.08);
-  border: 1px solid rgba(108, 240, 127, 0.22);
+  color: #00f090;
+  background: rgba(0, 240, 144, 0.08);
+  border: 1px solid rgba(0, 240, 144, 0.22);
   border-radius: 3px;
   padding: 2px 5px;
   line-height: 1;
@@ -534,13 +539,13 @@ input[type="range"].fee-range::-webkit-slider-thumb {
   border-radius: 999px;
   border: 3px solid #06170d;
   background: #eff8f1;
-  box-shadow: 0 0 0 1px #6cf07f, 0 2px 5px rgba(0, 0, 0, 0.34);
+  box-shadow: 0 0 0 1px #00f090, 0 2px 5px rgba(0, 0, 0, 0.34);
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 input[type="range"].fee-range:hover::-webkit-slider-thumb,
 input[type="range"].fee-range:focus-visible::-webkit-slider-thumb {
   transform: scale(1.12);
-  box-shadow: 0 0 0 2px rgba(108, 240, 127, 0.5), 0 3px 8px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 0 2px rgba(0, 240, 144, 0.5), 0 3px 8px rgba(0, 0, 0, 0.45);
 }
 input[type="range"].fee-range::-moz-range-thumb {
   width: 10px;
@@ -548,5 +553,5 @@ input[type="range"].fee-range::-moz-range-thumb {
   border-radius: 999px;
   border: 3px solid #06170d;
   background: #eff8f1;
-  box-shadow: 0 0 0 1px #6cf07f, 0 2px 7px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 0 0 1px #00f090, 0 2px 7px rgba(0, 0, 0, 0.38);
 }

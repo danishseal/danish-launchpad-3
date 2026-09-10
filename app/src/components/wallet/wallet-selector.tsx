@@ -67,7 +67,7 @@ export function WalletSelector({
       <PopoverContent
         side="bottom"
         align="end"
-        className="z-[100] w-[22rem] rounded-2xl border-[#2a2a30] bg-[#131316] p-4 text-zinc-100 shadow-2xl"
+        className="z-[100] w-[22rem] rounded-2xl border-[#2a2a30] bg-[#070707] p-4 text-zinc-100 shadow-2xl"
       >
         <h3 className="text-base font-semibold">Connect a Solana wallet</h3>
         <p className="mb-4 mt-1 text-sm text-zinc-400">

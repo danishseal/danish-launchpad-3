@@ -46,7 +46,7 @@ function Composer({
   }
 
   return (
-    <div className="rounded-xl border border-[var(--hairline)] bg-[#1c1c1e] p-3">
+    <div className="rounded-xl border border-[var(--hairline)] bg-[#0a0a0a] p-3">
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value.slice(0, MAX))}
@@ -61,7 +61,7 @@ function Composer({
           type="button"
           onClick={go}
           disabled={busy || (Boolean(wallet.address) && !text.trim())}
-          className="h-8 rounded-lg bg-[#6cf07f] px-4 text-[13px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-40"
+          className="h-8 rounded-lg bg-[#00f090] px-4 text-[13px] font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-40"
         >
           {busy ? "Signing…" : !wallet.address ? "Connect" : submitLabel}
         </button>
@@ -75,10 +75,10 @@ function Composer({
 function PostRow({ post }: { post: Post }) {
   return (
     <div className="flex gap-3 py-3">
-      <Link href={`/creator/${post.author}`} className="mt-0.5 h-9 w-9 shrink-0 rounded-full bg-[#202022] ring-1 ring-inset ring-white/10" />
+      <Link href={`/creator/${post.author}`} className="mt-0.5 h-9 w-9 shrink-0 rounded-full bg-[#101010] ring-1 ring-inset ring-white/10" />
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <Link href={`/creator/${post.author}`} className="font-mono text-[13px] font-semibold text-zinc-200 hover:text-[#6cf07f]">
+          <Link href={`/creator/${post.author}`} className="font-mono text-[13px] font-semibold text-zinc-200 hover:text-[#00f090]">
             {short(post.author)}
           </Link>
           <span className="font-mono text-[11px] text-zinc-600">{ago(post.createdAt)}</span>
@@ -185,7 +185,7 @@ function SubTabButton({
     >
       {children}
       {active && (
-        <span className="absolute inset-x-2 bottom-0 h-[2px] rounded-full bg-[#6cf07f]" />
+        <span className="absolute inset-x-2 bottom-0 h-[2px] rounded-full bg-[#00f090]" />
       )}
     </button>
   );

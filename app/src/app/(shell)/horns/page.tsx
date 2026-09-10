@@ -22,7 +22,7 @@ export default function HornsPage() {
       {/* Hero */}
       <div className="max-w-3xl">
         <div className="flex items-center gap-2">
-          <span className="font-display text-[12px] font-semibold uppercase tracking-[0.18em] text-[#6cf07f]">
+          <span className="font-display text-[12px] font-semibold uppercase tracking-[0.18em] text-[#00f090]">
             Horns
           </span>
         </div>
@@ -65,7 +65,7 @@ export default function HornsPage() {
                           type="button"
                           onClick={() => setSlug(h.slug)}
                           className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition-colors ${
-                            active ? "bg-[#1c1c1e] ring-1 ring-[#2a2a30]" : "hover:bg-[#161618]"
+                            active ? "bg-[#0a0a0a] ring-1 ring-[#2a2a30]" : "hover:bg-[#161618]"
                           }`}
                         >
                           <HornLogo horn={h} size={30} />
@@ -95,7 +95,7 @@ export default function HornsPage() {
       </div>
 
       {/* Build on it */}
-      <section className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#1e1e22] bg-[#0e0e10]/80 p-5">
+      <section className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#161616] bg-[#0e0e10]/80 p-5">
         <div>
           <h2 className="font-display text-[13px] font-semibold uppercase tracking-[0.12em] text-zinc-200">
             Build on Horns
@@ -146,7 +146,7 @@ function HornLogo({ horn, size }: { horn: Horn; size: number }) {
 
 function HornDetail({ horn }: { horn: Horn }) {
   return (
-    <section className="rounded-2xl border border-[#1e1e22] bg-[#0e0e10]/80 p-5">
+    <section className="rounded-2xl border border-[#161616] bg-[#0e0e10]/80 p-5">
       <div className="flex items-start gap-3">
         <HornLogo horn={horn} size={64} />
         <div className="min-w-0">
@@ -173,14 +173,14 @@ function HornDetail({ horn }: { horn: Horn }) {
       <ul className="mt-4 space-y-2">
         {horn.points.map((p) => (
           <li key={p} className="flex gap-2 text-[13px] leading-5 text-zinc-400">
-            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#6cf07f]" />
+            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#00f090]" />
             {p}
           </li>
         ))}
       </ul>
 
       {/* Concrete example, kept understated. */}
-      <div className="mt-5 rounded-xl border border-[#1e1e22] bg-[#0a0a0b] p-4">
+      <div className="mt-5 rounded-xl border border-[#161616] bg-[#000000] p-4">
         <span className="font-display text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
           Example
         </span>

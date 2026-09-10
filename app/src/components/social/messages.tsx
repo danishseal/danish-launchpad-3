@@ -37,7 +37,7 @@ export function Messages() {
         <button
           type="button"
           onClick={() => void wallet.connect().catch(() => {})}
-          className="mt-1 inline-flex h-9 items-center rounded-lg bg-[#6cf07f] px-4 text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
+          className="mt-1 inline-flex h-9 items-center rounded-lg bg-[#00f090] px-4 text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
         >
           Connect wallet
         </button>
@@ -50,7 +50,7 @@ export function Messages() {
       <h1 className="mb-4 px-1 font-display text-[20px] font-semibold tracking-tight text-white">
         Messages
       </h1>
-      <div className="grid min-h-[70vh] overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[#1c1c1e] md:grid-cols-[300px_minmax(0,1fr)]">
+      <div className="grid min-h-[70vh] overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] md:grid-cols-[300px_minmax(0,1fr)]">
         {/* Inbox pane: full-width on mobile until a thread is open */}
         <div
           className={
@@ -127,7 +127,7 @@ function InboxRow({
         onClick={() => onOpen(thread.peer)}
         className={
           "flex w-full items-center gap-3 border-b border-[var(--hairline)] px-4 py-3 text-left transition-colors " +
-          (active ? "bg-[#232326]" : "hover:bg-[#202022]")
+          (active ? "bg-[#141414]" : "hover:bg-[#101010]")
         }
       >
         <Avatar src={profile.avatar} className="h-10 w-10" iconSize={18} />
@@ -144,7 +144,7 @@ function InboxRow({
               {thread.lastMessage}
             </span>
             {thread.unread > 0 && (
-              <span className="ml-1 inline-flex h-[18px] min-w-[18px] shrink-0 items-center justify-center rounded-full bg-[#6cf07f] px-1 text-[11px] font-bold text-black">
+              <span className="ml-1 inline-flex h-[18px] min-w-[18px] shrink-0 items-center justify-center rounded-full bg-[#00f090] px-1 text-[11px] font-bold text-black">
                 {thread.unread}
               </span>
             )}
@@ -187,7 +187,7 @@ function ThreadPane({ peer, onBack }: { peer: string; onBack: () => void }) {
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-[#202022] hover:text-white md:hidden"
+          className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-[#101010] hover:text-white md:hidden"
           aria-label="Back to inbox"
         >
           <ArrowLeft size={18} weight="bold" />
@@ -219,7 +219,7 @@ function ThreadPane({ peer, onBack }: { peer: string; onBack: () => void }) {
                     className={
                       "max-w-[78%] rounded-2xl px-3.5 py-2 text-[14px] leading-relaxed " +
                       (mine
-                        ? "rounded-br-md bg-[#6cf07f] text-black"
+                        ? "rounded-br-md bg-[#00f090] text-black"
                         : "rounded-bl-md bg-[#26262b] text-zinc-100")
                     }
                     title={new Date(m.createdAt).toLocaleString()}
@@ -251,13 +251,13 @@ function ThreadPane({ peer, onBack }: { peer: string; onBack: () => void }) {
             rows={1}
             maxLength={2000}
             placeholder="Write a message…"
-            className="max-h-32 min-h-[40px] flex-1 resize-none rounded-xl border border-[var(--hairline)] bg-[#161616] px-3 py-2.5 text-[14px] text-zinc-100 placeholder:text-zinc-600 focus:border-[var(--hairline-strong)] focus:outline-none"
+            className="max-h-32 min-h-[40px] flex-1 resize-none rounded-xl border border-[var(--hairline)] bg-[#000000] px-3 py-2.5 text-[14px] text-zinc-100 placeholder:text-zinc-600 focus:border-[var(--hairline-strong)] focus:outline-none"
           />
           <button
             type="button"
             onClick={() => void handleSend()}
             disabled={!draft.trim() || send.isPending}
-            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#6cf07f] text-black transition-opacity hover:opacity-90 disabled:opacity-40"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#00f090] text-black transition-opacity hover:opacity-90 disabled:opacity-40"
             aria-label="Send message"
           >
             <PaperPlaneRight size={18} weight="fill" />

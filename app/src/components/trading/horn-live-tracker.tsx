@@ -44,7 +44,7 @@ type Readout = {
 
 const clamp01 = (v: number) => (v < 0 ? 0 : v > 1 ? 1 : v);
 const pct = (v: number) => `${v.toFixed(2)}%`;
-const ACCENT = "#6cf07f";
+const ACCENT = "#00f090";
 
 // Horns whose fee changes over time get a live graph. Everything else shows its
 // config without a fabricated curve.
@@ -194,7 +194,7 @@ export function HornLiveTracker({ token }: { token: TokenListItem }) {
           <span
             className={`rounded-[4px] border px-2 py-0.5 font-mono text-[10px] ${
               attached
-                ? "border-[#2f7d3f] bg-[#6cf07f]/10 text-[#6cf07f]"
+                ? "border-[#00693f] bg-[#00f090]/10 text-[#00f090]"
                 : "border-[#26262b] text-zinc-500"
             }`}
           >
@@ -206,7 +206,7 @@ export function HornLiveTracker({ token }: { token: TokenListItem }) {
       {attached && readout ? (
         <LiveReadout readout={readout} showGraph={showGraph} />
       ) : token.graduated ? (
-        <div className="mt-3 rounded-[10px] border border-[#1a1a1e] bg-[#0a0a0b] px-4 py-6 text-center">
+        <div className="mt-3 rounded-[10px] border border-[#1a1a1e] bg-[#000000] px-4 py-6 text-center">
           <p className="text-[13px] text-zinc-300">No Horn attached to this pool.</p>
           <p className="mt-1 text-[12px] text-zinc-600">This coin trades on the plain AMM.</p>
         </div>
@@ -220,7 +220,7 @@ export function HornLiveTracker({ token }: { token: TokenListItem }) {
 function LiveReadout({ readout, showGraph }: { readout: Readout; showGraph: boolean }) {
   return (
     <div
-      className={`mt-3 gap-3 rounded-[10px] border border-[#1a1a1e] bg-[#0a0a0b] p-3 ${
+      className={`mt-3 gap-3 rounded-[10px] border border-[#1a1a1e] bg-[#000000] p-3 ${
         showGraph ? "grid sm:grid-cols-[minmax(0,150px)_minmax(0,1fr)]" : "block"
       }`}
     >
@@ -234,10 +234,10 @@ function LiveReadout({ readout, showGraph }: { readout: Readout; showGraph: bool
         <p className="mt-2 text-[11px] leading-4 text-zinc-400">{readout.caption}</p>
         {!showGraph ? (
           <div className="mt-2 flex flex-wrap gap-1.5 font-mono text-[9px] uppercase tracking-[0.1em] text-zinc-500">
-            <span className="rounded border border-[#26262b] bg-[#131316] px-1.5 py-0.5">
+            <span className="rounded border border-[#26262b] bg-[#070707] px-1.5 py-0.5">
               {readout.startLabel}
             </span>
-            <span className="rounded border border-[#26262b] bg-[#131316] px-1.5 py-0.5">
+            <span className="rounded border border-[#26262b] bg-[#070707] px-1.5 py-0.5">
               {readout.endLabel}
             </span>
           </div>
@@ -260,7 +260,7 @@ function LiveReadout({ readout, showGraph }: { readout: Readout; showGraph: bool
 function PendingHorns({ slugs, loading }: { slugs: string[]; loading: boolean }) {
   const metas = slugs.map((s) => hornMeta(s)).filter((h): h is Horn => Boolean(h));
   return (
-    <div className="mt-3 rounded-[10px] border border-[#1a1a1e] bg-[#0a0a0b] p-4">
+    <div className="mt-3 rounded-[10px] border border-[#1a1a1e] bg-[#000000] p-4">
       <p className="text-[12px] leading-5 text-zinc-300">
         These Horns activate when the coin migrates to the AMM.
       </p>
@@ -270,7 +270,7 @@ function PendingHorns({ slugs, loading }: { slugs: string[]; loading: boolean })
             <Link
               key={h.slug}
               href="/horns"
-              className="flex items-center gap-2.5 rounded-lg px-1 py-1 transition-colors hover:bg-[#131316]"
+              className="flex items-center gap-2.5 rounded-lg px-1 py-1 transition-colors hover:bg-[#070707]"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={hornArt(h.slug)} alt="" className="h-8 w-8 shrink-0 object-contain" />
@@ -357,7 +357,7 @@ function TrajectoryTrack({ readout, accent }: { readout: Readout; accent: string
           top: `${(markerY / H) * 100}%`,
           background: accent,
           boxShadow: `0 0 10px ${accent}, 0 0 2px ${accent}`,
-          border: "2px solid #0a0a0b",
+          border: "2px solid #000000",
         }}
       />
     </div>

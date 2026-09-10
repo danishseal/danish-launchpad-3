@@ -95,7 +95,7 @@ export default function TokenDetailPage() {
   if (isLoading) return <TerminalSkeleton />;
   if (error || !token) {
     return (
-      <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-[#0a0a0b] text-red-300">
+      <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-[#000000] text-red-300">
         Token not found
       </div>
     );
@@ -150,7 +150,7 @@ export default function TokenDetailPage() {
                   token.listing.links?.telegram ||
                   token.listing.links?.discord) && (
                   <>
-                    <span className="mx-0.5 h-5 w-px bg-[#1e1e22]" />
+                    <span className="mx-0.5 h-5 w-px bg-[#161616]" />
                     <div className="flex shrink-0 items-center gap-1">
                       <SocialLink href={token.listing.links?.website} label="Website">
                         <GlobeSimple size={15} />
@@ -170,7 +170,7 @@ export default function TokenDetailPage() {
               </div>
               <div className="flex h-5 items-center gap-2 text-[11px] font-medium text-zinc-500">
                 <span className="max-w-40 truncate">{collectibleName}</span>
-                <span className="h-4 w-px bg-[#1e1e22]" />
+                <span className="h-4 w-px bg-[#161616]" />
                 <CopyValue value={token.mint} />
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function TokenDetailPage() {
               onClick={() => setTimeframe(value)}
               className={
                 timeframe === value
-                  ? "rounded-md bg-[#1e1e22] px-2.5 py-1 text-xs font-semibold text-zinc-100"
+                  ? "rounded-md bg-[#161616] px-2.5 py-1 text-xs font-semibold text-zinc-100"
                   : "rounded-md px-2.5 py-1 text-xs font-semibold hover:bg-[#161619] hover:text-zinc-100"
               }
             >
@@ -297,7 +297,7 @@ function TokenInformationPanel({
         onPointerCancel={onResizeEnd}
         className="group flex h-2.5 shrink-0 touch-none cursor-row-resize items-center justify-center"
       >
-        <span className="h-1 w-10 rounded-full bg-[#2a2a30] transition-colors group-hover:bg-zinc-500 group-active:bg-[#6cef4b]" />
+        <span className="h-1 w-10 rounded-full bg-[#2a2a30] transition-colors group-hover:bg-zinc-500 group-active:bg-[#00f090]" />
       </div>
       <section className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl bg-[#17171a]">
       <div className="flex h-10 shrink-0 items-center gap-5 border-b border-[#1a1a1e] bg-[#17171a] px-3">
@@ -381,9 +381,9 @@ function HoldersTable({
     <table className="w-full min-w-[600px] text-[13px]">
       <thead className="sticky top-0 z-10 bg-[#17171a] text-zinc-600">
         <tr>
-          <th className="border-b border-[#1e1e22] px-4 py-2 text-left text-xs font-medium">Trader</th>
-          <th className="border-b border-[#1e1e22] px-4 py-2 text-right text-xs font-medium">Position</th>
-          <th className="border-b border-[#1e1e22] px-4 py-2 text-right text-xs font-medium">Supply</th>
+          <th className="border-b border-[#161616] px-4 py-2 text-left text-xs font-medium">Trader</th>
+          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">Position</th>
+          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">Supply</th>
         </tr>
       </thead>
       <tbody>
@@ -396,15 +396,15 @@ function HoldersTable({
                 <div className="flex items-center gap-2.5">
                   <WalletAvatar address={holder.address} />
                   <div className="flex items-center gap-1.5">
-                    <a href={explorerUrl("address", holder.address)} target="_blank" rel="noreferrer" className="font-mono text-[13px] font-semibold text-zinc-200 hover:text-[#6cef4b]">
+                    <a href={explorerUrl("address", holder.address)} target="_blank" rel="noreferrer" className="font-mono text-[13px] font-semibold text-zinc-200 hover:text-[#00f090]">
                       {short(holder.address)}
                     </a>
                     {tag && (
-                      <span className="rounded-[4px] border border-[#6cf07f]/30 bg-[#6cf07f]/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#9ff5ae]">
+                      <span className="rounded-[4px] border border-[#00f090]/30 bg-[#00f090]/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#6dffbf]">
                         {tag}
                       </span>
                     )}
-                    <a href={solscanUrl("account", holder.address)} target="_blank" rel="noreferrer" title="View on Solscan" className="text-zinc-600 hover:text-[#6cef4b]">
+                    <a href={solscanUrl("account", holder.address)} target="_blank" rel="noreferrer" title="View on Solscan" className="text-zinc-600 hover:text-[#00f090]">
                       <ArrowSquareOut size={11} />
                     </a>
                   </div>
@@ -454,12 +454,12 @@ function TransactionsTable({ trades, symbol, baseLabel }: { trades: TokenTrade[]
     <table className="w-full min-w-[720px] text-[13px]">
       <thead className="sticky top-0 z-10 bg-[#17171a] text-zinc-600">
         <tr>
-          <th className="border-b border-[#1e1e22] px-4 py-2 text-left text-xs font-medium">Time</th>
-          <th className="border-b border-[#1e1e22] px-4 py-2 text-left text-xs font-medium">Type</th>
-          <th className="border-b border-[#1e1e22] px-4 py-2 text-right text-xs font-medium">{baseLabel}</th>
-          <th className="border-b border-[#1e1e22] px-4 py-2 text-right text-xs font-medium">{symbol}</th>
-          <th className="border-b border-[#1e1e22] px-4 py-2 text-left text-xs font-medium">Trader</th>
-          <th className="border-b border-[#1e1e22] px-4 py-2 text-right text-xs font-medium">Txn</th>
+          <th className="border-b border-[#161616] px-4 py-2 text-left text-xs font-medium">Time</th>
+          <th className="border-b border-[#161616] px-4 py-2 text-left text-xs font-medium">Type</th>
+          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">{baseLabel}</th>
+          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">{symbol}</th>
+          <th className="border-b border-[#161616] px-4 py-2 text-left text-xs font-medium">Trader</th>
+          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">Txn</th>
         </tr>
       </thead>
       <tbody>
@@ -469,17 +469,17 @@ function TransactionsTable({ trades, symbol, baseLabel }: { trades: TokenTrade[]
             <tr key={`${trade.tx_hash}-${index}`} className="border-b border-[#17171c] transition-colors last:border-0 hover:bg-[#121217]">
               <td className="whitespace-nowrap px-4 py-2 text-zinc-500">{relativeTime(trade.time)} ago</td>
               <td className="px-4 py-2">
-                <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase ${buy ? "bg-[#0f2e1e] text-[#4ade80]" : "bg-[#3a1418] text-[#f87171]"}`}>
+                <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase ${buy ? "bg-[#0f2e1e] text-[#00f090]" : "bg-[#3a1418] text-[#f87171]"}`}>
                   {trade.action}
                 </span>
               </td>
               <td className="px-4 py-2 text-right text-[13px] font-semibold text-zinc-100">{compact(Number(trade.hodl_amount) / 1_000_000)}</td>
               <td className="px-4 py-2 text-right text-[13px] font-semibold text-zinc-300">{compact(Number(trade.token_amount) / 1_000_000)}</td>
               <td className="px-4 py-2 font-mono text-[13px]">
-                <a href={explorerUrl("address", trade.trader)} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-[#6cef4b]">{short(trade.trader)}</a>
+                <a href={explorerUrl("address", trade.trader)} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-[#00f090]">{short(trade.trader)}</a>
               </td>
               <td className="px-4 py-2 text-right font-mono">
-                <a href={explorerUrl("tx", trade.tx_hash)} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-[#6cef4b]">{short(trade.tx_hash)}</a>
+                <a href={explorerUrl("tx", trade.tx_hash)} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-[#00f090]">{short(trade.tx_hash)}</a>
               </td>
             </tr>
           );
@@ -516,7 +516,7 @@ function StatTile({
       <p className="text-center text-[11px] font-medium text-zinc-500">{label}</p>
       <p
         className={`text-center text-[15px] font-bold leading-5 ${
-          tone == null ? "text-zinc-100" : tone >= 0 ? "text-[#4ade80]" : "text-[#f87171]"
+          tone == null ? "text-zinc-100" : tone >= 0 ? "text-[#00f090]" : "text-[#f87171]"
         }`}
       >
         {value}
@@ -529,7 +529,7 @@ function TokenSummary({ token, price }: { token: TokenListItem; price: number })
   const volumeUsd =
     (Number(token.volume_24h) / 1_000_000) * token.market.solUsd;
   return (
-    <section className="rounded-2xl border border-[#1e1e22] bg-[#131316] px-4 py-3">
+    <section className="rounded-2xl border border-[#161616] bg-[#070707] px-4 py-3">
       <div className="flex items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2.5">
           {token.image ? (
@@ -540,7 +540,7 @@ function TokenSummary({ token, price }: { token: TokenListItem; price: number })
               className="h-9 w-9 shrink-0 rounded-lg object-cover"
             />
           ) : (
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1e1e22] text-sm">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#161616] text-sm">
               {token.symbol?.[0]}
             </span>
           )}
@@ -658,11 +658,11 @@ function Overview({ token, trades }: { token: TokenListItem; trades: TokenTrade[
               className={`h-[46px] rounded-lg border px-1 py-1.5 text-center transition-colors ${
                 active
                   ? "border-[#2a2a30] bg-[#1a1a1e]"
-                  : "border-[#1e1e22] bg-transparent hover:bg-[#131316]"
+                  : "border-[#161616] bg-transparent hover:bg-[#070707]"
               }`}
             >
               <span className="block text-[10px] font-semibold leading-3 text-zinc-400">{item.label}</span>
-              <span className={`mt-0.5 block text-[11px] font-bold leading-4 ${change == null ? "text-zinc-500" : change >= 0 ? "text-[#22c55e]" : "text-[#ff5b35]"}`}>
+              <span className={`mt-0.5 block text-[11px] font-bold leading-4 ${change == null ? "text-zinc-500" : change >= 0 ? "text-[#00f090]" : "text-[#ff5b35]"}`}>
                 {change == null ? "-" : `${change >= 0 ? "▲" : "▼"} ${Math.abs(change).toFixed(2)}%`}
               </span>
             </button>
@@ -686,7 +686,7 @@ function Overview({ token, trades }: { token: TokenListItem; trades: TokenTrade[
         inert={!expanded}
       >
         <div className="min-h-0 overflow-hidden">
-          <div className="border-t border-[#1e1e22] pt-3">
+          <div className="border-t border-[#161616] pt-3">
             <div className="flex flex-wrap gap-1.5">
               <OverviewLink href={token.listing.links?.website} label="Website">
                 <GlobeSimple size={12} />
@@ -794,7 +794,7 @@ function SplitMetric({
         <span>{right}</span>
       </div>
       <div className="mt-1.5 flex h-1.5 gap-1 overflow-hidden rounded-full">
-        <span className="rounded-full bg-[#22c55e]" style={{ width: `${leftWidth}%` }} />
+        <span className="rounded-full bg-[#00f090]" style={{ width: `${leftWidth}%` }} />
         <span className="flex-1 rounded-full bg-[#ff5b35]" />
       </div>
     </div>
@@ -844,7 +844,7 @@ function CopyValue({ value }: { value: string }) {
     <button
       type="button"
       onClick={copy}
-      className="group inline-flex max-w-full items-center gap-1.5 font-medium text-zinc-100 transition-colors hover:text-[#8ff573]"
+      className="group inline-flex max-w-full items-center gap-1.5 font-medium text-zinc-100 transition-colors hover:text-[#6dffbf]"
       aria-label={`Copy ${value}`}
       title={value}
     >
@@ -854,7 +854,7 @@ function CopyValue({ value }: { value: string }) {
       ) : (
         <CopySimple
           size={15}
-          className="shrink-0 text-zinc-500 transition-colors group-hover:text-[#8ff573]"
+          className="shrink-0 text-zinc-500 transition-colors group-hover:text-[#6dffbf]"
         />
       )}
     </button>
@@ -920,9 +920,9 @@ function relativeTime(value: string): string {
 
 function TerminalSkeleton() {
   return (
-    <div className="grid min-h-[calc(100vh-64px)] bg-[#0a0a0b] xl:grid-cols-[minmax(0,1fr)_360px]">
-      <Skeleton className="h-full rounded-none bg-[#131316]" />
-      <Skeleton className="h-full rounded-none bg-[#131316]" />
+    <div className="grid min-h-[calc(100vh-64px)] bg-[#000000] xl:grid-cols-[minmax(0,1fr)_360px]">
+      <Skeleton className="h-full rounded-none bg-[#070707]" />
+      <Skeleton className="h-full rounded-none bg-[#070707]" />
     </div>
   );
 }

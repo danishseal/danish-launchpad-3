@@ -45,16 +45,16 @@ export default function YourTokensPage() {
       {holdings.data && holdings.data.length > 0 && (
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {holdings.data.map((token) => (
-            <Link key={token.mint} href={`/token/${token.market}`} className="group rounded-[16px] border border-[#1e1e22] bg-[#131316] p-4 transition-colors hover:border-[#57575e]">
+            <Link key={token.mint} href={`/token/${token.market}`} className="group rounded-[16px] border border-[#161616] bg-[#070707] p-4 transition-colors hover:border-[#57575e]">
               <div className="flex items-center gap-3">
                 <AssetImage image={token.image} name={token.name} fallback={token.symbol.slice(0, 1)} />
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-medium">{token.name}</p>
                   <p className="mt-1 truncate text-xs text-zinc-500">{token.symbol}</p>
                 </div>
-                <ArrowUpRight size={16} className="text-zinc-600 transition-colors group-hover:text-[#6cef4b]" />
+                <ArrowUpRight size={16} className="text-zinc-600 transition-colors group-hover:text-[#00f090]" />
               </div>
-              <div className="mt-5 border-t border-[#1e1e22] pt-4">
+              <div className="mt-5 border-t border-[#161616] pt-4">
                 <p className="text-xs text-zinc-500">Balance</p>
                 <p className="mt-1 text-lg font-medium">{formatBalance(token.balance)} {token.symbol}</p>
               </div>

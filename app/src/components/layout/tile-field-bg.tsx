@@ -135,7 +135,7 @@ function buildField(canvas: HTMLCanvasElement): Field | null {
   }
 
   const ink = getComputedStyle(canvas).getPropertyValue("--hero-ink").trim();
-  const color = `rgb(${ink || "108 240 127"})`;
+  const color = `rgb(${ink || "0 240 144"})`;
 
   context.clearRect(0, 0, bounds.width, bounds.height);
   context.fillStyle = color;
@@ -376,7 +376,7 @@ export function TileFieldBackground() {
   }, []);
 
   // Solid background everywhere (per user): the animated tile field is disabled.
-  // The effect above no-ops without a canvas, and the body's solid #161616 shows
+  // The effect above no-ops without a canvas, and the body's solid #000000 shows
   // through on every page. Kept as a component so the layout import stays stable.
   return null;
 }

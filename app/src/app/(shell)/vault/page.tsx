@@ -79,7 +79,7 @@ export default function VaultPage() {
           href={explorerUrl("tx", hash)}
           target="_blank"
           rel="noreferrer"
-          className="font-mono underline decoration-dotted underline-offset-2 hover:text-[#6cf07f]"
+          className="font-mono underline decoration-dotted underline-offset-2 hover:text-[#00f090]"
         >
           {hash.slice(0, 10)}… ↗
         </a>
@@ -146,13 +146,13 @@ export default function VaultPage() {
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="flex items-center gap-2 font-display text-[24px] font-semibold tracking-tight text-white">
-            <Lightning size={20} weight="fill" className="text-[#6cf07f]" />
+            <Lightning size={20} weight="fill" className="text-[#00f090]" />
             Horn Vault
           </h1>
           <p className="mt-1 max-w-lg text-[13px] leading-5 text-zinc-400">
             Stake ANSEM or CHANSE into the Vault to earn a cut of every graduated
             pool's swap fees. Two sinks, both denoms, rewards accrue per block.{" "}
-            <Link href="/horns" className="text-white underline underline-offset-4 hover:text-[#6cf07f]">
+            <Link href="/horns" className="text-white underline underline-offset-4 hover:text-[#00f090]">
               How Horns work
             </Link>
           </p>
@@ -176,13 +176,13 @@ export default function VaultPage() {
               key={s}
               type="button"
               onClick={() => setSink(s)}
-              className={`rounded-xl border bg-[#1c1c1e] p-4 text-left transition-colors ${
-                sink === s ? "border-[#6cf07f]" : "border-[var(--hairline)] hover:border-zinc-500"
+              className={`rounded-xl border bg-[#0a0a0a] p-4 text-left transition-colors ${
+                sink === s ? "border-[#00f090]" : "border-[var(--hairline)] hover:border-zinc-500"
               }`}
             >
               <div className="flex items-center justify-between">
                 <span className="font-display text-[15px] font-semibold text-white">{LABEL[s]} sink</span>
-                <span className="rounded-[3px] bg-[#2a2a2c] px-1.5 py-0.5 font-mono text-[9px] uppercase text-zinc-500">
+                <span className="rounded-[3px] bg-[#1e1e1e] px-1.5 py-0.5 font-mono text-[9px] uppercase text-zinc-500">
                   {s}
                 </span>
               </div>
@@ -197,7 +197,7 @@ export default function VaultPage() {
       </div>
 
       {/* Stake / claim panel for the selected sink */}
-      <div className="rounded-2xl border border-[var(--hairline)] bg-[#1c1c1e] p-5">
+      <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] p-5">
         <div className="flex items-center justify-between">
           <h2 className="font-display text-[15px] font-semibold text-white">{label} sink</h2>
           <div className="flex items-center gap-3">
@@ -208,7 +208,7 @@ export default function VaultPage() {
                 onClick={() => setAction(a)}
                 className={`pb-1 font-display text-[12px] font-semibold uppercase tracking-[0.1em] transition-colors ${
                   action === a
-                    ? "border-b-2 border-[#6cf07f] text-white"
+                    ? "border-b-2 border-[#00f090] text-white"
                     : "border-b-2 border-transparent text-zinc-500 hover:text-zinc-300"
                 }`}
               >
@@ -225,7 +225,7 @@ export default function VaultPage() {
             inputMode="decimal"
             placeholder="0.0"
             disabled={!canAct}
-            className="mt-4 h-11 w-full rounded-lg border border-[var(--hairline)] bg-[#202022] px-3.5 font-mono text-[15px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-zinc-500 disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-4 h-11 w-full rounded-lg border border-[var(--hairline)] bg-[#101010] px-3.5 font-mono text-[15px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-zinc-500 disabled:cursor-not-allowed disabled:opacity-60"
           />
 
           {live && !wallet.connected ? (
@@ -240,8 +240,8 @@ export default function VaultPage() {
               title={live ? undefined : "Staking activates with the Horns program"}
               className={`mt-3 h-11 w-full rounded-lg font-display text-[13px] font-semibold uppercase tracking-[0.1em] ${
                 canAct && amountValid && !busy
-                  ? "bg-[#6cf07f] text-black hover:opacity-90"
-                  : "cursor-not-allowed bg-[#2a2a2c] text-zinc-500"
+                  ? "bg-[#00f090] text-black hover:opacity-90"
+                  : "cursor-not-allowed bg-[#1e1e1e] text-zinc-500"
               }`}
             >
               {busy
@@ -254,7 +254,7 @@ export default function VaultPage() {
         </div>
 
         {/* Pending rewards */}
-        <div className="mt-4 rounded-xl border border-[var(--hairline)] bg-[#161616] p-3.5">
+        <div className="mt-4 rounded-xl border border-[var(--hairline)] bg-[#000000] p-3.5">
           <div className="flex items-center justify-between">
             <p className="text-[10px] uppercase tracking-[0.14em] text-zinc-600">Pending rewards</p>
             <button
@@ -263,7 +263,7 @@ export default function VaultPage() {
               disabled={!canAct || busy}
               className={`h-7 rounded-[4px] border border-[var(--hairline)] px-3 font-display text-[10px] font-semibold uppercase tracking-[0.1em] ${
                 canAct && !busy
-                  ? "text-[#6cf07f] hover:border-[#6cf07f]"
+                  ? "text-[#00f090] hover:border-[#00f090]"
                   : "cursor-not-allowed text-zinc-600"
               }`}
             >
@@ -296,7 +296,7 @@ function Stat({ label, value, accent = false }: { label: string; value: string; 
   return (
     <div>
       <p className="text-[9px] uppercase tracking-[0.14em] text-zinc-600">{label}</p>
-      <p className={`mono mt-0.5 text-[13px] font-semibold ${accent ? "text-[#6cf07f]" : "text-zinc-100"}`}>{value}</p>
+      <p className={`mono mt-0.5 text-[13px] font-semibold ${accent ? "text-[#00f090]" : "text-zinc-100"}`}>{value}</p>
     </div>
   );
 }

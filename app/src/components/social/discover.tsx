@@ -102,7 +102,7 @@ function SuggestedRow({ profile }: { profile: SuggestedProfile }) {
           {profile.verified && (
             <span
               title="Verified"
-              className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#6cf07f] font-mono text-[9px] font-bold leading-none text-black"
+              className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#00f090] font-mono text-[9px] font-bold leading-none text-black"
             >
               ✓
             </span>
@@ -135,7 +135,7 @@ export function WhoToFollow({ limit = 12, title }: { limit?: number; title?: str
       ) : !data || data.length === 0 ? (
         <Empty label="No suggestions yet." hint="Once people follow each other, they show up here." />
       ) : (
-        <div className="divide-y divide-[var(--hairline)] overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#1c1c1e]">
+        <div className="divide-y divide-[var(--hairline)] overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#0a0a0a]">
           {data.map((p) => (
             <SuggestedRow key={p.address} profile={p} />
           ))}
@@ -169,7 +169,7 @@ export function DiscoverTrending() {
             type="button"
             onClick={() => setWindow(w)}
             className={`rounded-full px-3 py-1 font-sans text-[12px] font-medium transition-colors ${
-              window === w ? "bg-[#232326] text-white" : "text-zinc-500 hover:text-zinc-300"
+              window === w ? "bg-[#141414] text-white" : "text-zinc-500 hover:text-zinc-300"
             }`}
           >
             {WINDOW_LABELS[w]}
@@ -212,16 +212,16 @@ function TagCloud({ onPick }: { onPick: (tag: string) => void }) {
     return <Empty label="No trending tags yet." hint="Add a #hashtag to a post to start one." />;
   }
   return (
-    <div className="overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#1c1c1e]">
+    <div className="overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#0a0a0a]">
       {tags.map((t, i) => (
         <button
           key={t.tag}
           type="button"
           onClick={() => onPick(t.tag)}
-          className="flex w-full items-center gap-3 border-b border-[var(--hairline)] px-4 py-3 text-left transition-colors last:border-b-0 hover:bg-[#232326]"
+          className="flex w-full items-center gap-3 border-b border-[var(--hairline)] px-4 py-3 text-left transition-colors last:border-b-0 hover:bg-[#141414]"
         >
           <span className="w-5 shrink-0 text-center font-mono text-[12px] text-zinc-600">{i + 1}</span>
-          <Hash size={16} weight="bold" className="shrink-0 text-[#6cf07f]" />
+          <Hash size={16} weight="bold" className="shrink-0 text-[#00f090]" />
           <span className="min-w-0 flex-1 truncate font-display text-[14px] font-semibold text-zinc-100">
             #{t.tag}
           </span>
@@ -252,7 +252,7 @@ function TagFeed({
         <button
           type="button"
           onClick={onBack}
-          className="rounded-md px-2 py-1 font-sans text-[12px] text-zinc-500 transition-colors hover:bg-[#232326] hover:text-zinc-300"
+          className="rounded-md px-2 py-1 font-sans text-[12px] text-zinc-500 transition-colors hover:bg-[#141414] hover:text-zinc-300"
         >
           ← Tags
         </button>
@@ -280,15 +280,15 @@ export function TrendingTagsStrip() {
   const list = useMemo(() => tags ?? [], [tags]);
   if (list.length === 0) return null;
   return (
-    <div className="mb-4 flex items-center gap-2 overflow-x-auto rounded-xl border border-[var(--hairline)] bg-[#1c1c1e] px-3 py-2.5">
+    <div className="mb-4 flex items-center gap-2 overflow-x-auto rounded-xl border border-[var(--hairline)] bg-[#0a0a0a] px-3 py-2.5">
       <span className="flex shrink-0 items-center gap-1 font-sans text-[12px] font-semibold text-zinc-400">
-        <TrendUp size={14} weight="bold" className="text-[#6cf07f]" /> Trending
+        <TrendUp size={14} weight="bold" className="text-[#00f090]" /> Trending
       </span>
       {list.map((t) => (
         <Link
           key={t.tag}
           href={`/explore?tab=tags&tag=${encodeURIComponent(t.tag)}`}
-          className="shrink-0 rounded-full border border-[var(--hairline)] px-2.5 py-1 font-mono text-[12px] text-[#6cf07f] transition-colors hover:bg-[#232326]"
+          className="shrink-0 rounded-full border border-[var(--hairline)] px-2.5 py-1 font-mono text-[12px] text-[#00f090] transition-colors hover:bg-[#141414]"
         >
           #{t.tag}
         </Link>
