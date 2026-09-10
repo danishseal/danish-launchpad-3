@@ -16,6 +16,12 @@ import { robinhoodChain, RPC_PATH } from "./chain";
 export const fourthStreetWagmiConfig = createConfig({
   chains: [robinhoodChain],
   connectors: [injected()],
-  transports: { [robinhoodChain.id]: http(RPC_PATH) },
+  // batch.multicall makes viem coalesce reads issued in the same tick into one
+  // aggregate3 call. wait is deliberately non-zero so a page that mounts several
+  // hooks at once produces one request rather than one per hook.
+  transports: {
+    [robinhoodChain.id]: http(RPC_PATH, { batch: { wait: 16 } }),
+  },
+  batch: { multicall: { wait: 16, batchSize: 2048 } },
   ssr: true,
 });

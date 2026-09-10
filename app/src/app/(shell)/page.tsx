@@ -1,7 +1,7 @@
 "use client";
 
-import { UtokenHome } from "@/components/utoken/home";
+import { FourthStreetHome } from "@/components/fourthstreet/home";
 
 export default function HomePage() {
-  return <UtokenHome />;
+  return <FourthStreetHome />;
 }

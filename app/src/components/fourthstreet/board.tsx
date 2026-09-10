@@ -102,12 +102,16 @@ export function FourthStreetBoard() {
                 <div className="mt-4">
                   <div className="h-1 overflow-hidden rounded-full bg-[var(--surface-3)]">
                     <div
-                      className="h-full bg-[var(--ansem)]"
+                      className={`h-full ${p >= 1 ? "bg-[var(--down)]" : "bg-[var(--ansem)]"}`}
                       style={{ width: `${Math.min(100, Math.max(0, p * 100))}%` }}
                     />
                   </div>
                   <div className="mt-1.5 flex justify-between text-[11px] text-zinc-500">
-                    <span>{(p * 100).toFixed(1)}% bonded</span>
+                    <span className={p >= 1 ? "text-[var(--down)]" : undefined}>
+                      {p >= 1
+                        ? `past target, not flipped${r.gradArmed ? ", armed" : ""}`
+                        : `${(p * 100).toFixed(1)}% bonded`}
+                    </span>
                     <span>
                       {compact(wadToNumber(r.uWad))} / {compact(wadToNumber(r.targetWad))}
                     </span>

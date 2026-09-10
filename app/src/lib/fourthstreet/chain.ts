@@ -27,4 +27,14 @@ export const robinhoodChain = defineChain({
   name: "Robinhood Chain",
   nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
   rpcUrls: { default: { http: [RPC_PATH] } },
+  /**
+   * Multicall3 at its canonical address, codesize 3808 on 4663, verified rather than
+   * assumed. Without it the board fires one eth_call per read: enumerating every
+   * launch across four launchers and asking four hooks about each is ~79 calls in a
+   * burst, and enough of them were dropped that eight launches silently vanished from
+   * the page. Aggregated they are a single call.
+   */
+  contracts: {
+    multicall3: { address: "0xcA11bde05977b3631167028862bE2a173976CA11" },
+  },
 });

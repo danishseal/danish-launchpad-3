@@ -384,3 +384,151 @@ export function useLaunch(token: Address | undefined) {
     liquidity: pool.data?.[1]?.result as bigint | undefined,
   };
 }
+
+/**
+ * Every launch the protocol has ever made, across the current launcher AND the
+ * retired ones, each row carrying the hook that actually holds it.
+ *
+ * WHY THIS IS SEPARATE FROM useBoard. The board shows the protocol as it stands
+ * and legacy deployments do not belong on it. But those launches are still live
+ * and still tradeable, so an archive that says so is honest where hiding them
+ * entirely is not. Callers must keep the two apart rather than concatenating them.
+ */
+export function useAllLaunches() {
+  const { stack, isLoading: stackLoading, error } = useStack();
+
+  const launchers = useMemo<Address[]>(
+    () => (stack ? [stack.launcher, ...stack.retiredLaunchers] : []),
+    [stack],
+  );
+
+  const counts = useReadContracts({
+    contracts: launchers.map((l) => ({
+      address: l,
+      abi: launcherAbi,
+      functionName: "launchCount" as const,
+      chainId: ROBINHOOD_CHAIN_ID,
+    })),
+    query: { enabled: launchers.length > 0 },
+  });
+
+  // One (launcher, index) pair per launch, flattened so a single multicall covers
+  // every deployment rather than one round trip each.
+  const slots = useMemo(() => {
+    const out: { launcher: Address; i: number; current: boolean }[] = [];
+    (counts.data ?? []).forEach((row, li) => {
+      const n = Number((row?.result as bigint | undefined) ?? 0n);
+      for (let i = 0; i < n; i++) out.push({ launcher: launchers[li], i, current: li === 0 });
+    });
+    return out;
+  }, [counts.data, launchers]);
+
+  const ids = useReadContracts({
+    contracts: slots.map((s) => ({
+      address: s.launcher,
+      abi: launcherAbi,
+      functionName: "launchAt" as const,
+      args: [BigInt(s.i)] as const,
+      chainId: ROBINHOOD_CHAIN_ID,
+    })),
+    query: { enabled: slots.length > 0 },
+  });
+
+  const hooks = useMemo<Address[]>(
+    () => (stack ? [stack.hook, ...stack.retiredHooks] : []),
+    [stack],
+  );
+
+  // Every (poolId, hook) pair. The pool belongs to whichever hook answers with a
+  // record naming a token, which is why this cannot just ask the current hook.
+  const pairs = useMemo(() => {
+    const out: { poolId: `0x${string}`; hook: Address; current: boolean }[] = [];
+    (ids.data ?? []).forEach((row, i) => {
+      const id = row?.result as `0x${string}` | undefined;
+      if (!id) return;
+      for (const h of hooks) out.push({ poolId: id, hook: h, current: slots[i]?.current ?? false });
+    });
+    return out;
+  }, [ids.data, hooks, slots]);
+
+  const records = useReadContracts({
+    contracts: pairs.map((p) => ({
+      address: p.hook,
+      abi: hookAbi,
+      functionName: "launchOf" as const,
+      args: [p.poolId] as const,
+      chainId: ROBINHOOD_CHAIN_ID,
+    })),
+    query: { enabled: pairs.length > 0 },
+  });
+
+  const partial = useMemo<LaunchRow[]>(() => {
+    const seen = new Set<string>();
+    const out: LaunchRow[] = [];
+    (records.data ?? []).forEach((row, i) => {
+      const d = row?.result as [Record<string, unknown>, readonly bigint[]] | undefined;
+      const L = d?.[0];
+      const token = L?.token as Address | undefined;
+      if (!L || !token || token === ZERO_ADDRESS) return;
+      const p = pairs[i];
+      if (seen.has(p.poolId)) return;
+      seen.add(p.poolId);
+      out.push({
+        poolId: p.poolId,
+        token,
+        underlying: L.underlying as Address,
+        mode: Number(L.mode),
+        uWad: L.uWad as bigint,
+        tRes: L.tRes as bigint,
+        supply: L.supply as bigint,
+        vWad: L.vWad as bigint,
+        targetWad: L.targetWad as bigint,
+        baseFeePpm: Number(L.baseFeePpm),
+        traitCount: Number(L.traitCount),
+        traits: d?.[1] ?? [],
+        gradArmed: Boolean(L.gradArmed),
+        launchedAt: Number(L.launchedAt),
+        hook: p.hook,
+      });
+    });
+    return out;
+  }, [records.data, pairs]);
+
+  const meta = useReadContracts({
+    contracts: partial.flatMap((r) => [
+      { address: r.token, abi: erc20Abi, functionName: "name" as const, chainId: ROBINHOOD_CHAIN_ID },
+      { address: r.token, abi: erc20Abi, functionName: "symbol" as const, chainId: ROBINHOOD_CHAIN_ID },
+      { address: r.underlying, abi: erc20Abi, functionName: "symbol" as const, chainId: ROBINHOOD_CHAIN_ID },
+    ]),
+    query: { enabled: partial.length > 0 },
+  });
+
+  const all = useMemo<LaunchRow[]>(() => {
+    const m = meta.data ?? [];
+    return partial.map((r, i) => ({
+      ...r,
+      name: m[i * 3]?.result as string | undefined,
+      symbol: m[i * 3 + 1]?.result as string | undefined,
+      underlyingSymbol: m[i * 3 + 2]?.result as string | undefined,
+    }));
+  }, [partial, meta.data]);
+
+  const currentIds = useMemo(() => {
+    const s = new Set<string>();
+    (ids.data ?? []).forEach((row, i) => {
+      const id = row?.result as `0x${string}` | undefined;
+      if (id && slots[i]?.current) s.add(id);
+    });
+    return s;
+  }, [ids.data, slots]);
+
+  return {
+    stack,
+    error,
+    isLoading: stackLoading || counts.isLoading || ids.isLoading || records.isLoading,
+    /** Launches made by the launcher the Registry points at today. */
+    current: all.filter((r) => currentIds.has(r.poolId)),
+    /** Still live, still tradeable, made by a deployment that has been replaced. */
+    retired: all.filter((r) => !currentIds.has(r.poolId)),
+  };
+}
