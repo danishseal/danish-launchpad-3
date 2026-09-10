@@ -97,11 +97,11 @@
   --up: #00f090;
   --down: #ff5b5b;
   --surface-0: #000000; /* page */
-  --surface-1: #0a0a0a; /* raised card */
-  --surface-2: #101010; /* elevated */
-  --surface-3: #171717; /* controls */
-  --hairline: #1e1e1e;
-  --hairline-strong: #2c2c2c;
+  --surface-1: #030806; /* raised card */
+  --surface-2: #061109; /* elevated */
+  --surface-3: #0b1b13; /* controls */
+  --hairline: #123021;
+  --hairline-strong: #1d4a33;
 
   /* Ink for the ported utoken tile-field backdrop, adapted to ANSEM green
      (0 240 144) from utoken's original 80 245 137. */
@@ -111,21 +111,21 @@
 .dark {
   --background: #000000;
   --foreground: #fafafa;
-  --card: #0a0a0a;
+  --card: #030806;
   --card-foreground: #fafafa;
-  --popover: #0a0a0a;
+  --popover: #030806;
   --popover-foreground: #fafafa;
   --primary: #00f090;
   --primary-foreground: #000000;
-  --secondary: #070707;
+  --secondary: #020604;
   --secondary-foreground: #f4f4f5;
-  --muted: #070707;
+  --muted: #020604;
   --muted-foreground: #71717a;
-  --accent: #141414;
+  --accent: #08160f;
   --accent-foreground: #f4f4f5;
   --destructive: #ff5b5b;
-  --border: #1e1e1e;
-  --input: #101010;
+  --border: #123021;
+  --input: #061109;
   --ring: #00f090;
   --chart-1: #00f090;
   --chart-2: #71717a;
@@ -136,9 +136,9 @@
   --sidebar-foreground: #fafafa;
   --sidebar-primary: #ffffff;
   --sidebar-primary-foreground: #000000;
-  --sidebar-accent: #070707;
+  --sidebar-accent: #020604;
   --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: #161616;
+  --sidebar-border: #040d09;
   --sidebar-ring: #00f090;
 }
 
@@ -479,7 +479,7 @@
 }
 
 .hairline {
-  background: #161616;
+  background: #040d09;
 }
 
 /* ANSEM green flag badge (mirrors pew's PONS badge) */

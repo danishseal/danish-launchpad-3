@@ -56,7 +56,7 @@ export function AccountDisplay({
           variant="outline"
           aria-label={`Wallet ${truncateAddress(address)}`}
           className={cn(
-            "min-w-0 max-w-full overflow-hidden border-[#161616] bg-[#1a1a1e] text-zinc-100 hover:border-[#3f3f46] hover:bg-[#161616] hover:text-white",
+            "min-w-0 max-w-full overflow-hidden border-[#040d09] bg-[#1a1a1e] text-zinc-100 hover:border-[#3f3f46] hover:bg-[#040d09] hover:text-white",
             compact ? "size-10 px-0" : "w-full px-3 font-mono text-sm",
             className,
           )}

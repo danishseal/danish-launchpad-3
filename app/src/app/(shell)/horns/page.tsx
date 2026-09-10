@@ -65,7 +65,7 @@ export default function HornsPage() {
                           type="button"
                           onClick={() => setSlug(h.slug)}
                           className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition-colors ${
-                            active ? "bg-[#0a0a0a] ring-1 ring-[#2a2a30]" : "hover:bg-[#161618]"
+                            active ? "bg-[#030806] ring-1 ring-[#2a2a30]" : "hover:bg-[#161618]"
                           }`}
                         >
                           <HornLogo horn={h} size={30} />
@@ -95,7 +95,7 @@ export default function HornsPage() {
       </div>
 
       {/* Build on it */}
-      <section className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#161616] bg-[#0e0e10]/80 p-5">
+      <section className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#040d09] bg-[#0e0e10]/80 p-5">
         <div>
           <h2 className="font-display text-[13px] font-semibold uppercase tracking-[0.12em] text-zinc-200">
             Build on Horns
@@ -146,7 +146,7 @@ function HornLogo({ horn, size }: { horn: Horn; size: number }) {
 
 function HornDetail({ horn }: { horn: Horn }) {
   return (
-    <section className="rounded-2xl border border-[#161616] bg-[#0e0e10]/80 p-5">
+    <section className="rounded-2xl border border-[#040d09] bg-[#0e0e10]/80 p-5">
       <div className="flex items-start gap-3">
         <HornLogo horn={horn} size={64} />
         <div className="min-w-0">
@@ -180,7 +180,7 @@ function HornDetail({ horn }: { horn: Horn }) {
       </ul>
 
       {/* Concrete example, kept understated. */}
-      <div className="mt-5 rounded-xl border border-[#161616] bg-[#000000] p-4">
+      <div className="mt-5 rounded-xl border border-[#040d09] bg-[#000000] p-4">
         <span className="font-display text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
           Example
         </span>

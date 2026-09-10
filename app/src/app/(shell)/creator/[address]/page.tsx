@@ -176,7 +176,7 @@ export default function CreatorPage() {
             // eslint-disable-next-line @next/next/no-img-element
             <img src={bannerImage} alt="" className="h-full w-full object-cover" />
           ) : (
-            <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#0a0a0a] to-[#000000]" />
+            <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#030806] to-[#000000]" />
           )}
         </div>
 
@@ -184,7 +184,7 @@ export default function CreatorPage() {
             page-colored ring so it reads as a clean cutout, plus the actions. */}
         <div className="px-1">
           <div className="flex items-end justify-between">
-            <div className="relative z-10 -mt-14 ml-4 h-28 w-28 shrink-0 overflow-hidden rounded-full bg-[#0a0a0a] ring-[6px] ring-[#000000] sm:-mt-16 sm:ml-6 sm:h-32 sm:w-32">
+            <div className="relative z-10 -mt-14 ml-4 h-28 w-28 shrink-0 overflow-hidden rounded-full bg-[#030806] ring-[6px] ring-[#000000] sm:-mt-16 sm:ml-6 sm:h-32 sm:w-32">
               {avatarImage ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={avatarImage} alt="" className="h-full w-full object-cover" />
@@ -198,7 +198,7 @@ export default function CreatorPage() {
               <button
                 type="button"
                 onClick={handleShare}
-                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 text-[13px] font-medium text-zinc-300 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
+                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[var(--hairline)] bg-[#061109] px-3 text-[13px] font-medium text-zinc-300 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
               >
                 {shared ? (
                   <>
@@ -222,7 +222,7 @@ export default function CreatorPage() {
                 <>
                   <Link
                     href={`/messages?peer=${encodeURIComponent(address)}`}
-                    className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 text-[13px] font-medium text-zinc-300 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
+                    className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[var(--hairline)] bg-[#061109] px-3 text-[13px] font-medium text-zinc-300 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
                   >
                     <ChatCircle size={14} weight="bold" /> Message
                   </Link>
@@ -332,7 +332,7 @@ export default function CreatorPage() {
         {/* Content: tabs fill the main column, stats sit in a sidebar */}
         <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
         {/* Tabs */}
-        <div className="order-2 min-w-0 self-start rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] lg:order-1">
+        <div className="order-2 min-w-0 self-start rounded-2xl border border-[var(--hairline)] bg-[#030806] lg:order-1">
           <div className="flex items-center border-b border-[var(--hairline)] px-2">
             {(["posts", "launches", "holdings", "activity"] as Tab[]).map((t) => (
               <button
@@ -379,7 +379,7 @@ export default function CreatorPage() {
                       href={`/token/${h.market}`}
                       className="group flex items-center gap-3 py-2.5"
                     >
-                      <div className="h-9 w-9 shrink-0 overflow-hidden rounded-[6px] border border-[var(--hairline)] bg-[#101010]">
+                      <div className="h-9 w-9 shrink-0 overflow-hidden rounded-[6px] border border-[var(--hairline)] bg-[#061109]">
                         {h.image ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={h.image} alt="" className="h-full w-full object-cover" />

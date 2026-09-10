@@ -51,7 +51,7 @@ export function TokenSearch() {
         placeholder="search coins..."
         className="h-9 w-full rounded-[4px] border border-[#1a1a1e] bg-[#101012] pl-9 pr-9 text-[13px] text-zinc-100 placeholder:text-zinc-600 focus:border-[#2a2a30] focus:outline-none"
       />
-      <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 rounded-[3px] border border-[#161616] bg-[#161619] px-1.5 py-0.5 font-mono text-[10px] text-zinc-600">
+      <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 rounded-[3px] border border-[#040d09] bg-[#161619] px-1.5 py-0.5 font-mono text-[10px] text-zinc-600">
         /
       </span>
       {open && results.length > 0 && (
@@ -61,7 +61,7 @@ export function TokenSearch() {
               key={t.address}
               href={`/token/${t.address}`}
               onClick={() => setOpen(false)}
-              className="flex items-center gap-3 px-3 py-2.5 transition-colors hover:bg-[#070707]"
+              className="flex items-center gap-3 px-3 py-2.5 transition-colors hover:bg-[#020604]"
             >
               {t.image ? (
                 // eslint-disable-next-line @next/next/no-img-element

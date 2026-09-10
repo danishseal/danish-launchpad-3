@@ -168,7 +168,7 @@ export function Avatar({
 }) {
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#101010] ring-1 ring-inset ring-white/10 ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#061109] ring-1 ring-inset ring-white/10 ${className}`}
     >
       {src ? (
         // eslint-disable-next-line @next/next/no-img-element
@@ -208,7 +208,7 @@ export function TokenPreviewBanner({
 
   const inner = (
     <div className="flex items-center gap-2.5 rounded-xl border border-[var(--hairline)] bg-[#000000] px-3 py-2 transition-colors hover:border-[var(--hairline-strong)]">
-      <div className={`${dim} shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]`}>
+      <div className={`${dim} shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#061109]`}>
         {token?.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={token.image} alt="" className="h-full w-full object-cover" />

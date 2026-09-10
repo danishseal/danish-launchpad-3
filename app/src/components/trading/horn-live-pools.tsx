@@ -125,7 +125,7 @@ export function HornLivePools() {
   const resolving = attachQueries.some((q) => q.isLoading);
 
   return (
-    <section className="rounded-2xl border border-[#161616] bg-[#0e0e10]/80 p-5">
+    <section className="rounded-2xl border border-[#040d09] bg-[#0e0e10]/80 p-5">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="font-display text-[16px] font-bold tracking-tight text-white">Live Horns</h2>
@@ -143,7 +143,7 @@ export function HornLivePools() {
               onClick={() => setShowHistory((v) => !v)}
               className={`rounded-[4px] border px-2 py-0.5 font-mono text-[10px] transition-colors ${
                 showHistory
-                  ? "border-[#3a3a42] bg-[#0a0a0a] text-zinc-200"
+                  ? "border-[#3a3a42] bg-[#030806] text-zinc-200"
                   : "border-[#26262b] text-zinc-500 hover:border-[#3a3a42] hover:text-zinc-300"
               }`}
             >
@@ -154,7 +154,7 @@ export function HornLivePools() {
       </div>
 
       {active.length === 0 ? (
-        <div className="rounded-xl border border-[#161616] bg-[#000000] px-4 py-10 text-center">
+        <div className="rounded-xl border border-[#040d09] bg-[#000000] px-4 py-10 text-center">
           <p className="text-[13px] text-zinc-400">
             {isLoading || resolving ? "Reading pools..." : "No pool is running a Horn yet."}
           </p>
@@ -166,7 +166,7 @@ export function HornLivePools() {
         <div className="overflow-x-auto">
           <table className="w-full min-w-[720px] border-collapse text-left">
             <thead>
-              <tr className="border-b border-[#161616] font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-600">
+              <tr className="border-b border-[#040d09] font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-600">
                 <th className="py-2 pr-3 font-normal">Pool</th>
                 <th className="py-2 pr-3 font-normal">Horn</th>
                 <th className="py-2 pr-3 font-normal">Current fee</th>
@@ -186,7 +186,7 @@ export function HornLivePools() {
 
       {/* Horn history: completed time-limited horns, as a list linking to the explorer. */}
       {showHistory && history.length > 0 ? (
-        <div className="mt-4 border-t border-[#161616] pt-4">
+        <div className="mt-4 border-t border-[#040d09] pt-4">
           <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-600">
             Completed
           </p>
@@ -197,7 +197,7 @@ export function HornLivePools() {
                   href={explorerUrl("address", r.horn.address as string)}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 rounded-lg px-2.5 py-2 transition-colors hover:bg-[#070707]"
+                  className="flex items-center gap-3 rounded-lg px-2.5 py-2 transition-colors hover:bg-[#020604]"
                 >
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-[13px] font-semibold text-zinc-300">
@@ -254,14 +254,14 @@ function HornPoolRow({ row, nowSec }: { row: Row; nowSec: number }) {
   const liquidity = usd(token.market.ammSolReserve * token.market.solUsd);
 
   return (
-    <tr className="border-b border-[#161619] text-[13px] transition-colors hover:bg-[#070707]">
+    <tr className="border-b border-[#161619] text-[13px] transition-colors hover:bg-[#020604]">
       <td className="py-3 pr-3">
         <Link href={`/token/${token.address}`} className="group flex items-center gap-2.5">
           {token.image ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={token.image} alt="" className="h-7 w-7 shrink-0 rounded-full object-cover" />
           ) : (
-            <span className="h-7 w-7 shrink-0 rounded-full bg-[#0a0a0a]" />
+            <span className="h-7 w-7 shrink-0 rounded-full bg-[#030806]" />
           )}
           <span className="min-w-0">
             <span className="block truncate font-semibold text-zinc-200 group-hover:text-white">
@@ -280,7 +280,7 @@ function HornPoolRow({ row, nowSec }: { row: Row; nowSec: number }) {
       <td className="py-3 pr-3">
         <span className="block text-[12px] text-zinc-400">{windowLabel}</span>
         {progress != null ? (
-          <span className="mt-1 block h-1 w-28 overflow-hidden rounded-full bg-[#0a0a0a]">
+          <span className="mt-1 block h-1 w-28 overflow-hidden rounded-full bg-[#030806]">
             <span
               className="block h-full rounded-full bg-[#00f090]"
               style={{ width: `${Math.round(progress * 100)}%` }}

@@ -116,7 +116,7 @@ export function ClaimUsername() {
     const identity = resolveIdentity(claimed, wallet.address);
     return (
       <div className="mx-auto w-full max-w-md">
-        <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] p-8 text-center">
+        <div className="rounded-2xl border border-[var(--hairline)] bg-[#030806] p-8 text-center">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#00f090]/10">
             <CheckCircle size={34} weight="fill" className="text-[#00f090]" />
           </div>
@@ -150,7 +150,7 @@ export function ClaimUsername() {
   return (
     <div className="mx-auto w-full max-w-md">
       <div className="mb-5 text-center">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--hairline)] bg-[#101010]">
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--hairline)] bg-[#061109]">
           <Ticket size={24} weight="duotone" className="text-[#00f090]" />
         </div>
         <h1 className="mt-3 font-display text-[22px] font-semibold tracking-tight text-white">
@@ -162,7 +162,7 @@ export function ClaimUsername() {
         </p>
       </div>
 
-      <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] p-5">
+      <div className="rounded-2xl border border-[var(--hairline)] bg-[#030806] p-5">
         <label htmlFor="claim-token" className="block text-[12px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
           Claim token
         </label>
@@ -320,11 +320,11 @@ function TokenAccountView({
   }
 
   const field =
-    "h-10 w-full rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]";
+    "h-10 w-full rounded-lg border border-[var(--hairline)] bg-[#061109] px-3 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]";
 
   return (
     <div className="mx-auto w-full max-w-md">
-      <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] p-5">
+      <div className="rounded-2xl border border-[var(--hairline)] bg-[#030806] p-5">
         {/* Success header */}
         <div className="flex items-center gap-2">
           <CheckCircle size={22} weight="fill" className="shrink-0 text-[#00f090]" />
@@ -355,13 +355,13 @@ function TokenAccountView({
               <button
                 type="button"
                 onClick={() => bannerInput.current?.click()}
-                className="group relative block aspect-[3.8/1] w-full overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#101010]"
+                className="group relative block aspect-[3.8/1] w-full overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#061109]"
               >
                 {form.banner ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={form.banner} alt="" className="h-full w-full object-cover" />
                 ) : (
-                  <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#0a0a0a] to-[#000000]" />
+                  <div className="h-full w-full bg-gradient-to-br from-[#1f2a20] via-[#030806] to-[#000000]" />
                 )}
                 <span className="absolute inset-0 flex items-center justify-center gap-1.5 bg-black/40 text-[12px] font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
                   <Camera size={16} weight="fill" /> {imgBusy === "banner" ? "Processing…" : form.banner ? "Change banner" : "Upload banner"}
@@ -370,7 +370,7 @@ function TokenAccountView({
               <button
                 type="button"
                 onClick={() => avatarInput.current?.click()}
-                className="group absolute -bottom-8 left-4 h-20 w-20 overflow-hidden rounded-full border-2 border-[#0a0a0a] bg-[#101010] ring-4 ring-[#0a0a0a]"
+                className="group absolute -bottom-8 left-4 h-20 w-20 overflow-hidden rounded-full border-2 border-[#030806] bg-[#061109] ring-4 ring-[#030806]"
               >
                 {form.avatar ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -399,7 +399,7 @@ function TokenAccountView({
           <label className="block">
             <span className="mb-1.5 block text-[12px] font-medium text-zinc-400">Bio</span>
             <textarea
-              className="w-full resize-none rounded-lg border border-[var(--hairline)] bg-[#101010] px-3 py-2 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]"
+              className="w-full resize-none rounded-lg border border-[var(--hairline)] bg-[#061109] px-3 py-2 text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[var(--hairline-strong)]"
               rows={2}
               value={form.bio ?? ""}
               onChange={(e) => set("bio", e.target.value)}
@@ -412,7 +412,7 @@ function TokenAccountView({
             type="button"
             onClick={() => void save()}
             disabled={editTokenProfile.isPending}
-            className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-[var(--hairline-strong)] bg-[#101010] text-[13px] font-semibold text-zinc-100 transition-colors hover:text-white disabled:opacity-60"
+            className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-[var(--hairline-strong)] bg-[#061109] text-[13px] font-semibold text-zinc-100 transition-colors hover:text-white disabled:opacity-60"
           >
             {editTokenProfile.isPending ? "Saving…" : "Save profile"}
           </button>

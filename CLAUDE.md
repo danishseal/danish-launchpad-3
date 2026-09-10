@@ -17,10 +17,15 @@ All black, with the phosphor green from the logo's CRT. `#00f090` was SAMPLED
 from the artwork rather than picked: it is the most common glyph pixel in it, a
 spring green with a slight cyan lean, which is what a P1 phosphor looks like.
 
-    ground     #000000        raised    #0a0a0a      elevated  #101010
-    controls   #171717        hairline  #1e1e1e      strong    #2c2c2c
+    ground     #000000        raised    #030806      elevated  #061109
+    controls   #0b1b13        hairline  #123021      strong    #1d4a33
     accent     #00f090        light     #6dffbf      mid       #00c477
     dim        #00693f
+
+Surfaces and hairlines are TINTED toward the phosphor, not neutral grey. That is
+the difference between this and the app it started as: it was already dark with
+a green accent, so neutralising the greys changed almost nothing on screen. The
+tint is what makes the chrome read as a CRT rather than a grey dashboard.
 
 Tokens live in `app/src/app/globals.css`. Prefer `--ansem`, `--surface-*` and
 `--hairline*` over a literal; there were 640 literals before this pass and they

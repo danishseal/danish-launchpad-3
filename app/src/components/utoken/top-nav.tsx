@@ -98,11 +98,11 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo.png"
-            alt="ansemchain"
-            className="h-6 w-6 rounded-md object-cover"
+            alt="4th"
+            className="h-7 w-7 object-contain"
           />
           <span className="font-display text-[16px] font-semibold tracking-tight text-white">
-            ansemchain
+            4th
           </span>
         </Link>
 
@@ -131,7 +131,7 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
         <button
           type="button"
           onClick={search.open}
-          className="ml-auto flex h-9 w-full max-w-[340px] items-center gap-2 rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] px-3 text-[13px] text-zinc-500 transition-colors hover:border-[var(--hairline-strong)]"
+          className="ml-auto flex h-9 w-full max-w-[340px] items-center gap-2 rounded-lg border border-[var(--hairline)] bg-[#030806] px-3 text-[13px] text-zinc-500 transition-colors hover:border-[var(--hairline-strong)]"
         >
           <MagnifyingGlass size={15} />
           <span>Search tokens or users</span>
@@ -146,7 +146,7 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
           rel="noreferrer"
           aria-label="ansemchain docs"
           title="Docs"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#030806] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
         >
           <BookOpen size={16} weight="bold" />
         </a>
@@ -157,7 +157,7 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
           rel="noreferrer"
           aria-label="ansemchain on X"
           title="ansemchain on X"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#030806] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white"
         >
           <XLogo size={16} weight="bold" />
         </a>

@@ -50,7 +50,7 @@ export function Messages() {
       <h1 className="mb-4 px-1 font-display text-[20px] font-semibold tracking-tight text-white">
         Messages
       </h1>
-      <div className="grid min-h-[70vh] overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] md:grid-cols-[300px_minmax(0,1fr)]">
+      <div className="grid min-h-[70vh] overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[#030806] md:grid-cols-[300px_minmax(0,1fr)]">
         {/* Inbox pane: full-width on mobile until a thread is open */}
         <div
           className={
@@ -127,7 +127,7 @@ function InboxRow({
         onClick={() => onOpen(thread.peer)}
         className={
           "flex w-full items-center gap-3 border-b border-[var(--hairline)] px-4 py-3 text-left transition-colors " +
-          (active ? "bg-[#141414]" : "hover:bg-[#101010]")
+          (active ? "bg-[#08160f]" : "hover:bg-[#061109]")
         }
       >
         <Avatar src={profile.avatar} className="h-10 w-10" iconSize={18} />
@@ -187,7 +187,7 @@ function ThreadPane({ peer, onBack }: { peer: string; onBack: () => void }) {
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-[#101010] hover:text-white md:hidden"
+          className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-[#061109] hover:text-white md:hidden"
           aria-label="Back to inbox"
         >
           <ArrowLeft size={18} weight="bold" />

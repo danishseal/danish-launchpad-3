@@ -221,14 +221,14 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
       </div>
 
       {/* Denom tabs: two sinks, ANSEM (uansem) + CHANSE (uchanse) */}
-      <div className="mt-4 grid grid-cols-2 gap-1 rounded-[6px] bg-[#070707] p-1">
+      <div className="mt-4 grid grid-cols-2 gap-1 rounded-[6px] bg-[#020604] p-1">
         {(["uansem", "uchanse"] as StakeDenom[]).map((d) => (
           <button
             key={d}
             type="button"
             onClick={() => setDenom(d)}
             className={`h-8 rounded-[4px] font-display text-[11px] font-semibold uppercase tracking-[0.1em] transition-colors ${
-              denom === d ? "bg-[#161616] text-white" : "text-zinc-500 hover:text-zinc-200"
+              denom === d ? "bg-[#040d09] text-white" : "text-zinc-500 hover:text-zinc-200"
             }`}
           >
             {denomLabel(d)}
@@ -262,7 +262,7 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
           inputMode="decimal"
           placeholder="0.0"
           disabled={!live}
-          className="h-10 w-full rounded-[6px] border border-[#161616] bg-[#070707] px-3 font-mono text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30] disabled:cursor-not-allowed disabled:opacity-60"
+          className="h-10 w-full rounded-[6px] border border-[#040d09] bg-[#020604] px-3 font-mono text-[14px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30] disabled:cursor-not-allowed disabled:opacity-60"
         />
       </div>
 
@@ -278,7 +278,7 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
       </button>
 
       {/* Pending rewards (Coin[]) + Claim */}
-      <div className="mt-3 rounded-lg border border-[#161616] bg-[#000000] p-3">
+      <div className="mt-3 rounded-lg border border-[#040d09] bg-[#000000] p-3">
         <div className="flex items-center justify-between">
           <p className="text-[10px] uppercase tracking-[0.14em] text-zinc-600">
             Pending rewards
@@ -290,7 +290,7 @@ export function HornVaultPanel({ token: _token }: { token: TokenListItem }) {
             className={`h-7 rounded-[4px] border px-3 font-display text-[10px] font-semibold uppercase tracking-[0.1em] transition-colors ${
               live && hasRewards
                 ? "border-[#00693f] bg-[#00f090]/10 text-[#00f090] hover:bg-[#00f090]/15"
-                : "cursor-not-allowed border-[#161616] text-zinc-600"
+                : "cursor-not-allowed border-[#040d09] text-zinc-600"
             }`}
           >
             Claim {label}

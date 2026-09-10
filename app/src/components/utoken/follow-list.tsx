@@ -40,7 +40,7 @@ export function FollowListModal({
       onClick={onClose}
     >
       <div
-        className="flex max-h-[80vh] w-full max-w-md flex-col overflow-hidden rounded-2xl border border-[var(--hairline-strong)] bg-[#0a0a0a] shadow-2xl"
+        className="flex max-h-[80vh] w-full max-w-md flex-col overflow-hidden rounded-2xl border border-[var(--hairline-strong)] bg-[#030806] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-[var(--hairline)] px-5 py-3.5">

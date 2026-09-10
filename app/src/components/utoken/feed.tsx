@@ -46,7 +46,7 @@ function Composer({
   }
 
   return (
-    <div className="rounded-xl border border-[var(--hairline)] bg-[#0a0a0a] p-3">
+    <div className="rounded-xl border border-[var(--hairline)] bg-[#030806] p-3">
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value.slice(0, MAX))}
@@ -75,7 +75,7 @@ function Composer({
 function PostRow({ post }: { post: Post }) {
   return (
     <div className="flex gap-3 py-3">
-      <Link href={`/creator/${post.author}`} className="mt-0.5 h-9 w-9 shrink-0 rounded-full bg-[#101010] ring-1 ring-inset ring-white/10" />
+      <Link href={`/creator/${post.author}`} className="mt-0.5 h-9 w-9 shrink-0 rounded-full bg-[#061109] ring-1 ring-inset ring-white/10" />
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
           <Link href={`/creator/${post.author}`} className="font-mono text-[13px] font-semibold text-zinc-200 hover:text-[#00f090]">

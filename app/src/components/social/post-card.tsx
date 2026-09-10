@@ -289,12 +289,12 @@ export function PostCard({
               <div
                 ref={menuRef}
                 style={{ position: "fixed", top: menuPos.top, left: menuPos.left, zIndex: 1000 }}
-                className="ansem-fade-in w-40 overflow-hidden rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] py-1 shadow-xl"
+                className="ansem-fade-in w-40 overflow-hidden rounded-lg border border-[var(--hairline)] bg-[#030806] py-1 shadow-xl"
               >
                 <button
                   type="button"
                   onClick={onRepost}
-                  className="flex w-full items-center gap-2 px-3 py-2 text-left font-sans text-[13px] text-zinc-200 hover:bg-[#141414]"
+                  className="flex w-full items-center gap-2 px-3 py-2 text-left font-sans text-[13px] text-zinc-200 hover:bg-[#08160f]"
                 >
                   <Repeat size={15} weight="regular" />
                   {post.viewerReposted ? "Undo repost" : "Repost"}
@@ -302,7 +302,7 @@ export function PostCard({
                 <button
                   type="button"
                   onClick={onQuote}
-                  className="flex w-full items-center gap-2 px-3 py-2 text-left font-sans text-[13px] text-zinc-200 hover:bg-[#141414]"
+                  className="flex w-full items-center gap-2 px-3 py-2 text-left font-sans text-[13px] text-zinc-200 hover:bg-[#08160f]"
                 >
                   <Quotes size={15} weight="regular" />
                   Quote
@@ -380,7 +380,7 @@ function ActionButton({
       onClick={onClick}
       disabled={busy}
       aria-label={label}
-      className={`group flex items-center gap-1.5 rounded-md px-2 py-1 font-mono text-[12px] tabular-nums transition-colors hover:bg-[#141414] disabled:opacity-50 ${
+      className={`group flex items-center gap-1.5 rounded-md px-2 py-1 font-mono text-[12px] tabular-nums transition-colors hover:bg-[#08160f] disabled:opacity-50 ${
         active ? activeClass : "text-zinc-500 hover:text-zinc-300"
       }`}
     >

@@ -136,7 +136,7 @@ function FollowRow({ event, viewer }: { event: FollowEvent; viewer?: string }) {
 
 function TokenAvatar({ image, symbol }: { image: string | null; symbol: string }) {
   return (
-    <div className="h-9 w-9 shrink-0 overflow-hidden rounded-full bg-[#101010] ring-1 ring-inset ring-white/10">
+    <div className="h-9 w-9 shrink-0 overflow-hidden rounded-full bg-[#061109] ring-1 ring-inset ring-white/10">
       {image ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={image} alt="" className="h-full w-full object-cover" />

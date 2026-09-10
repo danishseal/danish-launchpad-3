@@ -145,7 +145,7 @@ function CurrentStatePanel({
   const hasLinks = Boolean(site || x || tg);
 
   return (
-    <div className="mb-3 rounded-[10px] border border-[#161616] bg-[#070707] p-3">
+    <div className="mb-3 rounded-[10px] border border-[#040d09] bg-[#020604] p-3">
       <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">
         Current state
       </p>
@@ -184,7 +184,7 @@ function CurrentStatePanel({
         </p>
       ) : null}
 
-      <div className="mt-2.5 flex flex-col gap-1.5 border-t border-[#161616] pt-2.5">
+      <div className="mt-2.5 flex flex-col gap-1.5 border-t border-[#040d09] pt-2.5">
         <StateRow label="Trades in" value={baseLabel} />
         <StateRow label="Price" value={priceStr} mono />
         <StateRow label="Creator" value={creator ? short(creator) : "-"} mono />
@@ -296,7 +296,7 @@ function ProposalCard({
   }
 
   return (
-    <div className="rounded-xl border border-[#161616] bg-[#070707] p-3.5">
+    <div className="rounded-xl border border-[#040d09] bg-[#020604] p-3.5">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <div className="flex items-center gap-2">
@@ -341,7 +341,7 @@ function ProposalCard({
               type="button"
               disabled={voting !== null}
               onClick={() => vote(i)}
-              className="group relative overflow-hidden rounded-lg border border-[#161616] bg-[#0e0e10] px-3 py-2 text-left transition hover:border-[#2a3a2e] disabled:cursor-wait"
+              className="group relative overflow-hidden rounded-lg border border-[#040d09] bg-[#0e0e10] px-3 py-2 text-left transition hover:border-[#2a3a2e] disabled:cursor-wait"
             >
               <span
                 className={`absolute inset-y-0 left-0 transition-[width] duration-500 ${
@@ -515,7 +515,7 @@ function CreateProposalModal({
       onClick={onClose}
     >
       <div
-        className="max-h-[90vh] w-full max-w-[500px] overflow-y-auto rounded-2xl border border-[#161616] bg-[#0e0e10] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+        className="max-h-[90vh] w-full max-w-[500px] overflow-y-auto rounded-2xl border border-[#040d09] bg-[#0e0e10] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between gap-3">
@@ -528,7 +528,7 @@ function CreateProposalModal({
                 className="h-10 w-10 shrink-0 rounded-[9px] object-cover"
               />
             ) : detail ? (
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[9px] bg-[#070707] text-zinc-600">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[9px] bg-[#020604] text-zinc-600">
                 <Coins size={18} />
               </div>
             ) : null}
@@ -589,8 +589,8 @@ function CreateProposalModal({
                       active
                         ? "bg-[#00f090] text-black"
                         : disabled
-                          ? "cursor-not-allowed border border-[#161616] bg-[#070707] text-zinc-600 opacity-60"
-                          : "border border-[#161616] bg-[#000000] text-zinc-300 hover:text-zinc-100"
+                          ? "cursor-not-allowed border border-[#040d09] bg-[#020604] text-zinc-600 opacity-60"
+                          : "border border-[#040d09] bg-[#000000] text-zinc-300 hover:text-zinc-100"
                     }`}
                   >
                     <span className="block text-[12px] font-semibold">{k.label}</span>
@@ -616,7 +616,7 @@ function CreateProposalModal({
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="What are we deciding for this token?"
-              className="mt-1.5 h-10 w-full rounded-lg border border-[#161616] bg-[#000000] px-3 text-[13px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#00f090]"
+              className="mt-1.5 h-10 w-full rounded-lg border border-[#040d09] bg-[#000000] px-3 text-[13px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#00f090]"
             />
 
             <label className="mt-3 block text-[12px] font-semibold text-zinc-400">Description</label>
@@ -625,11 +625,11 @@ function CreateProposalModal({
               onChange={(e) => setDescription(e.target.value)}
               rows={3}
               placeholder="Add the context voters need."
-              className="mt-1.5 w-full resize-none rounded-lg border border-[#161616] bg-[#000000] px-3 py-2.5 text-[13px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#00f090]"
+              className="mt-1.5 w-full resize-none rounded-lg border border-[#040d09] bg-[#000000] px-3 py-2.5 text-[13px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#00f090]"
             />
 
             {kind === "params" ? (
-              <div className="mt-3 rounded-lg border border-[#161616] bg-[#070707] p-3">
+              <div className="mt-3 rounded-lg border border-[#040d09] bg-[#020604] p-3">
                 <p className="text-[11px] font-semibold text-zinc-300">Trade fee</p>
                 <p className="mt-0.5 text-[11px] text-zinc-500">
                   Propose a specific fee. Voters see the exact change.
@@ -639,7 +639,7 @@ function CreateProposalModal({
                     <label className="block text-[11px] font-medium text-zinc-500">
                       Current fee
                     </label>
-                    <div className="mt-1.5 flex h-10 items-center rounded-lg border border-[#161616] bg-[#0e0e10] px-3 text-[13px] font-semibold tabular-nums text-zinc-300">
+                    <div className="mt-1.5 flex h-10 items-center rounded-lg border border-[#040d09] bg-[#0e0e10] px-3 text-[13px] font-semibold tabular-nums text-zinc-300">
                       {currentFeeStr}
                     </div>
                   </div>
@@ -652,7 +652,7 @@ function CreateProposalModal({
                       onChange={(e) => setProposedFee(e.target.value)}
                       inputMode="decimal"
                       placeholder="e.g. 3.5"
-                      className="mt-1.5 h-10 w-full rounded-lg border border-[#161616] bg-[#000000] px-3 text-[13px] tabular-nums text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#00f090]"
+                      className="mt-1.5 h-10 w-full rounded-lg border border-[#040d09] bg-[#000000] px-3 text-[13px] tabular-nums text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#00f090]"
                     />
                   </div>
                 </div>

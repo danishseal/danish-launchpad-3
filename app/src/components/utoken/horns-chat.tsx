@@ -44,8 +44,8 @@ export function HornsChat({ focusName, focusSlug }: { focusName?: string; focusS
   }
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-[#161616] bg-[#0e0e10]/80">
-      <header className="flex items-center justify-between gap-3 border-b border-[#161616] px-4 py-3">
+    <section className="overflow-hidden rounded-2xl border border-[#040d09] bg-[#0e0e10]/80">
+      <header className="flex items-center justify-between gap-3 border-b border-[#040d09] px-4 py-3">
         <div className="flex items-center gap-2">
           <Sparkle size={16} weight="fill" className="text-[#00f090]" />
           <span className="font-display text-[14px] font-semibold text-white">Ask the Horns assistant</span>
@@ -68,7 +68,7 @@ export function HornsChat({ focusName, focusSlug }: { focusName?: string; focusS
                   key={s}
                   type="button"
                   onClick={() => send(s)}
-                  className="rounded-lg border border-[#161616] bg-[#141416] px-3 py-1.5 text-left text-[12px] text-zinc-300 transition-colors hover:border-[#2a2a30] hover:text-white"
+                  className="rounded-lg border border-[#040d09] bg-[#141416] px-3 py-1.5 text-left text-[12px] text-zinc-300 transition-colors hover:border-[#2a2a30] hover:text-white"
                 >
                   {s}
                 </button>
@@ -80,7 +80,7 @@ export function HornsChat({ focusName, focusSlug }: { focusName?: string; focusS
             <div key={i} className={`ansem-fade-in flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
               <div
                 className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-3 py-2 text-[13px] leading-5 ${
-                  m.role === "user" ? "bg-[#00f090] text-black" : "border border-[#161616] bg-[#141416] text-zinc-200"
+                  m.role === "user" ? "bg-[#00f090] text-black" : "border border-[#040d09] bg-[#141416] text-zinc-200"
                 }`}
               >
                 {m.content}
@@ -90,7 +90,7 @@ export function HornsChat({ focusName, focusSlug }: { focusName?: string; focusS
         )}
         {loading && (
           <div className="ansem-fade-in flex justify-start">
-            <div className="rounded-2xl border border-[#161616] bg-[#141416] px-3 py-2 text-[13px] text-zinc-500">
+            <div className="rounded-2xl border border-[#040d09] bg-[#141416] px-3 py-2 text-[13px] text-zinc-500">
               Thinking...
             </div>
           </div>
@@ -102,13 +102,13 @@ export function HornsChat({ focusName, focusSlug }: { focusName?: string; focusS
           e.preventDefault();
           send(input);
         }}
-        className="flex items-center gap-2 border-t border-[#161616] bg-[#111113] p-3"
+        className="flex items-center gap-2 border-t border-[#040d09] bg-[#111113] p-3"
       >
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={focusName ? `Ask about the ${focusName}...` : "Ask about the Horns..."}
-          className="h-10 flex-1 rounded-lg border border-[#161616] bg-[#0c0c0e] px-3 text-[13px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30]"
+          className="h-10 flex-1 rounded-lg border border-[#040d09] bg-[#0c0c0e] px-3 text-[13px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-[#2a2a30]"
         />
         <button
           type="submit"

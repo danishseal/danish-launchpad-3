@@ -980,7 +980,7 @@ function SkimStep({
             value={skimPct}
             onChange={(e) => setSkimPct(Number(e.target.value))}
             className="fee-range w-full"
-            style={{ background: `linear-gradient(to right, #00f090 0%, #00f090 ${skimPct * 2}%, #0a0a0a ${skimPct * 2}%, #0a0a0a 100%)` }}
+            style={{ background: `linear-gradient(to right, #00f090 0%, #00f090 ${skimPct * 2}%, #030806 ${skimPct * 2}%, #030806 100%)` }}
             aria-label="Skim percentage"
           />
         </div>

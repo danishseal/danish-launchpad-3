@@ -234,10 +234,10 @@ function LiveReadout({ readout, showGraph }: { readout: Readout; showGraph: bool
         <p className="mt-2 text-[11px] leading-4 text-zinc-400">{readout.caption}</p>
         {!showGraph ? (
           <div className="mt-2 flex flex-wrap gap-1.5 font-mono text-[9px] uppercase tracking-[0.1em] text-zinc-500">
-            <span className="rounded border border-[#26262b] bg-[#070707] px-1.5 py-0.5">
+            <span className="rounded border border-[#26262b] bg-[#020604] px-1.5 py-0.5">
               {readout.startLabel}
             </span>
-            <span className="rounded border border-[#26262b] bg-[#070707] px-1.5 py-0.5">
+            <span className="rounded border border-[#26262b] bg-[#020604] px-1.5 py-0.5">
               {readout.endLabel}
             </span>
           </div>
@@ -270,7 +270,7 @@ function PendingHorns({ slugs, loading }: { slugs: string[]; loading: boolean })
             <Link
               key={h.slug}
               href="/horns"
-              className="flex items-center gap-2.5 rounded-lg px-1 py-1 transition-colors hover:bg-[#070707]"
+              className="flex items-center gap-2.5 rounded-lg px-1 py-1 transition-colors hover:bg-[#020604]"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={hornArt(h.slug)} alt="" className="h-8 w-8 shrink-0 object-contain" />

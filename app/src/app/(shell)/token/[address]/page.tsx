@@ -150,7 +150,7 @@ export default function TokenDetailPage() {
                   token.listing.links?.telegram ||
                   token.listing.links?.discord) && (
                   <>
-                    <span className="mx-0.5 h-5 w-px bg-[#161616]" />
+                    <span className="mx-0.5 h-5 w-px bg-[#040d09]" />
                     <div className="flex shrink-0 items-center gap-1">
                       <SocialLink href={token.listing.links?.website} label="Website">
                         <GlobeSimple size={15} />
@@ -170,7 +170,7 @@ export default function TokenDetailPage() {
               </div>
               <div className="flex h-5 items-center gap-2 text-[11px] font-medium text-zinc-500">
                 <span className="max-w-40 truncate">{collectibleName}</span>
-                <span className="h-4 w-px bg-[#161616]" />
+                <span className="h-4 w-px bg-[#040d09]" />
                 <CopyValue value={token.mint} />
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function TokenDetailPage() {
               onClick={() => setTimeframe(value)}
               className={
                 timeframe === value
-                  ? "rounded-md bg-[#161616] px-2.5 py-1 text-xs font-semibold text-zinc-100"
+                  ? "rounded-md bg-[#040d09] px-2.5 py-1 text-xs font-semibold text-zinc-100"
                   : "rounded-md px-2.5 py-1 text-xs font-semibold hover:bg-[#161619] hover:text-zinc-100"
               }
             >
@@ -381,9 +381,9 @@ function HoldersTable({
     <table className="w-full min-w-[600px] text-[13px]">
       <thead className="sticky top-0 z-10 bg-[#17171a] text-zinc-600">
         <tr>
-          <th className="border-b border-[#161616] px-4 py-2 text-left text-xs font-medium">Trader</th>
-          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">Position</th>
-          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">Supply</th>
+          <th className="border-b border-[#040d09] px-4 py-2 text-left text-xs font-medium">Trader</th>
+          <th className="border-b border-[#040d09] px-4 py-2 text-right text-xs font-medium">Position</th>
+          <th className="border-b border-[#040d09] px-4 py-2 text-right text-xs font-medium">Supply</th>
         </tr>
       </thead>
       <tbody>
@@ -454,12 +454,12 @@ function TransactionsTable({ trades, symbol, baseLabel }: { trades: TokenTrade[]
     <table className="w-full min-w-[720px] text-[13px]">
       <thead className="sticky top-0 z-10 bg-[#17171a] text-zinc-600">
         <tr>
-          <th className="border-b border-[#161616] px-4 py-2 text-left text-xs font-medium">Time</th>
-          <th className="border-b border-[#161616] px-4 py-2 text-left text-xs font-medium">Type</th>
-          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">{baseLabel}</th>
-          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">{symbol}</th>
-          <th className="border-b border-[#161616] px-4 py-2 text-left text-xs font-medium">Trader</th>
-          <th className="border-b border-[#161616] px-4 py-2 text-right text-xs font-medium">Txn</th>
+          <th className="border-b border-[#040d09] px-4 py-2 text-left text-xs font-medium">Time</th>
+          <th className="border-b border-[#040d09] px-4 py-2 text-left text-xs font-medium">Type</th>
+          <th className="border-b border-[#040d09] px-4 py-2 text-right text-xs font-medium">{baseLabel}</th>
+          <th className="border-b border-[#040d09] px-4 py-2 text-right text-xs font-medium">{symbol}</th>
+          <th className="border-b border-[#040d09] px-4 py-2 text-left text-xs font-medium">Trader</th>
+          <th className="border-b border-[#040d09] px-4 py-2 text-right text-xs font-medium">Txn</th>
         </tr>
       </thead>
       <tbody>
@@ -529,7 +529,7 @@ function TokenSummary({ token, price }: { token: TokenListItem; price: number })
   const volumeUsd =
     (Number(token.volume_24h) / 1_000_000) * token.market.solUsd;
   return (
-    <section className="rounded-2xl border border-[#161616] bg-[#070707] px-4 py-3">
+    <section className="rounded-2xl border border-[#040d09] bg-[#020604] px-4 py-3">
       <div className="flex items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2.5">
           {token.image ? (
@@ -540,7 +540,7 @@ function TokenSummary({ token, price }: { token: TokenListItem; price: number })
               className="h-9 w-9 shrink-0 rounded-lg object-cover"
             />
           ) : (
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#161616] text-sm">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#040d09] text-sm">
               {token.symbol?.[0]}
             </span>
           )}
@@ -658,7 +658,7 @@ function Overview({ token, trades }: { token: TokenListItem; trades: TokenTrade[
               className={`h-[46px] rounded-lg border px-1 py-1.5 text-center transition-colors ${
                 active
                   ? "border-[#2a2a30] bg-[#1a1a1e]"
-                  : "border-[#161616] bg-transparent hover:bg-[#070707]"
+                  : "border-[#040d09] bg-transparent hover:bg-[#020604]"
               }`}
             >
               <span className="block text-[10px] font-semibold leading-3 text-zinc-400">{item.label}</span>
@@ -686,7 +686,7 @@ function Overview({ token, trades }: { token: TokenListItem; trades: TokenTrade[
         inert={!expanded}
       >
         <div className="min-h-0 overflow-hidden">
-          <div className="border-t border-[#161616] pt-3">
+          <div className="border-t border-[#040d09] pt-3">
             <div className="flex flex-wrap gap-1.5">
               <OverviewLink href={token.listing.links?.website} label="Website">
                 <GlobeSimple size={12} />
@@ -921,8 +921,8 @@ function relativeTime(value: string): string {
 function TerminalSkeleton() {
   return (
     <div className="grid min-h-[calc(100vh-64px)] bg-[#000000] xl:grid-cols-[minmax(0,1fr)_360px]">
-      <Skeleton className="h-full rounded-none bg-[#070707]" />
-      <Skeleton className="h-full rounded-none bg-[#070707]" />
+      <Skeleton className="h-full rounded-none bg-[#020604]" />
+      <Skeleton className="h-full rounded-none bg-[#020604]" />
     </div>
   );
 }

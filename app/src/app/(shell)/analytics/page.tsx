@@ -63,7 +63,7 @@ export default function AnalyticsPage() {
             price CHANSE volume through the on-chain oracle.
           </p>
         </div>
-        <div className="flex items-center gap-1 rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] p-1">
+        <div className="flex items-center gap-1 rounded-lg border border-[var(--hairline)] bg-[#030806] p-1">
           {ANALYTICS_WINDOWS.map((w) => (
             <button
               key={w.key}
@@ -130,7 +130,7 @@ export default function AnalyticsPage() {
           right={
             flow > 0 ? (
               <div className="flex flex-col items-end gap-1">
-                <div className="flex h-1.5 w-28 overflow-hidden rounded-full bg-[#1e1e1e]">
+                <div className="flex h-1.5 w-28 overflow-hidden rounded-full bg-[#123021]">
                   <div style={{ width: `${buyPct}%`, background: "#00f090" }} />
                   <div style={{ width: `${100 - buyPct}%`, background: "#f0736c" }} />
                 </div>
@@ -193,7 +193,7 @@ export default function AnalyticsPage() {
               {top.data?.tokens.map((t, i) => (
                 <tr
                   key={t.address}
-                  className="border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#101010]"
+                  className="border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#061109]"
                 >
                   <td className="px-4 py-2.5 font-mono text-[12px] text-zinc-600 tabular-nums">
                     {i + 1}
@@ -205,7 +205,7 @@ export default function AnalyticsPage() {
                     >
                       ${t.symbol || t.address.slice(0, 6)}
                       {t.base_denom !== "uchanse" && (
-                        <span className="rounded-[3px] bg-[#1e1e1e] px-1.5 py-0.5 font-mono text-[9px] uppercase text-zinc-400">
+                        <span className="rounded-[3px] bg-[#123021] px-1.5 py-0.5 font-mono text-[9px] uppercase text-zinc-400">
                           {t.base_label}
                         </span>
                       )}
@@ -339,7 +339,7 @@ function Card({
   noPad?: boolean;
 }) {
   return (
-    <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a]">
+    <div className="rounded-2xl border border-[var(--hairline)] bg-[#030806]">
       <div className="flex items-start justify-between gap-4 border-b border-[var(--hairline)] px-4 py-3">
         <div>
           <h2 className="font-display text-[14px] font-semibold text-white">{title}</h2>
@@ -353,5 +353,5 @@ function Card({
 }
 
 function ChartSkeleton() {
-  return <div className="h-[240px] w-full animate-pulse rounded-lg bg-[#101010]" />;
+  return <div className="h-[240px] w-full animate-pulse rounded-lg bg-[#061109]" />;
 }

@@ -176,13 +176,13 @@ export default function VaultPage() {
               key={s}
               type="button"
               onClick={() => setSink(s)}
-              className={`rounded-xl border bg-[#0a0a0a] p-4 text-left transition-colors ${
+              className={`rounded-xl border bg-[#030806] p-4 text-left transition-colors ${
                 sink === s ? "border-[#00f090]" : "border-[var(--hairline)] hover:border-zinc-500"
               }`}
             >
               <div className="flex items-center justify-between">
                 <span className="font-display text-[15px] font-semibold text-white">{LABEL[s]} sink</span>
-                <span className="rounded-[3px] bg-[#1e1e1e] px-1.5 py-0.5 font-mono text-[9px] uppercase text-zinc-500">
+                <span className="rounded-[3px] bg-[#123021] px-1.5 py-0.5 font-mono text-[9px] uppercase text-zinc-500">
                   {s}
                 </span>
               </div>
@@ -197,7 +197,7 @@ export default function VaultPage() {
       </div>
 
       {/* Stake / claim panel for the selected sink */}
-      <div className="rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] p-5">
+      <div className="rounded-2xl border border-[var(--hairline)] bg-[#030806] p-5">
         <div className="flex items-center justify-between">
           <h2 className="font-display text-[15px] font-semibold text-white">{label} sink</h2>
           <div className="flex items-center gap-3">
@@ -225,7 +225,7 @@ export default function VaultPage() {
             inputMode="decimal"
             placeholder="0.0"
             disabled={!canAct}
-            className="mt-4 h-11 w-full rounded-lg border border-[var(--hairline)] bg-[#101010] px-3.5 font-mono text-[15px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-zinc-500 disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-4 h-11 w-full rounded-lg border border-[var(--hairline)] bg-[#061109] px-3.5 font-mono text-[15px] text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-zinc-500 disabled:cursor-not-allowed disabled:opacity-60"
           />
 
           {live && !wallet.connected ? (
@@ -241,7 +241,7 @@ export default function VaultPage() {
               className={`mt-3 h-11 w-full rounded-lg font-display text-[13px] font-semibold uppercase tracking-[0.1em] ${
                 canAct && amountValid && !busy
                   ? "bg-[#00f090] text-black hover:opacity-90"
-                  : "cursor-not-allowed bg-[#1e1e1e] text-zinc-500"
+                  : "cursor-not-allowed bg-[#123021] text-zinc-500"
               }`}
             >
               {busy

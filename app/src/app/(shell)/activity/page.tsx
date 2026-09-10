@@ -9,7 +9,7 @@ export default function ActivityPage() {
         <h1 className="font-display text-[24px] font-semibold tracking-tight text-white">Activity</h1>
         <p className="mt-1 text-[13px] text-zinc-500">Live launches, buys and sells across ansemchain.</p>
       </div>
-      <div className="rounded-xl border border-[var(--hairline)] bg-[#0a0a0a] px-4">
+      <div className="rounded-xl border border-[var(--hairline)] bg-[#030806] px-4">
         <ActivityFeed />
       </div>
     </div>

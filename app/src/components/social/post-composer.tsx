@@ -242,7 +242,7 @@ function TokenChip({ address, onRemove }: { address: string; onRemove: () => voi
   const token = useToken(address);
   return (
     <div className="mt-2 flex items-center gap-2.5 rounded-xl border border-[var(--hairline)] bg-[#000000] px-3 py-2">
-      <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]">
+      <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#061109]">
         {token?.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -264,7 +264,7 @@ function TokenChip({ address, onRemove }: { address: string; onRemove: () => voi
         type="button"
         onClick={onRemove}
         aria-label="Remove token"
-        className="flex h-6 w-6 items-center justify-center rounded-full text-zinc-500 hover:bg-[#141414] hover:text-zinc-200"
+        className="flex h-6 w-6 items-center justify-center rounded-full text-zinc-500 hover:bg-[#08160f] hover:text-zinc-200"
       >
         <X size={13} weight="bold" />
       </button>
@@ -327,9 +327,9 @@ function TokenPicker({
               <button
                 type="button"
                 onClick={() => onPick(t)}
-                className="flex w-full items-center gap-2.5 px-3 py-2 text-left transition-colors hover:bg-[#141414]"
+                className="flex w-full items-center gap-2.5 px-3 py-2 text-left transition-colors hover:bg-[#08160f]"
               >
-                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]">
+                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#061109]">
                   {t.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={t.image} alt="" className="h-full w-full object-cover" />

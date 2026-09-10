@@ -177,7 +177,7 @@ function SearchModal({ onClose }: { onClose: () => void }) {
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl overflow-hidden rounded-2xl border border-[var(--hairline-strong)] bg-[#0a0a0a] shadow-2xl"
+        className="w-full max-w-2xl overflow-hidden rounded-2xl border border-[var(--hairline-strong)] bg-[#030806] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Input */}
@@ -218,10 +218,10 @@ function SearchModal({ onClose }: { onClose: () => void }) {
                     onMouseEnter={() => setActive(idx)}
                     onClick={() => go(items[idx])}
                     className={`flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left transition-colors ${
-                      idx === active ? "bg-[#171717]" : "hover:bg-[#141414]"
+                      idx === active ? "bg-[#0b1b13]" : "hover:bg-[#08160f]"
                     }`}
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[var(--hairline)] bg-[#101010]">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[var(--hairline)] bg-[#061109]">
                       {p.avatar ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img src={p.avatar} alt="" className="h-full w-full object-cover" />
@@ -258,10 +258,10 @@ function SearchModal({ onClose }: { onClose: () => void }) {
                     onMouseEnter={() => setActive(idx)}
                     onClick={() => go(items[idx])}
                     className={`flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left transition-colors ${
-                      idx === active ? "bg-[#171717]" : "hover:bg-[#141414]"
+                      idx === active ? "bg-[#0b1b13]" : "hover:bg-[#08160f]"
                     }`}
                   >
-                    <div className="h-9 w-9 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]">
+                    <div className="h-9 w-9 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#061109]">
                       {t.image ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img src={t.image} alt="" className="h-full w-full object-cover" />
@@ -307,10 +307,10 @@ function SearchModal({ onClose }: { onClose: () => void }) {
                     onMouseEnter={() => setActive(idx)}
                     onClick={() => go(items[idx])}
                     className={`flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left transition-colors ${
-                      idx === active ? "bg-[#171717]" : "hover:bg-[#141414]"
+                      idx === active ? "bg-[#0b1b13]" : "hover:bg-[#08160f]"
                     }`}
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[var(--hairline)] bg-[#101010]">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[var(--hairline)] bg-[#061109]">
                       {u.image ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img src={u.image} alt="" className="h-full w-full object-cover" />

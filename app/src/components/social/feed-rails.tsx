@@ -57,9 +57,9 @@ export function TrendingRail() {
             <li key={t.address}>
               <Link
                 href={`/token/${t.address}`}
-                className="group flex items-center gap-2.5 px-3 py-2.5 transition-colors hover:bg-[#141414]"
+                className="group flex items-center gap-2.5 px-3 py-2.5 transition-colors hover:bg-[#08160f]"
               >
-                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#101010]">
+                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-md border border-[var(--hairline)] bg-[#061109]">
                   {t.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={t.image} alt="" className="h-full w-full object-cover" />
@@ -133,12 +133,12 @@ export function LeaderboardRail() {
             <li key={c.creator}>
               <Link
                 href={`/creator/${c.creator}`}
-                className="group flex items-center gap-2.5 px-3 py-2.5 transition-colors hover:bg-[#141414]"
+                className="group flex items-center gap-2.5 px-3 py-2.5 transition-colors hover:bg-[#08160f]"
               >
                 <span className="w-5 shrink-0 text-center font-mono text-[12px] text-zinc-500">
                   {medal(i)}
                 </span>
-                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-full border border-[var(--hairline)] bg-[#101010]">
+                <div className="h-8 w-8 shrink-0 overflow-hidden rounded-full border border-[var(--hairline)] bg-[#061109]">
                   {c.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={c.image} alt="" className="h-full w-full object-cover" />
@@ -178,7 +178,7 @@ function RailShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#0a0a0a]">
+    <div className="overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#030806]">
       <div className="flex items-center gap-2 border-b border-[var(--hairline)] px-3 py-3">
         <h2 className="font-display text-[15px] font-semibold text-white">{title}</h2>
       </div>

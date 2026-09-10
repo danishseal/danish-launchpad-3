@@ -62,8 +62,8 @@ export function HornCodeViewer({ slug }: { slug: string }) {
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-[#161616] bg-[#0c0c0e]">
-      <div className="flex items-center justify-between gap-3 border-b border-[#161616] bg-[#111113] px-3 py-2">
+    <div className="overflow-hidden rounded-xl border border-[#040d09] bg-[#0c0c0e]">
+      <div className="flex items-center justify-between gap-3 border-b border-[#040d09] bg-[#111113] px-3 py-2">
         <span className="truncate font-mono text-[11px] text-zinc-500">
           {path}
           {code ? ` · ${lines.length} lines` : ""}
@@ -83,7 +83,7 @@ export function HornCodeViewer({ slug }: { slug: string }) {
             type="button"
             onClick={copy}
             disabled={!code}
-            className="flex items-center gap-1.5 rounded-md border border-[#161616] bg-[#161618] px-2 py-1 font-mono text-[11px] text-zinc-400 transition-colors hover:text-white disabled:opacity-40"
+            className="flex items-center gap-1.5 rounded-md border border-[#040d09] bg-[#161618] px-2 py-1 font-mono text-[11px] text-zinc-400 transition-colors hover:text-white disabled:opacity-40"
           >
             {copied ? <Check size={12} className="text-[#00f090]" weight="bold" /> : <CopySimple size={12} />}
             {copied ? "Copied" : "Copy"}

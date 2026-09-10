@@ -120,7 +120,7 @@ export function NotificationsBell() {
         aria-haspopup="menu"
         aria-expanded={open}
         className={
-          "relative flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#0a0a0a] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white " +
+          "relative flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--hairline)] bg-[#030806] text-zinc-400 transition-colors hover:border-[var(--hairline-strong)] hover:text-white " +
           (open ? "border-[var(--hairline-strong)] text-white" : "")
         }
       >
@@ -133,7 +133,7 @@ export function NotificationsBell() {
       </button>
 
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-[360px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[#0a0a0a] shadow-2xl shadow-black/50">
+        <div className="absolute right-0 z-50 mt-2 w-[360px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[#030806] shadow-2xl shadow-black/50">
           <Panel connected={Boolean(wallet.address)} onNavigate={() => setOpen(false)} onConnect={() => void wallet.connect().catch(() => {})} />
         </div>
       )}
@@ -232,7 +232,7 @@ function NotificationRow({
           router.push(routeFor(n));
         }}
         className={
-          "flex w-full items-start gap-3 border-b border-[var(--hairline)] px-4 py-3 text-left transition-colors hover:bg-[#141414] " +
+          "flex w-full items-start gap-3 border-b border-[var(--hairline)] px-4 py-3 text-left transition-colors hover:bg-[#08160f] " +
           (fresh ? "bg-[#1f241f]" : "")
         }
       >

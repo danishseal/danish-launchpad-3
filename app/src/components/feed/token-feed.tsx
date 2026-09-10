@@ -354,7 +354,7 @@ function RankedCoin({ token, rank }: { token: TokenListItem; rank: number }) {
       <span className="absolute left-2 top-2 z-10 flex h-6 min-w-6 items-center justify-center rounded-[4px] bg-black/70 px-1.5 font-display text-[11px] font-bold text-white backdrop-blur-sm">
         {rank}
       </span>
-      <div className="relative aspect-square w-full overflow-hidden bg-[#070707]">
+      <div className="relative aspect-square w-full overflow-hidden bg-[#020604]">
         {token.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={token.image} alt="" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
@@ -446,7 +446,7 @@ function NewCoinRow({ token, thresholdMicro }: { token: TokenListItem; threshold
       className="grid grid-cols-[minmax(240px,1fr)_140px_120px_110px_90px] items-center border-b border-[#141417] px-4 py-2.5 transition-colors last:border-b-0 hover:bg-[#101012]"
     >
       <div className="flex min-w-0 items-center gap-2.5">
-        <div className="h-9 w-9 shrink-0 overflow-hidden rounded-[5px] border border-[#161616] bg-[#070707]">
+        <div className="h-9 w-9 shrink-0 overflow-hidden rounded-[5px] border border-[#040d09] bg-[#020604]">
           {token.image ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -477,7 +477,7 @@ function NewCoinRow({ token, thresholdMicro }: { token: TokenListItem; threshold
       </div>
       <span className="mono text-right text-[13px] font-semibold text-white">{formatUsd(cap)}</span>
       <div className="flex items-center justify-end gap-2">
-        <div className="h-1 w-14 overflow-hidden rounded-full bg-[#161616]">
+        <div className="h-1 w-14 overflow-hidden rounded-full bg-[#040d09]">
           <span
             className={`block h-full rounded-full ${token.graduated ? "bg-[#8ab4ff]" : "bg-[#00f090]"}`}
             style={{ width: `${progress ?? 0}%` }}
@@ -495,7 +495,7 @@ function NewCoinRow({ token, thresholdMicro }: { token: TokenListItem; threshold
 
 function EmptyRail({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-[236px] flex-1 items-center justify-center rounded-[8px] border border-dashed border-[#161616] px-6 text-center text-sm text-zinc-600">
+    <div className="flex h-[236px] flex-1 items-center justify-center rounded-[8px] border border-dashed border-[#040d09] px-6 text-center text-sm text-zinc-600">
       {children}
     </div>
   );

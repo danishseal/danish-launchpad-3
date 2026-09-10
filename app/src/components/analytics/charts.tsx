@@ -136,7 +136,7 @@ export function VolumeChart({
       </div>
       {h && hover != null && (
         <div
-          className="pointer-events-none absolute top-2 z-10 rounded-lg border border-[var(--hairline-strong)] bg-[#101010] px-2.5 py-1.5 shadow-lg"
+          className="pointer-events-none absolute top-2 z-10 rounded-lg border border-[var(--hairline-strong)] bg-[#061109] px-2.5 py-1.5 shadow-lg"
           style={{ left: `calc(${(hover / Math.max(1, n - 1)) * 100}% )`, transform: "translateX(-50%)" }}
         >
           <p className="font-mono text-[10px] text-zinc-500">{fmtTime(h.t)}</p>
@@ -262,7 +262,7 @@ export function LaunchesChart({
       </div>
       {h && hover != null && (
         <div
-          className="pointer-events-none absolute top-8 z-10 rounded-lg border border-[var(--hairline-strong)] bg-[#101010] px-2.5 py-1.5 shadow-lg"
+          className="pointer-events-none absolute top-8 z-10 rounded-lg border border-[var(--hairline-strong)] bg-[#061109] px-2.5 py-1.5 shadow-lg"
           style={{
             left: `calc(${((hover + 0.5) / n) * 100}%)`,
             transform: "translateX(-50%)",

@@ -38,7 +38,7 @@ export function UtokenHome() {
         {isLoading ? (
           <div className="flex gap-3 overflow-hidden">
             {Array.from({ length: 5 }).map((_, i) => (
-              <div key={i} className="h-[150px] w-[300px] shrink-0 animate-pulse rounded-xl border border-[var(--hairline)] bg-[#0a0a0a]" />
+              <div key={i} className="h-[150px] w-[300px] shrink-0 animate-pulse rounded-xl border border-[var(--hairline)] bg-[#030806]" />
             ))}
           </div>
         ) : (
@@ -54,7 +54,7 @@ export function UtokenHome() {
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {isLoading
             ? Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="h-[92px] animate-pulse rounded-xl border border-[var(--hairline)] bg-[#0a0a0a]" />
+                <div key={i} className="h-[92px] animate-pulse rounded-xl border border-[var(--hairline)] bg-[#030806]" />
               ))
             : trending.map((t) => <TrendingCard key={t.address} token={t} />)}
         </div>
@@ -150,7 +150,7 @@ function Hero() {
 
   return (
     <section
-      className="relative aspect-[2880/920] min-h-[300px] overflow-hidden rounded-2xl border border-[#161616] bg-[#0c0c0e]"
+      className="relative aspect-[2880/920] min-h-[300px] overflow-hidden rounded-2xl border border-[#040d09] bg-[#0c0c0e]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -279,7 +279,7 @@ function FeaturedCard({ token, thresholdMicro }: { token: TokenListItem; thresho
   return (
     <Link
       href={`/token/${token.address}`}
-      className="group relative h-[150px] w-[300px] shrink-0 snap-start overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#0a0a0a] transition-colors hover:border-zinc-500"
+      className="group relative h-[150px] w-[300px] shrink-0 snap-start overflow-hidden rounded-xl border border-[var(--hairline)] bg-[#030806] transition-colors hover:border-zinc-500"
     >
       {token.image && (
         // eslint-disable-next-line @next/next/no-img-element
@@ -324,9 +324,9 @@ function TrendingCard({ token }: { token: TokenListItem }) {
   return (
     <Link
       href={`/token/${token.address}`}
-      className="flex items-center gap-3 rounded-[10px] border border-[var(--hairline)] bg-[#0a0a0a] p-3 transition-colors hover:border-[#3a3a42]"
+      className="flex items-center gap-3 rounded-[10px] border border-[var(--hairline)] bg-[#030806] p-3 transition-colors hover:border-[#3a3a42]"
     >
-      <div className="h-14 w-14 shrink-0 overflow-hidden rounded-[10px] border border-[var(--hairline)] bg-[#101010]">
+      <div className="h-14 w-14 shrink-0 overflow-hidden rounded-[10px] border border-[var(--hairline)] bg-[#061109]">
         {token.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -399,7 +399,7 @@ function Registry({ tokens, loading }: { tokens: TokenListItem[]; loading: boole
         </div>
       </div>
 
-      <div className="overflow-x-auto rounded-xl bg-[#0a0a0a] ring-1 ring-[var(--hairline)]">
+      <div className="overflow-x-auto rounded-xl bg-[#030806] ring-1 ring-[var(--hairline)]">
         <table className="w-full min-w-[860px] text-left">
           <thead>
             <tr className="border-b border-[var(--hairline)] text-[11px] uppercase tracking-[0.08em] text-zinc-600">
@@ -433,11 +433,11 @@ function RegistryRow({ token, rank, thresholdMicro }: { token: TokenListItem; ra
   const change = token.price_change_24h;
   const priceUsd = (Number(token.current_price) / 1e6) * token.market.solUsd;
   return (
-    <tr className="group border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#141414]">
+    <tr className="group border-b border-[var(--hairline)] transition-colors last:border-0 hover:bg-[#08160f]">
       <td className="px-4 py-3 tabular-nums text-[13px] text-zinc-600">{rank}</td>
       <td className="px-4 py-3">
         <Link href={`/token/${token.address}`} className="flex items-center gap-2.5">
-          <div className="h-8 w-8 shrink-0 overflow-hidden rounded-lg bg-[#101010] ring-1 ring-[var(--hairline)]">
+          <div className="h-8 w-8 shrink-0 overflow-hidden rounded-lg bg-[#061109] ring-1 ring-[var(--hairline)]">
             {token.image ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={token.image} alt="" className="h-full w-full object-cover" />
@@ -471,7 +471,7 @@ function VenueBadge({ token }: { token: TokenListItem }) {
   return (
     <span
       className={`inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${
-        graduated ? "bg-[#00f090]/15 text-[#6dffbf]" : "bg-[#1e1e1e] text-zinc-400"
+        graduated ? "bg-[#00f090]/15 text-[#6dffbf]" : "bg-[#123021] text-zinc-400"
       }`}
     >
       {graduated ? "ANSEM AMM" : "Bonding"}

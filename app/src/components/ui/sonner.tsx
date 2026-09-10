@@ -20,7 +20,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
           title: "!text-zinc-100",
           description: "!text-zinc-300",
           actionButton: "!bg-[#00f090] !text-[#10250a]",
-          cancelButton: "!bg-[#161616] !text-zinc-200",
+          cancelButton: "!bg-[#040d09] !text-zinc-200",
           closeButton: "!border-[#45454c] !bg-[#242428] !text-zinc-100",
         },
       }}
