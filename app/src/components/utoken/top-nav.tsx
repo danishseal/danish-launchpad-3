@@ -7,7 +7,6 @@ import { MagnifyingGlass, Plus, XLogo, BookOpen } from "@phosphor-icons/react";
 import { useTokens } from "@/hooks/use-tokens";
 import { ConnectButton } from "@/components/wallet/connect-button";
 import { NotificationsBell } from "@/components/social/notifications-bell";
-import { DEFAULT_TOKEN_SUPPLY } from "@/lib/chain-config";
 import { useCommandSearch } from "@/components/utoken/command-search";
 
 /** utoken.so-style top chrome: a thin stats line, the main header, and a
@@ -52,18 +51,6 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
     );
     return { count: src.length, volume };
   }, [tokens]);
-
-  const ranked = useMemo(
-    () =>
-      [...(tokens ?? [])]
-        .sort(
-          (a, b) =>
-            Number(b.current_price) * b.market.solUsd -
-            Number(a.current_price) * a.market.solUsd,
-        )
-        .slice(0, 12),
-    [tokens],
-  );
 
   return (
     <header
@@ -128,7 +115,10 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
           {/* The EVM section. Robinhood Chain 4663, not ansem-1, which is why it is
               named rather than folded into Scanner. */}
           <Link href="/4thstreet" className="transition-colors hover:text-white">
-            4thstreet
+            Launches
+          </Link>
+          <Link href="/4thstreet/structures" className="transition-colors hover:text-white">
+            Structures
           </Link>
         </nav>
 
@@ -184,27 +174,6 @@ export function TopNav({ squareCorners = false }: { squareCorners?: boolean }) {
         />
       </div>
 
-      {/* Price ticker: animated marquee (duplicated for a seamless loop) */}
-      {mounted && ranked.length > 0 && (
-        <div className="overflow-hidden border-t border-[var(--hairline)]">
-          <div className="ansem-marquee items-center">
-            {[...ranked, ...ranked].map((t, i) => {
-              const price = (Number(t.current_price) / 1e6) * t.market.solUsd * DEFAULT_TOKEN_SUPPLY;
-              return (
-                <Link
-                  key={`${t.address}-${i}`}
-                  href={`/token/${t.address}`}
-                  className="flex h-9 shrink-0 items-center gap-1.5 border-r border-[var(--hairline)] px-4 font-mono text-[12px] transition-opacity hover:opacity-80"
-                >
-                  <span className="text-zinc-600">#{(i % ranked.length) + 1}</span>
-                  <span className="font-semibold text-zinc-200">${t.symbol}</span>
-                  <span className="text-zinc-500">{usdCompact(price)}</span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      )}
     </header>
   );
 }
@@ -216,8 +185,4 @@ function usd(v: number): string {
     notation: "compact",
     maximumFractionDigits: 2,
   }).format(v || 0);
-}
-function usdCompact(v: number): string {
-  if (v >= 1000) return usd(v);
-  return `$${(v || 0).toLocaleString("en-US", { maximumFractionDigits: v < 1 ? 4 : 2 })}`;
 }

@@ -79,23 +79,26 @@ export function FourthStreetHome() {
             <span className="text-xs text-zinc-500">{retired.length} still tradeable</span>
           </div>
           <p className="mb-4 max-w-3xl text-sm text-zinc-500">
-            These were launched by a launcher that has since been replaced. A Uniswap v4
-            pool key contains the hook address, so each pool stays with the hook that
-            opened it and the protocol cannot migrate them. They are kept off the main
-            board on purpose and they trade exactly as they always did.
+            Launched before the current deployment. They trade exactly as they always
+            did.
           </p>
           <Grid rows={retired} muted />
         </section>
       )}
 
-      <section className="rounded-xl border border-[var(--hairline)] bg-[var(--surface-1)] p-5 text-xs text-zinc-500">
-        <div className="flex flex-wrap gap-x-8 gap-y-2">
-          <span>chain 4663</span>
+      <details className="rounded-xl border border-[var(--hairline)] bg-[var(--surface-1)] p-5">
+        <summary className="cursor-pointer text-xs text-zinc-500">
+          Contracts on chain 4663
+        </summary>
+        <div className="mt-3 flex flex-wrap gap-x-8 gap-y-2 text-xs text-zinc-500">
           {stack && <span>registry {shortAddress(stack.registry)}</span>}
           {stack && <span>hook {shortAddress(stack.hook)}</span>}
           {stack && <span>router {shortAddress(stack.router)}</span>}
+          <span className="text-zinc-600">
+            every address resolved from the Registry at read time, never hardcoded
+          </span>
         </div>
-      </section>
+      </details>
     </div>
   );
 }
@@ -125,6 +128,12 @@ function Hero({ live, retiredCount }: { live: number; retiredCount: number }) {
             className="rounded-lg bg-[var(--ansem)] px-5 py-2.5 text-sm font-medium text-black"
           >
             Browse launches →
+          </Link>
+          <Link
+            href="/4thstreet/structures"
+            className="rounded-lg border border-[var(--hairline-strong)] px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors hover:bg-[var(--surface-2)]"
+          >
+            How the structures work
           </Link>
           <span className="text-xs text-zinc-500">
             {live} live

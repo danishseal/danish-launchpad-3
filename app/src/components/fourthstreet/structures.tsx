@@ -5,7 +5,9 @@ import type { Address } from "viem";
 import { ROBINHOOD_CHAIN_ID } from "@/lib/fourthstreet/chain";
 import { traitAbi } from "@/lib/fourthstreet/abis";
 import { ZERO_ADDRESS } from "@/lib/fourthstreet/addresses";
+import Link from "next/link";
 import { shortAddress } from "@/lib/fourthstreet/format";
+import { TRAITS } from "@/lib/fourthstreet/structures-catalog";
 import type { LaunchRow } from "@/lib/fourthstreet/launches";
 
 /**
@@ -61,7 +63,13 @@ export function StructureList({ launch }: { launch: LaunchRow }) {
                 <div className="text-[13px] text-zinc-200">
                   {d ? d[1] : q.isLoading ? "reading describe()…" : "did not answer describe()"}
                 </div>
-                <div className="text-[11px] text-zinc-600">{d ? d[0] : shortAddress(a)}</div>
+                {/* The tagline is matched on the name the CONTRACT returned, so a
+                    structure the directory does not know about shows its family
+                    rather than borrowing someone else's description. */}
+                <div className="text-[11px] text-zinc-600">
+                  {(d && TRAITS.find((t) => t.name === d[1])?.tagline) ??
+                    (d ? d[0] : shortAddress(a))}
+                </div>
               </div>
               <span className="shrink-0 text-[11px] text-zinc-600">slot {i + 1}</span>
             </li>
@@ -71,7 +79,10 @@ export function StructureList({ launch }: { launch: LaunchRow }) {
       <p className="mt-3 text-[11px] text-zinc-600">
         A structure can add fee and nothing else. It cannot refuse a trade: refuse was
         removed from the trait interface as a type, so nothing written later can
-        reintroduce blocking. Sells always work.
+        reintroduce blocking. Sells always work.{" "}
+        <Link href="/4thstreet/structures" className="text-[var(--ansem)] hover:underline">
+          All seventeen, explained →
+        </Link>
       </p>
     </section>
   );
